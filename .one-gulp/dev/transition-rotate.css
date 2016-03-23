@@ -1,0 +1,20 @@
+section {
+    -webkit-transition-property: opacity, -webkit-transform;
+            transition-property: opacity, transform;
+}
+
+html:not(.overview) [data-state="previous"] {
+    -webkit-transform: scale(1.5) rotate(-40deg) translate3d(-50px, -50px, 0);
+            transform: scale(1.5) rotate(-40deg) translate3d(-50px, -50px, 0);
+}
+
+html:not(.overview) [data-state="current"] {
+    -webkit-transform: scale(1) rotate(0deg);
+        -ms-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+}
+
+html:not(.overview) [data-state="next"] {
+    -webkit-transform: scale(.5) rotate(40deg) translate3d(50px, 50px, 0);
+            transform: scale(.5) rotate(40deg) translate3d(50px, 50px, 0);
+}

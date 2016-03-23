@@ -1,0 +1,15 @@
+section {
+    transition-property: opacity, transform;
+}
+
+html:not(.overview) [data-state="previous"] {
+    transform: translate3d(-110%, 0, 0);
+}
+
+html:not(.overview) [data-state="current"] {
+    transform: translate3d(0, 0, 0);
+}
+
+html:not(.overview) [data-state="next"] {
+    transform: translate3d(110%, 0, 0);
+}

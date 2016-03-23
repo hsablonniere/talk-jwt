@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="prezento-capable" content="yes">
+  <meta name="prezento-vendor" content="dzslides">
+  <title>100% Stateless avec JWT</title>
+  <link href="dzslides.css" rel="stylesheet">
+  <!--link(href='https://fonts.googleapis.com/css?family=Press+Start+2P', rel='stylesheet', type='text/css')-->
+  <link href="fonts.css" rel="stylesheet">
+  <link href="highlight.github.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+</head>
+<body>
+  <section class="slide-startEnd">
+    <div class="startEnd-author">
+      <div class="startEnd-authorName">Hubert<br>Sablonnière</div><img src="media/hsablonniere-avatar.jpg" class="startEnd-authorAvatar">
+      <div class="startEnd-authorTwitter">@hsablonniere</div>
+    </div>
+    <div class="startEnd-title">
+      <div class="startEnd-subtitle">100% Stateless avec</div>
+      <div class="startEnd-maintitle">JWT</div>
+    </div>
+    <div class="startEnd-footer"><img src="./media/ineat-conseil.png" class="startEnd-companyLogo zoom">
+      <div class="startEnd-talkInfos">
+        <div class="startEnd-hashtags">#Breizhcamp #JWT</div>
+        <div class="startEnd-locationDate">Breizhcamp - 2016-03-23</div>
+      </div>
+    </div>
+    <div role="note">
+      Bonjour à tous !
+      Je m'appelle Hubert SABLONNIÈRE,
+      je suis développeur Web chez INEAT Conseil à Lille
+      et aujourd'hui j'ai envie de vous parler de...
+      
+    </div>
+  </section>
+  <section>
+    <figure class="fs-media fs-media-cover"><img src="/media/compaq-2.jpg">
+      <figcaption>Noël 1994</figcaption>
+    </figure>
+    <div role="note">
+      ...mon premier ordinateur.
+      Enfin bon [...] c'était pas MON ordinateur,
+      c'était pour toute la famille "bien sûr".
+      On l'a eu pour Noël 1994.
+      
+    </div>
+  </section>
+  <section>
+    <figure class="fs-media fs-media-cover"><img src="/media/compaq-1.jpg"></figure>
+    <div role="note">
+      Un Compaq Presario avec 33Mz de processeur.
+      Une bête de course à l'époque.
+      Quand mon père l'a ramené à la maison, on était tout fou...
+      
+    </div>
+  </section>
+  <section class="black">
+    <figure class="fs-media fs-media-contain"><img src="/media/compaq-3.jpg"></figure>
+    <div role="note">
+      ...avec ma soeur, on a tout de suite cherché où étaient les jeux.
+      On s'est vite lassé du démineur et du soliaire et
+      c'est à peu près à ce moment là que nos cousins nous on fait découvrir...
+      
+    </div>
+  </section>
+  <section>
+    <figure class="fs-media"><img src="/media/msdos.png"></figure>
+    <div role="note">
+      ...les jeux MS-DOS [...] wouahhh.
+      Dès que j'allais chez un pote et qu'il me montrait un nouveau, je demandais direct : "Ça rentre sur une disquette ?"
+      Bon du coup, ça fait un peu peur quand tu vois qu'en 2016, un site moderne dépasse souvent les 1 meg 44 mais bon.
+      Un de mes jeux préférés c'était les...
+      
+    </div>
+  </section>
+  <section>
+    <figure class="fs-media fs-media-fill">
+      <video src="/media/lemmings-fun-level-1-just-dig-1991-ms-dos.webm#t=24" autoplay="false" data-playbackrate="3"></video>
+    </figure>
+    <div role="note">
+      ...Lemmings. [???] Il y en a qui jouait aux Lemmings ici ?
+      Bon le principe est simple. Il y a des petits bonshommes qui rentrent dans le monde par la trappe et il faut les aider à sortir par la grande porte. Le problème c'est qu'ils sont très très cons et qu'il faut parfois les empêcher de mourir. Alors on leur dit de creuser, de grimper, de construire des escaliers, comme dans la vraie vie quoi.
+      A la fin, si on en a sauvé assez, le niveau est validé et on obtient un code.
+      C'est vachement pratique ce système de code parce qu'après 3 ou 4 "Hubert, tu viens manger ?",
+      bah t'es bien obligé d'éteindre l'ordinateur et le lendemain, si tu veux pas te retaper 17 niveaux...
+      
+    </div>
+  </section>
+  <section class="black">
+    <figure class="fs-media fs-media-contain"><img src="/media/lemmings-code-input.png"></figure>
+    <div role="note">
+      ...tu saisis le code et t'arrives direct au niveau qui va bien.
+      
+    </div>
+  </section>
+  <section>
+    <figure class="fs-media"><img src="/media/netscape.png"></figure>
+    <div role="note">
+      Pendant ce temps là, chez Netscape [...]
+      Lou Montulli invente pour notre plus grand plaisir...
+      
+    </div>
+  </section>
+  <section class="slide-quote">
+    <div class="quote">The <span class="blink">&lt;blink&gt;</span> tag is the worst thing I've ever done for the Internet.</div>
+    <div class="quote-author">Lou Montulli<br>(netscape)</div><img src="./media/loumontulli.jpg" class="quote-author-avatar">
+    <div role="note">
+      ...la balise HTML < blink > [COUGH]
+      Mais Lou a aussi de très bonnes idées.
+      On est en juin 1994, Netscape bosse pour un client qui développe une solution de panier virtuel pour du e-commerce.
+      A l'époque, pour gérer ça, on était obligé de stocker l'état dans l'URL.
+      Ça résumait à peu près l'expérience d'achat à celle d'un distributeur de canettes : un produit à la fois.
+      
+    </div>
+  </section>
+  <section class="slide-section fit-title">
+    <div class="title">Il etait une fois</div>
+    <div class="title">les <span class="title-info">cookies HTTP</span></div>
+    <div role="note">
+      Du coup, Lou propose d'appliquer le concept existant de magic-cookies sur le Web
+      et c'est ainsi que les cookies HTTP voient le jour.
+      Lou travaille sur une spécification avec John Giannandrea
+      et le support arrive dans Netscape assez rapidement.
+      Le premier usage officiel, c'était de savoir si un visiteur de netscape.com est déjà venu sur le site.
+      
+    </div>
+    <!--L'idée générale est proche du système des Lemmings :-->
+    <!--le serveur donne au navigateur un cookie et celui ci l'enregistre,-->
+    <!--lors des prochaines visites, ce cookie est réenvoyé au serveur tel quel.-->
+    <!--onv-->
+    <!--L'idée général c'est de copier le fonctionnement d'un vestiaire et des tickets qu'on donne aux clients en échange de leur manteau.-->
+    <!--C'est ainsi que les...-->
+    <!--...cookies HTTP voient le jour.-->
+    <!--Lou travaille sur une spécification avec John Giannandrea.-->
+    <!--Le support arrive dans Netscape assez rapidement et le premier usage officiel était de savoir si les visiteurs de netscape.com étaient déjà venus sur le site.-->
+  </section>
+  <section class="no-transition">
+    <div role="note">
+      Le fonctionnement n'a pas beaucoup changé depuis mais voici un petit rappel.
+      Vous prenez votre...
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-01.svg"></figure>
+    <div role="note">
+      navigateur et vous...
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-02.svg"></figure>
+    <div role="note">
+      ...validez le formulaire de login.
+      Ça envoie une requête POST côté serveur.
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-03.svg"></figure>
+    <div role="note">
+      Ensuite, le serveur va contacter la base de donnée pour vérifier si l'utilisateur existe.
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-04.svg"></figure>
+    <div role="note">
+      La base répond, oui John existe dans la base de donnée.
+      Du coup le serveur passe sa moulinette sécurisée (bcrypt, pbkdf2 ou autre) pour valider le mot de passe.
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-05.svg"></figure>
+    <div role="note">
+      Si tout va bien, le serveur peut enfin répondre à l'utilisateur
+      et c'est là que le navigateur va enregistrer pour la prochaine visite le couple clé/valeur name=John,
+      le fameux cookie.
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-06.svg"></figure>
+    <div role="note">
+      Du coup quand l'utilisateur revient,
+      son navigateur renvoie automatiquement ce cookie au serveur,
+      et le serveur va se servir de ces données pour
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-07.svg"></figure>
+    <div role="note">
+      afficher à l'utilisateur une page qui se souvient qu'il s'appelle John.
+      
+    </div>
+  </section>
+  <section>
+    <figure class="fs-media fs-media-cover"><img src="/media/lemmings-code-notebook.jpg"></figure>
+    <div role="note">
+      En fait, la première fois que j'ai implémenté une fonction d'un navigateur, j'avais 8 ans.
+      J'avais mon propre framework de cookie : le bloc notes... [clac]
+      Bref, le truc avec les codes des Lemmings, c'est qu'on ne pouvait pas deviner le code du niveau suivant.
+    </div>
+    <!--Ça me rapelle bizarrement une situation,-->
+    <!--Comme quoi, en 1994, je me mettais déjà à la place du navigateur...-->
+    <!--L'idée générale étant assez proche du système des Lemmings,-->
+    <!--Bon, ça nécessite de garder une session côté client,-->
+    <!--A l'époque, le framework à la mode pour ça, c'était le bloc-notes.-->
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-08.svg"></figure>
+    <div role="note">
+      Alors que là, je peux très bien me faire passer pour Paul alors que je suis John,
+      (c'est Yoko qui ne va pas être contente)
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <div role="note">
+      Le serveur doit trouver un moyen pour faire confiance au cookie que je lui donne.
+      La solution, ce sont les ID de session.
+      
+    </div>
+    <!--On est toujours sur ...-->
+    <!--Explications en plusieurs étapes du fonctionnement des cookies avec session ID-->
+    <!--cas BDD pour les sessions persistantes-->
+    <!-- C'est finalement assez proche du fonctionnement des codes des lemmings-->
+    <!-- ou pas car c'est pas unique à ma réussite du niveau-->
+    <!-- reparler du manteau et des tokens => token par référence-->
+  </section>
+  <!--section.no-transition-->
+  <!--    figure.fs-media.fs-media-cover.fs-media-cover--left-->
+  <!--        img(src="/media/schema-cookies-session-05.svg")-->
+  <!--    div(role='note').-->
+  <!---->
+  <!--section.no-transition-->
+  <!--    figure.fs-media.fs-media-cover.fs-media-cover--left-->
+  <!--        img(src="/media/schema-cookies-session-06.svg")-->
+  <!--    div(role='note').-->
+  <!---->
+  <!--section.no-transition-->
+  <!--    figure.fs-media.fs-media-cover.fs-media-cover--left-->
+  <!--        img(src="/media/schema-cookies-session-07.svg")-->
+  <!--    div(role='note').-->
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-session-08.svg"></figure>
+    <div role="note">
+      En gros, si je reprens la situation prédécente :
+      Juste avant d'envoyer une réponse avec un cookie,
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-session-09.svg"></figure>
+    <div role="note">
+      le serveur va générer un identifiant bien aléatoire, genre 42,
+      et il va associer dans un cache mémoire les informations sur l'utilisateur avec cet identifiant.
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-session-10.svg"></figure>
+    <div role="note">
+      C'est cet identifiant qui sera envoyé au navigateur.
+      Là on retombe sur le fonctionnement classique des cookies,
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-session-11.svg"></figure>
+    <div role="note">
+      Lors des prochaines visites, le navigateur envoie à nouveau ce cookie au serveur.
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-session-12.svg"></figure>
+    <div role="note">
+      Par contre, cette fois ci le serveur a besoin de son cache mémoire pour transformer un identifiant opaque...
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-session-13.svg"></figure>
+    <div role="note">
+      ...en informations sur l'utilisateur et ainsi...
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-session-14.svg"></figure>
+    <div role="note">
+      ...envoyer une réponse contextualisée à l'utilisateur.
+      Génial.
+      
+    </div>
+  </section>
+  <section>
+    <div role="note">
+      Il y a plusieurs inconvénients à utiliser des ID de session.
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-02.svg"></figure>
+    <div role="note">
+      Si votre site a du succès,
+      un seul serveur ne suffira pas,
+      il risque de tomber.
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-03.svg"></figure>
+    <div role="note">
+      Pas de soucis, je mets deux serveurs et un load balancer, merci au revoir.
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-04.svg"></figure>
+    <div role="note">
+      Bon, en fait le commercial de l'hébergeur a négocié en direct avec mon chef :-(
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-05.svg"></figure>
+    <div role="note">
+      et puis après ils sont allé voir un match de foot...
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-06.svg"></figure>
+    <div role="note">
+      ...et c'est l'équipe préféré de mon chef qui a gagné.
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-07.svg"></figure>
+    <div role="note">
+      Bref, tout ces serveurs là...
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-08.svg"></figure>
+    <div role="note">
+      ...ont leur propre cache mémoire.
+      
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-09.svg"></figure>
+    <div role="note">
+      Du coup, si j'arrive avec la session 42 sur le serveur qui a les infos dans son cache mémoire,
+      tout va bien,
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-10.svg"></figure>
+    <div role="note">
+      Mais si le load balancer me redirige sur un autre noeud,
+      je suis mal barré.
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-11.svg"></figure>
+    <div role="note">
+      Du coup, on est tenté par une solution facile :
+      Un cache partagé as a service qui répond à tous les serveurs.
+      En faisant ça, le problème est décalé d'une couche et on a...
+      
+    </div>
+  </section>
+  <section class="slide-section no-images">
+    <div class="fit-title">
+      <div class="title title-alert">SPOF</div>
+      <div class="title title-alert">Alert</div>
+    </div>
+    <div role="note">
+      ...un bon gros Single Point Of Failure.
+      Je scale, Je scale...
+      Je met un load balancer
+      Oui mais si le mec arrive pas sur le bon ?
+      => je partage les sessions avec une BDD ou un memcached
+      => merde mais du coup j'ai un gros SPOF car si le memcache tombe on est cuit
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-12.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-13.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-14.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-15.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-16.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <!--section-->
+  <!--    .title schema scalabilité (sticky session)-->
+  <!--    div(role='note').-->
+  <!--        du coup je vais voir pour faire du sticky session-->
+  <!--        => mais je gère pas bien l'elasticité à chaud-->
+  <!--        => les pannes : pas cool, si un serveur tombe et qu'il gérait une session, le mec est déconnecté et il a perdu tout son panier-->
+  <!---->
+  <!--        // micro services-->
+  <section>
+    <div role="note">
+      Ces techniques, on les utilises depuis des années,
+      Ça fonctionne mais c'est pas toujours ce qu'il y a de plus simple à mettre en place et à maintenir.
+      Pour éviter une bonne partie de ces problèmes,
+      l'IETF nous propose la RFC rfc7519 :
+      
+    </div>
+  </section>
+  <section class="slide-section">
+    <!--.title <span class="title-info">J</span>SON <span class="title-info">W</span>eb <span class="title-info">T</span>oken-->
+    <!--.title c'est quoi ?-->
+    <div class="title-initials">
+      <div class="title trigger-off"><span class="title-info">J</span>SON</div>
+      <div class="title trigger-off"><span class="title-info">W</span>eb</div>
+      <div class="title trigger-off"><span class="title-info">T</span>oken</div>
+      <div class="title trigger-on"><span class="title-info">J</span>o</div>
+      <div class="title trigger-on"><span class="title-info">W</span>ilfried</div>
+      <div class="title trigger-on"><span class="title-info">T</span>songa</div>
+    </div>
+    <div role="note">
+      Les JSON Web Token !
+      Deux choses à retenir :
+      1 : Ça n'a strictement rien à voir avec GWT.
+      2 : Ce sont les mêmes initiales que Jo Wilfried Tsonga [...] coincidence ??
+      Mais alors qu'est ce qu'un JWT ?
+      //Bref, si vous faite un peu de lecture sur le sujet,
+      //vous verrez souvent des articles qui opposent et comparent les JWT aux cookies.
+      //C'est une erreur, il faut opposer et comparer les JWT aux IDs de session.
+      //ne pas opposer cookie vs token
+      //=> Remplacer des sessions
+      //Token par valeur, token par référence
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover"><img src="/media/schema-value-vs-reference-01.svg"></figure>
+    <div role="note">
+      C'est un token.
+      Mais il y a plusieurs sortes de tokens.
+      Car si les session ID sont bien des tokens par référence qui nécessite une forme de stockage pour les faire correspondre à des données,
+      les JWT sont des tokens par valeur, ils contiennent directement les informations.
+      En gros côté client
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover"><img src="/media/schema-value-vs-reference-02.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover"><img src="/media/schema-value-vs-reference-03.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover"><img src="/media/schema-value-vs-reference-04.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover"><img src="/media/schema-value-vs-reference-05.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-jwt-01.svg"></figure>
+    <div role="note">
+      On est toujours sur ...
+      Explications en plusieurs étapes du fonctionnement des cookies classiques
+      Fonctionnement badge conférence
+      Confiance ?
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-jwt-02.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-jwt-03.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-jwt-04.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-jwt-05.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-jwt-06.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section>
+    <pre class="wrap"><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19.fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</code></pre>
+    <div role="note">
+      Montrer le token et demander si qq parle le base 64 url couramment ?
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code><span class="jwt-header">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span><span class="code-hl">.</span><span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span><span class="code-hl">.</span><span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span></code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code>> encodedHeader
+<span class="jwt-header">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>
+
+
+
+
+> encodedPayload
+<span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+
+
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code>> <span class="code-hl">base64URLdecode(</span>encodedHeader<span class="code-hl">)</span>;
+<span class="jwt-header">'{"alg":"HS256","typ":"JWT"}'</span>
+
+
+
+
+> encodedPayload
+<span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+
+
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code>> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedHeader) <span class="code-hl">)</span>;
+<span class="jwt-header">{
+    "alg": "HS256",
+    "typ": "JWT"
+}</span>
+
+> encodedPayload
+<span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+
+
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code>> parseJSON( base64URLdecode(encodedHeader) );
+<span class="jwt-header">{
+    "alg": "HS256",
+    "typ": "JWT"
+}</span>
+
+> encodedPayload
+<span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> <span class="code-hl">hmacSha256(</span>encodedHeader + '.' + encodedPayload, 's3cr3t'<span class="code-hl">)</span>;
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code>> parseJSON( base64URLdecode(encodedHeader) );
+<span class="jwt-header">{
+    "alg": "HS256",
+    "typ": "JWT"
+}</span>
+
+> encodedPayload
+<span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> hmacSha256(encodedHeader + '.' + encodedPayload, <span class="code-hl">'foobar'</span>);
+<span class="jwt-signature">C61YChOynsK0bDfD1X8YP4SzFdACgL02EKI2u4XxqLU</span>
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code class="markdown">> parseJSON( base64URLdecode(encodedHeader) );
+<span class="jwt-header">{
+    "alg": "HS256",
+    "typ": "JWT"
+}</span>
+
+> <span class="code-hl">base64URLdecode(</span>encodedPayload<span class="code-hl">)</span>;
+<span class="jwt-payload">'{"iss":"auth-backend","sub":"hsablonniere","aud":"web-frontend","exp":1458638618,"nbf":null,"iat":1458635018,"jti":"85a3cb4c-5720-4dba-ae94-931d60937c47","name":"Hubert SABLONNIÈRE","permissions":["EDITOR","REVIEWER"]}'</span>
+
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+
+
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+    "iss": "auth-backend",
+    "sub": "hsablonniere",
+    "aud": "web-frontend",
+    "exp": 1458638618,
+    "nbf": null,
+    "iat": 1458635018,
+    "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+    "name": "Hubert SABLONNIÈRE",
+    "permissions": ["EDITOR", "REVIEWER"]
+}</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+    <span class="code-hlnow">"iss": "auth-backend"</span>,
+    "sub": "hsablonniere",
+    "aud": "web-frontend",
+    "exp": 1458638618,
+    "nbf": null,
+    "iat": 1458635018,
+    "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+    "name": "Hubert SABLONNIÈRE",
+    "permissions": ["EDITOR", "REVIEWER"]
+}</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+    "iss": "auth-backend",
+    <span class="code-hlnow">"sub": "hsablonniere"</span>,
+    "aud": "web-frontend",
+    "exp": 1458638618,
+    "nbf": null,
+    "iat": 1458635018,
+    "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+    "name": "Hubert SABLONNIÈRE",
+    "permissions": ["EDITOR", "REVIEWER"]
+}</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+    "iss": "auth-backend",
+    "sub": "hsablonniere",
+    <span class="code-hlnow">"aud": "web-frontend"</span>,
+    "exp": 1458638618,
+    "nbf": null,
+    "iat": 1458635018,
+    "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+    "name": "Hubert SABLONNIÈRE",
+    "permissions": ["EDITOR", "REVIEWER"]
+}</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+    "iss": "auth-backend",
+    "sub": "hsablonniere",
+    "aud": "web-frontend",
+    <span class="code-hlnow">"exp": 1458638618</span>,
+    "nbf": null,
+    "iat": 1458635018,
+    "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+    "name": "Hubert SABLONNIÈRE",
+    "permissions": ["EDITOR", "REVIEWER"]
+}</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+    "iss": "auth-backend",
+    "sub": "hsablonniere",
+    "aud": "web-frontend",
+    "exp": 1458638618,
+    <span class="code-hlnow">"nbf": null</span>,
+    "iat": 1458635018,
+    "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+    "name": "Hubert SABLONNIÈRE",
+    "permissions": ["EDITOR", "REVIEWER"]
+}</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+    "iss": "auth-backend",
+    "sub": "hsablonniere",
+    "aud": "web-frontend",
+    "exp": 1458638618,
+    "nbf": null,
+    <span class="code-hlnow">"iat": 1458635018</span>,
+    "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+    "name": "Hubert SABLONNIÈRE",
+    "permissions": ["EDITOR", "REVIEWER"]
+}</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+    "iss": "auth-backend",
+    "sub": "hsablonniere",
+    "aud": "web-frontend",
+    "exp": 1458638618,
+    "nbf": null,
+    "iat": 1458635018,
+    <span class="code-hlnow">"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47"</span>,
+    "name": "Hubert SABLONNIÈRE",
+    "permissions": ["EDITOR", "REVIEWER"]
+}</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+    "iss": "auth-backend",
+    "sub": "hsablonniere",
+    "aud": "web-frontend",
+    "exp": 1458638618,
+    "nbf": null,
+    "iat": 1458635018,
+    "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+    <span class="code-hlnow">"name": "Hubert SABLONNIÈRE"</span>,
+    <span class="code-hlnow">"permissions": ["EDITOR", "REVIEWER"]</span>
+}</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+</code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload" data-code-id="jwt-body">{
+    "iss": "auth-backend",
+    "sub": "hsablonniere",
+    "aud": "web-frontend",
+    "exp": 1458638618,
+    "nbf": null,
+    "iat": 1458635018,
+    "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+    "name": "Hubert SABLONNIÈRE",
+    "permissions": ["EDITOR", "REVIEWER"]
+}</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
+<span class="jwt-signature" data-code-id="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+</code></pre>
+    <div role="note">
+      Exliquer les claims
+      
+    </div>
+  </section>
+  <!--section.no-transition-->
+  <!--    pre.wrap-->
+  <!--        code.markdown.-->
+  <!--            > parseJSON( base64URLdecode(encodedPayload) );-->
+  <!--            <span class="jwt-payload">{-->
+  <!--                "iss": "auth-backend",-->
+  <!--                "sub": "hsablonniere",-->
+  <!--                "aud": "web-frontend",-->
+  <!--                "exp": 1458638618,-->
+  <!--                "nbf": null,-->
+  <!--                "iat": 1458635018,-->
+  <!--                "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",-->
+  <!--                "name": "Hubert SABLONNIÈRE",-->
+  <!--                "permissions": ["EDITOR", "REVIEWER", <span class="code-hl">"ADMIN"</span>]-->
+  <!--            }</span>-->
+  <!---->
+  <!--            > signature-->
+  <!--            <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>-->
+  <!---->
+  <!--            > hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');-->
+  <!--            <span class="jwt-signature"><span class="code-hl">sz_ALMnwaDEf7sF7wKeabiLPSUIBhDSdALvEiVb9G_c</span></span>-->
+  <!---->
+  <!--    div(role='note').-->
+  <!--        Du coup si qq change le payload, s'il ne connait pas le secret, le token sera invalide-->
+  <!---->
+  <!--section.no-transition-->
+  <!--    pre.wrap-->
+  <!--        code.markdown.-->
+  <!--            > parseJSON( base64URLdecode(encodedPayload) );-->
+  <!--            <span class="jwt-payload">{-->
+  <!--                "iss": "auth-backend",-->
+  <!--                "sub": "hsablonniere",-->
+  <!--                "aud": "web-frontend",-->
+  <!--                "exp": <span class="code-hl">1500000000</span>,-->
+  <!--                "nbf": null,-->
+  <!--                "iat": 1458635018,-->
+  <!--                "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",-->
+  <!--                "name": "Hubert SABLONNIÈRE",-->
+  <!--                "permissions": ["EDITOR", "REVIEWER"]-->
+  <!--            }</span>-->
+  <!---->
+  <!--            > signature-->
+  <!--            <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>-->
+  <!---->
+  <!--            > hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');-->
+  <!--            <span class="jwt-signature"><span class="code-hl">YicKS8hG-PSnYyV22atgbwrshyS-_coW-s79xzFPcqs</span></span>-->
+  <!--    div(role='note').-->
+  <!--section-->
+  <!--    .title JWT claims-->
+  <!--    div(role='note').-->
+  <!--        Claim-->
+  <!--        authentification et authorization-->
+  
+  <section class="slide-section">
+    <div class="fit-title">
+      <div class="title">Avantages</div>
+      <div class="title">des <span class="title-info">JWT</span> ?</div>
+    </div>
+    <div role="note">
+      Load balancing easy
+      Pas de sticky session à configurer
+      Plus de SPOF dans une architecture distribué voir micro service
+      
+    </div>
+  </section>
+  <section class="slide-section no-images">
+    <div class="title title-info">#1</div>
+    <div class="fit-title--small">
+      <div class="title">Load balancing</div>
+      <div class="title title-info">facile</div>
+    </div>
+    <div role="note">
+      Load balancing easy
+      Pas de sticky session à configurer
+      Plus de SPOF dans une architecture distribué voir micro service
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-jwt-scalable-01.svg"></figure>
+    <div role="note">
+      Load balancing easy
+      Pas de sticky session à configurer
+      Plus de SPOF dans une architecture distribué voir micro service
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-jwt-scalable-02.svg"></figure>
+    <div role="note">
+      Load balancing easy
+      Pas de sticky session à configurer
+      Plus de SPOF dans une architecture distribué voir micro service
+      
+    </div>
+  </section>
+  <section class="slide-section no-images">
+    <div class="title title-info">#2</div>
+    <div class="fit-title--small">
+      <div class="title"><span class="title-info">Multi</span>-langage</div>
+    </div>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-jwt-scalable-02.svg"></figure>
+    <div role="note">
+      Load balancing easy
+      Pas de sticky session à configurer
+      Plus de SPOF dans une architecture distribué voir micro service
+      
+    </div>
+  </section>
+  <section class="slide-section no-images">
+    <div class="title title-info">#3</div>
+    <div class="fit-title--small">
+      <div class="title">Architectures</div>
+      <div class="title title-info">microservices</div>
+    </div>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-jwt-scalable-microservices-04.svg"></figure>
+    <div role="note">
+      Micro services
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right-nt"><img src="/media/schema-jwt-scalable-microservices-05.svg"></figure>
+    <div role="note">
+      Micro services
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right-nt"><img src="/media/schema-jwt-scalable-microservices-06.svg"></figure>
+    <div role="note">
+      Micro services
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right-nt"><img src="/media/schema-jwt-scalable-microservices-07.svg"></figure>
+    <div role="note">
+      Micro services
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right-nt"><img src="/media/schema-jwt-scalable-microservices-08.svg" class="trigger-media-on"><img src="/media/schema-jwt-scalable-microservices-09.svg" class="trigger-media-off"></figure>
+    <div role="note">
+      Micro services
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-contain"><img src="/media/microservices-and-shared-db.png"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover"><img src="/media/schema-signatures-00.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover"><img src="/media/schema-signatures-01.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover"><img src="/media/schema-signatures-02.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover"><img src="/media/schema-signatures-03.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <pre class="wrap"><code>> decodedHeader
+<span class="jwt-header">{
+    <span class="code-hl">"alg": "RS256"</span>,
+    "typ": "JWT"
+}</span></code></pre>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right-nt"><img src="/media/schema-jwt-asym.svg" class="trigger-media-on"><img src="/media/schema-jwt-asym-keys.svg" class="trigger-media-off"></figure>
+    <div role="note">
+      Micro services
+      
+    </div>
+  </section>
+  <section class="slide-section fit-title--small">
+    <div class="title">oAuth<span class="title-info">2</span></div>
+    <div role="note">
+      Schéma d'architecture
+      JWT en tant que Bearer token (à la place d'un opaque)
+      Bearer token devient un token par référence
+          pertinence de le faire que dans le SI
+      
+    </div>
+  </section>
+  <section>
+    <div class="title">Schéma d'architecture oauth</div>
+    <div role="note"></div>
+  </section>
+  <section>
+    <div class="title">plus besoin du serveur oauth pour valider des access-token</div>
+    <div role="note"></div>
+  </section>
+  <section>
+    <div class="title">Bearer token devient un token par référence</div>
+    <div role="note"></div>
+  </section>
+  <section>
+    <div class="title">schéma d'archi firewall reference to valeur</div>
+    <div role="note">
+      pertinence de le faire que dans le SI
+      
+    </div>
+  </section>
+  <section class="slide-section fit-title">
+    <div class="title">Open-ID <span class="title-info zoom">Connect</span></div>
+    <div role="note"></div>
+  </section>
+  <section>
+    <div class="title">schéma d'archi open ID</div>
+    <div role="note">
+      JWT à la base d'Open ID
+      Les token d'identité sont des JWT
+      
+    </div>
+  </section>
+  <section class="slide-section fit-title">
+    <div class="title">Inconvenients</div>
+    <div class="title">des <span class="title-red">JWT</span> ?</div>
+    <div role="note">
+      revokation
+      Verre à moitié plein => verre à moitié vide
+          whitelist vs blacklist
+          optimisme du nombre de fois ou il faut expirer des session
+      => short lived c'est mieux
+      
+    </div>
+  </section>
+  <section class="slide-section no-images">
+    <div class="fit-title--small">
+      <div class="title">revocation</div>
+      <div class="title">de <span class="title-info">Tokens</span></div>
+    </div>
+    <div class="title title-red">:-(</div>
+    <div role="note">
+      Expiration != revokation
+      Black list vs white list
+      Verre à moitié plein => verre à moitié vide
+          whitelist vs blacklist
+          optimisme du nombre de fois ou il faut expirer des session
+          => short lived c'est mieux
+          expiration
+      
+    </div>
+  </section>
+  <section class="slide-section no-images fit-title">
+    <div class="title">Securite des</div>
+    <div class="title"><span class="title-info">S</span>ingle <span class="title-info">P</span>age <span class="title-info">A</span>pplications</div>
+    <div role="note">
+      revokation
+      Verre à moitié plein => verre à moitié vide
+          whitelist vs blacklist
+          optimisme du nombre de fois ou il faut expirer des session
+      => short lived c'est mieux
+    </div>
+  </section>
+  <!--section-->
+  <!--    .title schema avec acces token et refresh token-->
+  <!--    div(role='note').-->
+  <!--        => short lived c'est mieux-->
+  <!--        expiration-->
+  <section class="slide-section fit-title--small">
+    <div class="title shake">Attaques</div>
+    <div class="title"><span class="title-info">XSS</span></div>
+    <div role="note">
+      Utiliser un cookie secure et HTTP only => XSS
+      Ajouter un XSRF token dans le payload et qui est stoké aussi à part
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media"><img src="/media/xss-twitter.jpg"></figure>
+    <div role="note">
+      explication de l'attaque XSS
+      Script tiers
+      Commentaires clients
+      
+    </div>
+  </section>
+  <section class="slide-section no-images">
+    <div class="fit-title incremental">
+      <div class="title"><span class="title-info">Injections</span> de contenus utilisateurs</div>
+      <div class="title"><span class="title-info">Scripts</span> partenaires</div>
+      <div class="title">WIFIs publics (HTTP <span class="title-info">pas S</span>)</div>
+    </div>
+    <div role="note"></div>
+  </section>
+  <section>
+    <pre class="nowrap"><code># Single Page App / App Mobile / Serveur tiers
+
+200 OK
+Set-Cookie: jwt=<span class="jwt-header">H34DER</span>.<span class="jwt-payload">P4YL04D</span>.<span class="jwt-signature">S1GN47URE</span>;
+    Path=/;
+    Domain=api.myapp.com;
+    <span class="code-hl">Secure;</span>
+    <span class="code-hl">HTTPOnly</span>
+</code></pre>
+  </section>
+  <section>
+    <pre class="nowrap"><code># App Mobile / Serveur tiers
+
+200 OK
+Authorization: Bearer <span class="jwt-header">H34DER</span>.<span class="jwt-payload">P4YL04D</span>.<span class="jwt-signature">S1GN47URE</span>
+</code></pre>
+  </section>
+  <section class="slide-section fit-title--small">
+    <div class="title shake">Attaques</div>
+    <div class="title"><span class="title-info">CSRF</span></div>
+    <div role="note">
+      Utiliser un cookie secure et HTTP only => XSS
+      Ajouter un XSRF token dans le payload et qui est stoké aussi à part
+      
+    </div>
+  </section>
+  <section>
+    <pre><code>&lt;!-- http://malicious.com -->
+
+&lt;form action="https://twitter.com/i/tweet/create"
+      method="POST">
+
+    &lt;input type="hidden" name="status"
+           value="La Normandie c'est mieux">
+&lt;/form>
+
+
+
+</code></pre>
+  </section>
+  <section>
+    <pre><code>&lt;!-- https://twitter.com -->
+
+&lt;form action="https://twitter.com/i/tweet/create"
+      method="POST">
+
+    &lt;input type="text" name="status"
+           value="I &lt;3 Bretagne">
+    &lt;input type="hidden" name="<span class="code-hl">authenticity_token</span>"
+           value="125d260e57fd924fc363534713e4bc43b774">
+&lt;/form>
+</code></pre>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-csrf-03.svg"></figure>
+    <div role="note">
+      Synchronizer Token Pattern
+      attention au content-type
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-csrf-04.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-csrf-05.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-csrf-06.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-csrf-07.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-csrf-08.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-csrf-09.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right"><img src="/media/schema-csrf-jwt-01.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right"><img src="/media/schema-csrf-jwt-02.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right"><img src="/media/schema-csrf-jwt-03.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right"><img src="/media/schema-csrf-jwt-04.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right"><img src="/media/schema-csrf-jwt-05.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right"><img src="/media/schema-csrf-jwt-06.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right"><img src="/media/schema-csrf-jwt-07.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right"><img src="/media/schema-csrf-jwt-08.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right"><img src="/media/schema-csrf-jwt-09.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="slide-section fit-title--small">
+    <div class="title title-info">Autres</div>
+    <div class="title">usages</div>
+    <div class="title">des JWT</div>
+    <div role="note"></div>
+  </section>
+  <section class="slide-section no-images fit-title--small">
+    <div class="title">Formulaire en</div>
+    <div class="title"><span class="title-info">plusieurs</span> parties</div>
+    <div role="note"></div>
+  </section>
+  <section class="slide-section no-images fit-title--small">
+    <div class="title"><span class="title-info">Email</span> de</div>
+    <div class="title">confirmation</div>
+    <div role="note"></div>
+  </section>
+  <section class="slide-section no-images">
+    <div role="note">
+      Voilà, j'espère que vous avez une meilleure idée de ce que sont les JSON Web Token,
+      de comment ils fonctionnent et dans quelle contexte ils sont utiles.
+      
+    </div>
+  </section>
+  <section class="slide-quote">
+    <div class="quote">Stateless<br>is priceless.</div>
+    <div class="quote-author">Thomas Recloux</div><img src="./media/thomas-recloux.jpg" class="quote-author-avatar">
+    <div role="note">
+      De manière générale, vous gagnerez toujours en simplicité avec des architectures stateless.
+      Sauvons les Lemmings...
+      
+    </div>
+  </section>
+  <section class="slide-section fit-title--small">
+    <div class="title zoom">Merci <span class="title-info">;-)</span></div>
+    <div role="note">
+      Merci bcp.
+      
+    </div>
+  </section>
+  <section class="slide-startEnd">
+    <div class="startEnd-author">
+      <div class="startEnd-authorName">Hubert<br>Sablonnière</div><img src="media/hsablonniere-avatar.jpg" class="startEnd-authorAvatar">
+      <div class="startEnd-authorTwitter">@hsablonniere</div>
+    </div>
+    <div class="startEnd-title">
+      <div class="startEnd-subtitle">Game Over</div>
+      <div class="startEnd-maintitle">?</div>
+    </div>
+    <div class="startEnd-footer"><img src="./media/ineat-conseil.png" class="startEnd-companyLogo">
+      <div class="startEnd-talkInfos">
+        <div class="startEnd-hashtags">#Breizhcamp #JWT</div>
+        <div class="startEnd-locationDate">Breizhcamp - 2016-03-23</div>
+      </div>
+    </div>
+    <div role="note"></div>
+  </section>
+  <section class="slide-section no-images">
+    <div class="fit-title">
+      <div class="title"><span class="title-info">stormpath</span>.com/blog</div>
+      <div class="title"><span class="title-info">auth0</span>.com/blog</div>
+      <div class="title"><span class="title-info">owasp</span>.org</div>
+      <div class="title"><span class="title-info">jwt</span>.io</div>
+    </div>
+    <div role="note"></div>
+  </section>
+  <section class="slide-section no-images">
+    <div class="fit-title">
+      <div class="title">HTTP/<span class="title-info">2</span> ?</div>
+    </div>
+    <div role="note"></div>
+  </section>
+  <section class="slide-section no-images">
+    <div class="fit-title">
+      <div class="title">Taille des</div>
+      <div class="title"><span class="title-info">tokens</span> ?</div>
+    </div>
+    <div role="note"></div>
+  </section>
+  <section class="slide-section no-images">
+    <div class="fit-title">
+      <div class="title">Chiffrement du</div>
+      <div class="title"><span class="title-info">payload</span> ?</div>
+    </div>
+    <div role="note"></div>
+  </section>
+  <script src="dzslides.js"></script>
+  <script src="highlight.pack.js"></script>
+  <script src="xtab.js"></script>
+  <script src="jwt.js"></script>
+  <script src="jsrsasign-5.0.7-all-min.js"></script>
+  <script src="dynamic-code-in-slides.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>

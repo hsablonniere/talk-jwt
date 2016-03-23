@@ -1,0 +1,19 @@
+section {
+    -webkit-transition-property: opacity, -webkit-transform;
+            transition-property: opacity, transform;
+}
+
+html:not(.overview) [data-state="previous"] {
+    -webkit-transform: translate3d(-110%, 0, 0);
+            transform: translate3d(-110%, 0, 0);
+}
+
+html:not(.overview) [data-state="current"] {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+html:not(.overview) [data-state="next"] {
+    -webkit-transform: translate3d(110%, 0, 0);
+            transform: translate3d(110%, 0, 0);
+}

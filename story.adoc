@@ -1,0 +1,12 @@
+Bonjour à tous !
+Je m'appelle Hubert SABLONNIÈRE,
+je suis développeur Web chez INEAT Conseil à Lille
+et aujourd'hui j'ai envie de vous parler de ...
+
+
+
+
+------------------------
+
+sujets que je ne connais pas :
+SAML

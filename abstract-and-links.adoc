@@ -1,0 +1,187 @@
+= 100% Stateless avec JWT (JSON Web Token)
+
+Dans nos architectures REST modernes, les bons vieux cookies de session ne suffisent plus. Il est temps de s’intéresser aux JSON Web Token : une nouvelle approche plus simple, 100% stateless et facilement scalable.
+
+Plus de stockage de session côté serveur. Plus de réplication de session sur le cluster. La consommation de multiples couches d’APIs avec une seule connexion devient plus simple.
+
+Dans cette présentation, nous aborderons le fonctionnement des JWT, nous verrons comment gérer une session client et bien d'autres usages tout en pesant les avantages et inconvénients.
+
+---------------------------------------------------
+
+Pour ce talk, j’aimerai que le public reparte avec :
+* Une bonne idée du fonctionnement interne des JWT
+* Comment bien sécuriser les JWT pour un usage browser/serveur (CSRF, XSS)
+* D’autres idées d’utilisation (panier, email de confirmation…)
+* Une connaissance des avantages et inconvénients
+
+
+---------------------------------------------------
+
+https://www.youtube.com/watch?v=WzfJgCOMIsU
+  Session ID and why JWT
+    id opaque, no meaning
+    (db load => mem cache) on every req
+    Cookies insecure ?
+  Intro to JWT
+    Rappels authentication vs authorization
+    it's just a token format
+    used with oauth2 access token and refresh tokens
+    format
+      scope (what they can do)
+        exemples avec oauth2 et facebook
+    issuing JWT
+    verifying JWT => stateless verification
+      scope makes authorization
+      how to revoke stateless auth?
+  Access tokens & refresh tokens
+    access & refresh tokens
+      passe le deux au client
+      le access est court (implicit trust)
+        time : revokation tolerance
+      le refresh est long (DB roundtrip)
+      bank acc 5min / ref 30min
+      social acc 1h / ref 4years
+    revoke refresh token immediatly
+      maintain blacklist (kinda) gti field
+        avec TTL (redis bon exemple)
+        easier to maintain blacklist than whitelist
+    transmettre les deux à chaque requête
+  Storing JWT in Browser
+    Don't store JWT in localStorage
+    Cookie secure if HttpOnly, Secure and CSRF prevention
+      CSRF is easy to get right
+      XSS is easy to get wrong
+    Auth header is fun but (not necessary with cookies)
+      ??
+    Cross domain is always hell
+      simplify if you can
+  Angular specifics
+    How do I know if the user is logged in ?
+      route /me
+    How do I know if the user can access a view ?
+      Resolve dans la route avec un service getUser()
+      $authenticated event
+    How do I know if access has been revoked
+      401 intercepté => unauthenticated
+  Cookies the right way
+
+--------------------------------
+
+client & provider
+  il faut un client id et un client secret pour discuter
+  => page de login du provider et redirect_url vers le client
+  => l'utilisateur accepte ou non une série d'autorisations
+  => redirect avec un code (1 time use)
+  => POST code + client_id + client_secret
+  => send access_token to request
+  => access_token (user + client + resource + scope)
+    => resource = app
+
+--------------------------------
+
+Pourquoi tt le monde dit que c'est pour authoriz et pas authenticate
+
+Resource owner (user)
+Client (app)
+Resource Server
+Authorization server
+
+Auth code (web apps / code server side)
+Implicit (browser SPA and mobile)
+Resource Owner Password (bad user/password)
+Client credentials (app)
+
+--------------------------------
+
+https://www.youtube.com/watch?v=BdKmZ7mPNns
+
+token by value & token by reference
+JWT with openId connect and oAuth
+
+JWT inside the network and by reference outside the network
+
+--------------------------------
+
+https://www.youtube.com/watch?v=XGmUlyggXVo
+
+https://fr.wikipedia.org/wiki/Security_assertion_markup_language
+http://www.simplecloud.info/
+https://fr.wikipedia.org/wiki/XACML
+
+JSON Identity suite
+  Token JWT
+  Keys JWK
+  Algorithms JWA
+  Encryption JWE
+  Signatures JWS
+
+Refresh token : never sent to the API (send to auth provider)
+
+Delegation exemple banque
+
+OpenID Connect JWT
+  UserInfo Endpoint
+
+--------------------------------
+
+JOSE, JSON Object Signing and Encryption
+
+JWS
+    HEADER + PAYLOAD (JWA) => SIGNATURE
+    Compact serialization
+    JSON Serialization
+    Headers alg, jwk, kid, ...
+    MAC vs Asymmetric
+
+JWE
+    HEADER + PAYLOAD (JWA) => ENC CONTENT
+    JOSE Header
+    JWT Encrypted Key
+    JWE Init vector
+    JWE Cipher Text
+    JWE Authentication tag
+    Headers enc, zip
+
+JWT (nested)
+    content type of JWT cty to jwt
+    signed or encrypted but with nested we can do both
+
+JWK
+    expose the key over REST
+
+JWA
+    JSON algorythms
+
+--------------------------------
+
+https://www.youtube.com/watch?v=I56HzTKvZKc
+https://www.dinochiesa.net/?p=1388
+https://security.stackexchange.com/questions/64350/compromised-json-web-token-jwt-bearer-token
+https://stackoverflow.com/questions/28875555/revoke-invalidate-a-token-with-jwt
+https://documentation.pingidentity.com/display/PF72/Token+Revocation+Endpoint
+https://tools.ietf.org/html/rfc7009
+https://auth0.com/blog/2015/03/10/blacklist-json-web-token-api-keys/
+
+--------------------------------
+
+Ideas
+
+GWT joke
+Jo Wilfried Tsonga joke
+encrypter joke
+parallèle tour de magie avec carte signé
+parallèle douane passeport
+parallèle boite de nuit ou événement
+
+
+-------------------------------------------
+
+sticky session
+
+ASP.NET_SessionId, JSESSIONID, PHPSESSIONID
+
+http://blog.haproxy.com/2012/03/29/load-balancing-affinity-persistence-sticky-sessions-what-you-need-to-know/
+
+Symfony
+https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md
+https://github.com/gesdinet/JWTRefreshTokenBundle

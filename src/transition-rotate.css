@@ -1,0 +1,15 @@
+section {
+    transition-property: opacity, transform;
+}
+
+html:not(.overview) [data-state="previous"] {
+    transform: scale(1.5) rotate(-40deg) translate3d(-50px, -50px, 0);
+}
+
+html:not(.overview) [data-state="current"] {
+    transform: scale(1) rotate(0deg);
+}
+
+html:not(.overview) [data-state="next"] {
+    transform: scale(.5) rotate(40deg) translate3d(50px, 50px, 0);
+}

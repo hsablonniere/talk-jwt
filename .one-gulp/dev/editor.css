@@ -1,0 +1,11 @@
+html, body {
+  margin: 0; }
+
+.textarea-wrapper {
+  margin: 20px auto;
+  width: 90%; }
+
+textarea {
+  height: 70vh;
+  font-size: 20px;
+  width: 100%; }

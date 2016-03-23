@@ -1,0 +1,8 @@
+{
+  "name": "6-ans-plus-tard",
+  "version": "0.0.0",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "one-gulp": "git://github.com/one-gulp/one-gulp"
+  }
+}

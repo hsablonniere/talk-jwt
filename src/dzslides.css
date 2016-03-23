@@ -1,0 +1,159 @@
+html {
+    background: #000;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+html:not([data-mode]) {
+    visibility: hidden;
+}
+
+body {
+    left: 0;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transform-origin: 0 0 0;
+}
+
+body,
+section {
+    height: 768px;
+}
+
+/* 14/9 is between 4/3 and 16/9 */
+@media (max-aspect-ratio: 14/9) {
+    body,
+    section {
+        /* 4/3 aspect ratio */
+        width: 1024px;
+    }
+}
+
+@media (min-aspect-ratio: 14/9) {
+    body,
+    section {
+        /* 16/9 aspect ratio */
+        width: 1366px;
+    }
+}
+
+section {
+    overflow: hidden;
+}
+
+[data-mode="view"] section {
+    position: absolute;
+    transition-property: opacity;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+[data-mode="view"] [data-state="none"] {
+    display: none;
+}
+
+[data-mode="view"] [data-state="previous"] {
+    opacity: 0;
+}
+
+[data-mode="view"] [data-state="current"] {
+    opacity: 1;
+    transition-delay: 200ms;
+    z-index: 2;
+}
+
+[data-mode="view"] [data-state="next"] {
+    opacity: 0;
+    pointer-events: none;
+}
+
+[role="note"] {
+    display: none;
+}
+
+/***************/
+/* INCREMENTAL */
+/***************/
+
+.incremental {
+    visibility: hidden;
+}
+
+.incremental[active=true] {
+    visibility: visible;
+}
+
+.incremental > *,
+.incremental > [aria-selected] {
+    opacity: 1;
+}
+
+.incremental[active=true] > [aria-selected] {
+    transition: opacity 200ms ease-in-out;
+}
+
+.incremental > [aria-selected] ~ * {
+    opacity: 0;
+}
+
+/************/
+/* OVERVIEW */
+/************/
+
+[data-mode="overview"] head,
+[data-mode="overview"] title {
+    display: block;
+}
+
+[data-mode="overview"] title {
+    background: #FFF;
+    box-shadow: 0 0 10px #CCC;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    height: 50px;
+    left: 0;
+    line-height: 50px;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+[data-mode="overview"] body {
+    height: auto;
+    overflow-y: auto;
+    padding: 10px;
+    margin-top: 60px;
+    width: 4300px;
+    /* 4 * 1024px (sectionWidth) + 2 * 4 * 10px (sectonMargin) + 20px (bodyPadding) + 104px (scrollbar) */
+    /* 3 * 1366px (sectionWidth) + 2 * 3 * 10px (sectonMargin) + 20px (bodyPadding) + 122px (scrollbar) */
+}
+
+[data-mode="overview"] section {
+    box-sizing: border-box;
+    cursor: pointer;
+    float: left;
+    margin: 10px;
+    position: relative;
+}
+
+[data-mode="overview"] section * {
+    pointer-events: none;
+}
+
+[data-mode="overview"] [data-state="current"] {
+    outline: 10px solid #AAA;
+}
+
+[data-mode="overview"] .incremental {
+    visibility: visible;
+}
+
+[data-mode="overview"] .incremental > * {
+    opacity: 1;
+}

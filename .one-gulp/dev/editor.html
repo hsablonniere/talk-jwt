@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="prezento-capable" content="yes">
+  <meta name="prezento-vendor" content="dzslides">
+  <title>JSON editor</title>
+  <link href="editor.css" rel="stylesheet">
+</head>
+<body>
+  <div class="textarea-wrapper">
+    <textarea data-code-id="jwt-body">
+      {
+          "iss": "auth-backend",
+          "sub": "hsablonniere",
+          "aud": "web-frontend",
+          "exp": 1458638618,
+          "nbf": null,
+          "iat": 1458635018,
+          "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+          "name": "Hubert SABLONNIÈRE",
+          "permissions": ["EDITOR", "REVIEWER"]
+      }
+      
+    </textarea>
+  </div>
+  <script src="xtab.js"></script>
+  <script src="editor.js"></script>
+</body>
