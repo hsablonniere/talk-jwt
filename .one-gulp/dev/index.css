@@ -275,6 +275,11 @@ a {
   display: flex;
   padding: 0; }
 
+.slide-thx {
+  background-image: url(/media/lemmings-entrance.jpg), url(/media/animated-lemmings.gif);
+  background-size: 200px, 880px;
+  background-position: 50px 50px, calc(100% - 50px) 108%; }
+
 .slide-section:before, .slide-section:after, .slide-quote:before, .slide-quote:after {
   -webkit-animation-play-state: paused;
           animation-play-state: paused; }
@@ -489,7 +494,8 @@ section.black {
 
 /* CODE */
 .hljs {
-  background: #FFF; }
+  background: #FFF;
+  color: #111; }
 
 pre {
   font-size: 26px;

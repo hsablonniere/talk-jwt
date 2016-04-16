@@ -304,6 +304,11 @@
       
     </div>
   </section>
+  <section>
+    <figure class="fs-media fs-media-cover">
+      <video src="/media/drinking-cat.webm" autoplay="false"></video>
+    </figure>
+  </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-02.svg"></figure>
     <div role="note">
@@ -1062,37 +1067,47 @@
       
     </div>
   </section>
-  <section>
-    <div class="title">Schéma d'architecture oauth</div>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-cover"><img src="/media/schema-oauth-token.svg"></figure>
     <div role="note"></div>
   </section>
-  <section>
-    <div class="title">plus besoin du serveur oauth pour valider des access-token</div>
-    <div role="note"></div>
-  </section>
-  <section>
-    <div class="title">Bearer token devient un token par référence</div>
-    <div role="note"></div>
-  </section>
-  <section>
-    <div class="title">schéma d'archi firewall reference to valeur</div>
-    <div role="note">
-      pertinence de le faire que dans le SI
-      
+  <section class="slide-section no-images">
+    <div class="fit-title incremental incremental-full">
+      <div class="title">Check access_token</div>
+      <div class="title">Check refresh_token</div>
+      <div class="title title-info">stateless</div>
     </div>
+    <div role="note"></div>
   </section>
+  <!--section-->
+  <!--    .title Schéma d'architecture oauth-->
+  <!--    div(role='note').-->
+  <!--section-->
+  <!--    .title plus besoin du serveur oauth pour valider des access-token-->
+  <!--    div(role='note').-->
+  <!--section-->
+  <!--    .title Bearer token devient un token par référence-->
+  <!--    div(role='note').-->
+  <!--section-->
+  <!--    .title schéma d'archi firewall reference to valeur-->
+  <!--    div(role='note').-->
+  <!--        pertinence de le faire que dans le SI-->
   <section class="slide-section fit-title">
     <div class="title">Open-ID <span class="title-info zoom">Connect</span></div>
     <div role="note"></div>
   </section>
-  <section>
-    <div class="title">schéma d'archi open ID</div>
-    <div role="note">
-      JWT à la base d'Open ID
-      Les token d'identité sont des JWT
-      
+  <section class="slide-section no-images">
+    <div class="fit-title incremental incremental-full">
+      <div class="title">ID token</div>
+      <div class="title">est un <span class="title-info">JWT</span></div>
     </div>
+    <div role="note"></div>
   </section>
+  <!--section-->
+  <!--    .title schéma d'archi open ID-->
+  <!--    div(role='note').-->
+  <!--        JWT à la base d'Open ID-->
+  <!--        Les token d'identité sont des JWT-->
   <section class="slide-section fit-title">
     <div class="title">Inconvenients</div>
     <div class="title">des <span class="title-red">JWT</span> ?</div>
@@ -1318,7 +1333,7 @@ Authorization: Bearer <span class="jwt-header">H34DER</span>.<span class="jwt-pa
       
     </div>
   </section>
-  <section class="slide-section fit-title--small">
+  <section class="slide-section fit-title--small slide-thx">
     <div class="title zoom">Merci <span class="title-info">;-)</span></div>
     <div role="note">
       Merci bcp.

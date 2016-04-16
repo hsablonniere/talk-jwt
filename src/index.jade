@@ -274,6 +274,10 @@ body
         div(role='note').
             Il y a plusieurs inconvénients à utiliser des ID de session.
 
+    section
+        figure.fs-media.fs-media-cover
+            video(src="/media/drinking-cat.webm", autoplay="false")
+
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-02.svg")
@@ -1051,32 +1055,50 @@ body
             Bearer token devient un token par référence
                 pertinence de le faire que dans le SI
 
-    section
-        .title Schéma d'architecture oauth
+    section.no-transition
+        figure.fs-media.fs-media-cover
+            img(src="/media/schema-oauth-token.svg")
         div(role='note').
 
-    section
-        .title plus besoin du serveur oauth pour valider des access-token
+    section.slide-section.no-images
+        .fit-title.incremental.incremental-full
+            .title Check access_token
+            .title Check refresh_token
+            .title.title-info stateless
         div(role='note').
 
-    section
-        .title Bearer token devient un token par référence
-        div(role='note').
+    //section
+    //    .title Schéma d'architecture oauth
+    //    div(role='note').
 
-    section
-        .title schéma d'archi firewall reference to valeur
-        div(role='note').
-            pertinence de le faire que dans le SI
+    //section
+    //    .title plus besoin du serveur oauth pour valider des access-token
+    //    div(role='note').
+
+    //section
+    //    .title Bearer token devient un token par référence
+    //    div(role='note').
+
+    //section
+    //    .title schéma d'archi firewall reference to valeur
+    //    div(role='note').
+    //        pertinence de le faire que dans le SI
 
     section.slide-section.fit-title
         .title Open-ID <span class="title-info zoom">Connect</span>
         div(role='note').
 
-    section
-        .title schéma d'archi open ID
+    section.slide-section.no-images
+        .fit-title.incremental.incremental-full
+            .title ID token
+            .title est un <span class="title-info">JWT</span>
         div(role='note').
-            JWT à la base d'Open ID
-            Les token d'identité sont des JWT
+
+    //section
+    //    .title schéma d'archi open ID
+    //    div(role='note').
+    //        JWT à la base d'Open ID
+    //        Les token d'identité sont des JWT
 
     section.slide-section.fit-title
         .title Inconvenients
@@ -1306,7 +1328,7 @@ body
             De manière générale, vous gagnerez toujours en simplicité avec des architectures stateless.
             Sauvons les Lemmings...
 
-    section.slide-section.fit-title--small
+    section.slide-section.fit-title--small.slide-thx
         .title.zoom Merci <span class="title-info">;-)</span>
         div(role='note').
             Merci bcp.

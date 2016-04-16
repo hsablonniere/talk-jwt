@@ -2346,12 +2346,12 @@
        d="m 1108.2238,628.15457 299.4145,0 0,-132.43635 -299.4145,0 0,132.43635 z m 149.7144,-128.36024 c 34.3171,0 62.1367,27.81959 62.1367,62.13672 0,34.33495 -27.8196,62.15454 -62.1367,62.15454 -34.3278,0 -62.1474,-27.81959 -62.1474,-62.15454 0,-34.31713 27.816,-62.13672 62.1474,-62.13672 z"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:#44ff44;fill-opacity:1"
+       style="fill:#00cf00;fill-opacity:1"
        id="path4579"
        d="m 1092.8323,479.70617 0,164.46401 330.1976,0 0,-164.46401 -330.1976,0 z m 324.2421,153.16643 c 0,2.61043 -2.1112,4.71446 -4.7145,4.71446 l -308.8577,0 c -2.6104,0 -4.718,-2.10403 -4.718,-4.71446 l 0,-141.86884 c 0,-2.60686 2.1076,-4.71803 4.718,-4.71803 l 308.8542,0 c 2.6068,0 4.7215,2.11117 4.7215,4.71803 l 0,141.86884 0,0 z"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:#44ff44;fill-opacity:1"
+       style="fill:#00cf00;fill-opacity:1"
        inkscape:connector-curvature="0"
        d="m 1266.1297,535.35248 c -7.5603,0 -13.2626,5.24225 -17.114,15.72675 l 26.1007,0 -3.7409,7.59592 -24.2855,0 -0.535,4.81431 22.7878,0 -3.7481,7.59591 -19.0397,0 c 0.8559,11.76475 5.7059,17.64891 14.55,17.64891 4.8464,0 10.7341,-2.38933 17.6524,-7.16798 l -2.7816,15.83017 c -5.7736,2.63896 -11.4473,3.962 -17.0105,3.962 -8.7692,0 -15.5093,-2.89215 -20.2166,-8.66932 -4.1367,-5.20659 -6.526,-12.40666 -7.168,-21.61091 l -8.0238,0 3.7409,-7.59592 4.3864,0 0.6419,-4.81431 -6.0946,0 3.7409,-7.59591 3.962,0 c 2.3501,-8.34481 6.0946,-15.01352 11.2298,-20.00614 5.9163,-5.70585 12.8382,-8.55877 20.7515,-8.55877 6.9932,0 13.4088,2.2859 19.2572,6.84702 l -6.526,12.08927 c -3.9192,-4.06186 -8.0916,-6.091 -12.5172,-6.091 z"
        id="path4583" />
@@ -2361,7 +2361,7 @@
      id="text4681"
      y="484.36215"
      x="1200.9119"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96.38951874px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#44ff44;fill-opacity:1;stroke:none"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96.38951874px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#00cf00;fill-opacity:1;stroke:none"
      xml:space="preserve"><tspan
        y="484.36215"
        x="1200.9119"
@@ -2383,12 +2383,12 @@
      id="text5215"
      y="890.01978"
      x="1028.267"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34.49915695px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#44ff44;fill-opacity:1;stroke:none"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34.49915695px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#00cf00;fill-opacity:1;stroke:none"
      xml:space="preserve"><tspan
        y="890.01978"
        x="1028.267"
        sodipodi:role="line"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;fill:#44ff44;fill-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;fill:#00cf00;fill-opacity:1"
        id="tspan5223">JWT=H34D3R.P4L04D.S1GN47UR3</tspan></text>
   <text
      xml:space="preserve"

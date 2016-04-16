@@ -235,6 +235,12 @@ $footer-margin: 45px;
   @extend .scanlines;
 }
 
+.slide-thx {
+  background-image: url(/media/lemmings-entrance.jpg), url(/media/animated-lemmings.gif);
+  background-size: 200px, 880px;
+  background-position: 50px 50px, calc(100% - 50px) 108%;
+}
+
 .slide-section,
 .slide-quote {
   &:before,
@@ -522,6 +528,7 @@ $quoteAvatarSize: 150px;
 
 .hljs {
   background: $colorGrey;
+  color: $colorFour;
 }
 
 pre {
