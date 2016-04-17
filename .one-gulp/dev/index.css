@@ -600,6 +600,13 @@ pre.wrap {
         -ms-transform: scale(1.4);
             transform: scale(1.4); }
 
+.zoom-code {
+  -webkit-transition: 150ms -webkit-transform ease-in-out;
+          transition: 150ms transform ease-in-out; }
+  .triggerAction .zoom-code {
+    -webkit-transform: scale(2.4) translate3d(10px, -160px, 0);
+            transform: scale(2.4) translate3d(10px, -160px, 0); }
+
 .triggerAction .shake {
   -webkit-animation-duration: 100ms;
           animation-duration: 100ms;

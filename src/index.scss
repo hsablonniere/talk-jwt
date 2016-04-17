@@ -645,6 +645,15 @@ pre.wrap {
   }
 }
 
+.zoom-code {
+
+  transition: 150ms transform ease-in-out;
+
+  .triggerAction & {
+    transform: scale(2.4) translate3d(10px, -160px, 0);
+  }
+}
+
 .triggerAction .shake {
   animation-duration: 100ms;
   animation-iteration-count: infinite;

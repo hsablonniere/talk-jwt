@@ -22,8 +22,8 @@
     </div>
     <div class="startEnd-footer"><img src="./media/ineat-conseil.png" class="startEnd-companyLogo zoom">
       <div class="startEnd-talkInfos">
-        <div class="startEnd-hashtags">#Breizhcamp #JWT</div>
-        <div class="startEnd-locationDate">Breizhcamp - 2016-03-23</div>
+        <div class="startEnd-hashtags">#Devoxx #JWT</div>
+        <div class="startEnd-locationDate">Devoxx France - 2016-04-21</div>
       </div>
     </div>
     <div role="note">
@@ -40,8 +40,8 @@
     </figure>
     <div role="note">
       ...mon premier ordinateur.
-      Enfin bon [...] c'était pas MON ordinateur,
-      c'était pour toute la famille "bien sûr".
+      Bon OK [...] c'était pas "MON" ordinateur,
+      c'était pour toute la famille, bien sûr.
       On l'a eu pour Noël 1994.
       
     </div>
@@ -51,15 +51,19 @@
     <div role="note">
       Un Compaq Presario avec 33Mz de processeur.
       Une bête de course à l'époque.
-      Quand mon père l'a ramené à la maison, on était tout fou...
+      Quand mon père l'a ramené à la maison, on était tout fou.
+      Avec ma soeur, on a tout de suite cherché où étaient...
       
     </div>
   </section>
   <section class="black">
-    <figure class="fs-media fs-media-contain"><img src="/media/compaq-3.jpg"></figure>
+    <figure class="fs-media fs-media-contain">
+      <picture>
+        <source srcset="/media/solitaire-demineur-169.png" media="(min-aspect-ratio: 14/9)"><img src="/media/solitaire-demineur-43.png">
+      </picture>
+    </figure>
     <div role="note">
-      ...avec ma soeur, on a tout de suite cherché où étaient les jeux.
-      On s'est vite lassé du démineur et du soliaire et
+      ...les jeux mais on s'est vite lassé du démineur et du soliaire et
       c'est à peu près à ce moment là que nos cousins nous on fait découvrir...
       
     </div>
@@ -68,8 +72,8 @@
     <figure class="fs-media"><img src="/media/msdos.png"></figure>
     <div role="note">
       ...les jeux MS-DOS [...] wouahhh.
-      Dès que j'allais chez un pote et qu'il me montrait un nouveau, je demandais direct : "Ça rentre sur une disquette ?"
-      Bon du coup, ça fait un peu peur quand tu vois qu'en 2016, un site moderne dépasse souvent les 1 meg 44 mais bon.
+      Dès que j'allais chez un pote et qu'il me montrait un nouveau jeu, je lui demandais direct : "Ça rentre sur une disquette ?"
+      Bon du coup, ça fait un peu peur quand tu vois qu'en 2016, il faut 4 disquettes pour stocker la page d'accueil d'amazon mais bon.
       Un de mes jeux préférés c'était les...
       
     </div>
@@ -82,13 +86,21 @@
       ...Lemmings. [???] Il y en a qui jouait aux Lemmings ici ?
       Bon le principe est simple. Il y a des petits bonshommes qui rentrent dans le monde par la trappe et il faut les aider à sortir par la grande porte. Le problème c'est qu'ils sont très très cons et qu'il faut parfois les empêcher de mourir. Alors on leur dit de creuser, de grimper, de construire des escaliers, comme dans la vraie vie quoi.
       A la fin, si on en a sauvé assez, le niveau est validé et on obtient un code.
+      
+      
+    </div>
+  </section>
+  <section class="no-transition">
+    <figure class="fs-media fs-media-fill zoom-code"><img src="/media/lemmings-code-info.jpg"></figure>
+    <div role="note">
       C'est vachement pratique ce système de code parce qu'après 3 ou 4 "Hubert, tu viens manger ?",
-      bah t'es bien obligé d'éteindre l'ordinateur et le lendemain, si tu veux pas te retaper 17 niveaux...
+      bah t'es bien obligé d'éteindre l'ordinateur et le lendemain,
+      si tu veux pas te retaper les 17 niveaux...
       
     </div>
   </section>
   <section class="black">
-    <figure class="fs-media fs-media-contain"><img src="/media/lemmings-code-input.png"></figure>
+    <figure class="fs-media fs-media-fill"><img src="/media/lemmings-code-input.png"></figure>
     <div role="note">
       ...tu saisis le code et t'arrives direct au niveau qui va bien.
       
@@ -110,7 +122,8 @@
       Mais Lou a aussi de très bonnes idées.
       On est en juin 1994, Netscape bosse pour un client qui développe une solution de panier virtuel pour du e-commerce.
       A l'époque, pour gérer ça, on était obligé de stocker l'état dans l'URL.
-      Ça résumait à peu près l'expérience d'achat à celle d'un distributeur de canettes : un produit à la fois.
+      Ça résumait à peu près l'expérience d'achat à celle d'un distributeur de canettes :
+      un produit à la fois.
       
     </div>
   </section>
@@ -138,45 +151,45 @@
   <section class="no-transition">
     <div role="note">
       Le fonctionnement n'a pas beaucoup changé depuis mais voici un petit rappel.
-      Vous prenez votre...
+      Quand un utilisateur se connecte sur un site avec...
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-01.svg"></figure>
     <div role="note">
-      navigateur et vous...
+      ...son navigateur,
+      il saisit son login/mdp et il valide le formulaire de login.
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-02.svg"></figure>
     <div role="note">
-      ...validez le formulaire de login.
-      Ça envoie une requête POST côté serveur.
+      Le navigateur envoi une requête POST côté serveur.
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-03.svg"></figure>
     <div role="note">
-      Ensuite, le serveur va contacter la base de donnée pour vérifier si l'utilisateur existe.
+      Le serveur demande à la base de donnée si l'utilisateur existe.
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-04.svg"></figure>
     <div role="note">
-      La base répond, oui John existe dans la base de donnée.
-      Du coup le serveur passe sa moulinette sécurisée (bcrypt, pbkdf2 ou autre) pour valider le mot de passe.
+      La base répond, "oui John existe, voici le mot de passe haché et salé".
+      Le serveur passe sa moulinette sécurisée (bcrypt, pbkdf2 ou autre) pour valider le mot de passe.
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-05.svg"></figure>
     <div role="note">
-      Si tout va bien, le serveur peut enfin répondre à l'utilisateur
-      et c'est là que le navigateur va enregistrer pour la prochaine visite le couple clé/valeur name=John,
+      Si tout va bien, le serveur peut enfin envoyer la réponse
+      et c'est là que le navigateur va enregistrer pour les prochaines visites le couple clé/valeur name=John,
       le fameux cookie.
       
     </div>
@@ -186,7 +199,7 @@
     <div role="note">
       Du coup quand l'utilisateur revient,
       son navigateur renvoie automatiquement ce cookie au serveur,
-      et le serveur va se servir de ces données pour
+      et le serveur se sert de ces données pour
       
     </div>
   </section>
@@ -194,15 +207,19 @@
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-07.svg"></figure>
     <div role="note">
       afficher à l'utilisateur une page qui se souvient qu'il s'appelle John.
+      Je sais pas vous, mais moi ça me rapelle étrangement le système de codes des Lemmings,
+      sauf qu'à l'époque,
       
     </div>
   </section>
   <section>
     <figure class="fs-media fs-media-cover"><img src="/media/lemmings-code-notebook.jpg"></figure>
     <div role="note">
-      En fait, la première fois que j'ai implémenté une fonction d'un navigateur, j'avais 8 ans.
-      J'avais mon propre framework de cookie : le bloc notes... [clac]
+      du haut de mes 8 ans,
+      c'est moi qui faisait le navigateur.
+      J'avais mon framework maison : le bloc notes... [clac]
       Bref, le truc avec les codes des Lemmings, c'est qu'on ne pouvait pas deviner le code du niveau suivant.
+      Ça serait trop facile.
     </div>
     <!--Ça me rapelle bizarrement une situation,-->
     <!--Comme quoi, en 1994, je me mettais déjà à la place du navigateur...-->
@@ -213,15 +230,14 @@
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-08.svg"></figure>
     <div role="note">
-      Alors que là, je peux très bien me faire passer pour Paul alors que je suis John,
-      (c'est Yoko qui ne va pas être contente)
+      Alors que là, je peux très bien me faire passer pour Paul alors que je suis John.
       
     </div>
   </section>
   <section class="no-transition">
     <div role="note">
       Le serveur doit trouver un moyen pour faire confiance au cookie que je lui donne.
-      La solution, ce sont les ID de session.
+      C'est une des raisons pour laquelle on a introduit le concept d'identifiant de session.
       
     </div>
     <!--On est toujours sur ...-->
@@ -249,37 +265,40 @@
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-session-08.svg"></figure>
     <div role="note">
       En gros, si je reprens la situation prédécente :
-      Juste avant d'envoyer une réponse avec un cookie,
+      Juste avant d'envoyer la réponse,
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-session-09.svg"></figure>
     <div role="note">
-      le serveur va générer un identifiant bien aléatoire, genre 42,
-      et il va associer dans un cache mémoire les informations sur l'utilisateur avec cet identifiant.
+      le serveur va générer un identifiant bien aléatoire,
+      genre 42,
+      et il va associer dans un cache mémoire l'identifiant 42 avec les informations utilisateur de John.
+      Et du coup, au lieu d'envoyer le nom de la personne connectée,
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-session-10.svg"></figure>
     <div role="note">
-      C'est cet identifiant qui sera envoyé au navigateur.
-      Là on retombe sur le fonctionnement classique des cookies,
+      le serveur envoie juste cet identifiant de session dans un cookie,
+      et quand le visiteur navigue sur le site,
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-session-11.svg"></figure>
     <div role="note">
-      Lors des prochaines visites, le navigateur envoie à nouveau ce cookie au serveur.
+      le navigateur renvoie les cookies au serveur.
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-session-12.svg"></figure>
     <div role="note">
-      Par contre, cette fois ci le serveur a besoin de son cache mémoire pour transformer un identifiant opaque...
+      Pour savoir qui a demandé la page,
+      le serveur a besoin de son cache mémoire pour transformer un identifiant opaque...
       
     </div>
   </section>
@@ -300,7 +319,7 @@
   </section>
   <section>
     <div role="note">
-      Il y a plusieurs inconvénients à utiliser des ID de session.
+      Il y a plusieurs inconvénients à utiliser des identifiants de session.
       
     </div>
   </section>
@@ -1351,8 +1370,8 @@ Authorization: Bearer <span class="jwt-header">H34DER</span>.<span class="jwt-pa
     </div>
     <div class="startEnd-footer"><img src="./media/ineat-conseil.png" class="startEnd-companyLogo">
       <div class="startEnd-talkInfos">
-        <div class="startEnd-hashtags">#Breizhcamp #JWT</div>
-        <div class="startEnd-locationDate">Breizhcamp - 2016-03-23</div>
+        <div class="startEnd-hashtags">#Devoxx #JWT</div>
+        <div class="startEnd-locationDate">Devoxx France - 2016-04-21</div>
       </div>
     </div>
     <div role="note"></div>
