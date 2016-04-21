@@ -524,6 +524,10 @@ $quoteAvatarSize: 150px;
   width: $quoteAvatarSize;
 }
 
+.quote-author-avatar-two {
+  left: $quoteAvatarPoz + $quoteAvatarSize;
+}
+
 /* CODE */
 
 .hljs {

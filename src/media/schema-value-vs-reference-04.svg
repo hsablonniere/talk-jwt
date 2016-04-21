@@ -14,7 +14,7 @@
    inkscape:version="0.91 r13725"
    width="1920"
    height="1080"
-   sodipodi:docname="schema-value-vs-reference-03.svg"
+   sodipodi:docname="schema-value-vs-reference.svg"
    inkscape:export-filename="/home/hsablonniere/dev/dzslides/src/media/schema-conscient-inconscient.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
@@ -2188,13 +2188,13 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1600"
-     inkscape:window-height="876"
+     inkscape:window-width="1920"
+     inkscape:window-height="1176"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="0.79109758"
-     inkscape:cx="957.20219"
-     inkscape:cy="521.68063"
+     inkscape:zoom="0.39395862"
+     inkscape:cx="823.9266"
+     inkscape:cy="315.1438"
      inkscape:window-x="0"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -2378,4 +2378,28 @@
        id="tspan4697"
        x="771.33618"
        y="293.90521">tokens</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text5215"
+     y="890.01978"
+     x="1028.267"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34.49915695px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#00cf00;fill-opacity:1;stroke:none"
+     xml:space="preserve"><tspan
+       y="890.01978"
+       x="1028.267"
+       sodipodi:role="line"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;fill:#00cf00;fill-opacity:1"
+       id="tspan5223">JWT=H34D3R.P4L04D.S1GN47UR3</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34.49915695px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#4444ff;fill-opacity:1;stroke:none"
+     x="466.28326"
+     y="890.01978"
+     id="text5328"
+     sodipodi:linespacing="125%"><tspan
+       id="tspan5330"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;fill:#4444ff;fill-opacity:1"
+       sodipodi:role="line"
+       x="466.28326"
+       y="890.01978">SESSIONID=42</tspan></text>
 </svg>

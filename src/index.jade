@@ -250,7 +250,7 @@ body
         div(role='note').
             le serveur va générer un identifiant bien aléatoire,
             genre 42,
-            et il va associer dans un cache mémoire l'identifiant 42 avec les informations utilisateur de John.
+            et il va associer dans un cache mémoire l'identifiant 42 avec les informations de l'utilisateur.
             Et du coup, au lieu d'envoyer le nom de la personne connectée,
 
     section.no-transition
@@ -287,12 +287,12 @@ body
             Génial.
 
     section
-        div(role='note').
-            Il y a plusieurs inconvénients à utiliser des identifiants de session.
+        figure.fs-media.fs-media-cover
+            video(src="/media/cat-drinking-water-out-of-the-tap.mp4", autoplay="false", muted="true")
 
     section
-        figure.fs-media.fs-media-cover
-            video(src="/media/drinking-cat.webm", autoplay="false")
+        div(role='note').
+            Il y a plusieurs inconvénients à utiliser des identifiants de session.
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
@@ -306,60 +306,88 @@ body
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-03.svg")
         div(role='note').
-            Pas de soucis, je mets deux serveurs et un load balancer, merci au revoir.
+            Pas de soucis, une archi avec deux instances et un load balancer, merci au revoir.
+            Après, je dis deux mais on va imaginer que vous aillez...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-04.svg")
         div(role='note').
-            Bon, en fait le commercial de l'hébergeur a négocié en direct avec mon chef :-(
+            ...vraiment,
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-05.svg")
         div(role='note').
-            et puis après ils sont allé voir un match de foot...
+            beaucoup,
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-06.svg")
         div(role='note').
-            ...et c'est l'équipe préféré de mon chef qui a gagné.
+            beaucoup de succès.
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-07.svg")
         div(role='note').
-            Bref, tout ces serveurs là...
+            Toutes les instances de ce cluster sont les mêmes.
+            Peut importe la technique (provisionning, VM, conteneurs...)
+            on a répliqué la même conf partout.
+            Du coup, ils...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-08.svg")
         div(role='note').
-            ...ont leur propre cache mémoire.
-
+            ...ont tous leur propre cache mémoire,
+            et si j'arrive avec l'identifiant de session...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-09.svg")
         div(role='note').
-            Du coup, si j'arrive avec la session 42 sur le serveur qui a les infos dans son cache mémoire,
-            tout va bien,
+            ...42 sur le serveur qui a les infos dans son cache mémoire,
+            tout va bien.
+            Maintenant imaginez que le load balancer...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-10.svg")
         div(role='note').
-            Mais si le load balancer me redirige sur un autre noeud,
+            ...me redirige sur un noeud qui n'a pas les infos de la session 42,
             je suis mal barré.
+            [WALK]
+            La solution facile et naïve, c'est de ne...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
-            img(src="/media/schema-scalable-shared-memory-11.svg")
+            img(src="/media/schema-scalable-shared-memory-11a.svg")
         div(role='note').
-            Du coup, on est tenté par une solution facile :
-            Un cache partagé as a service qui répond à tous les serveurs.
-            En faisant ça, le problème est décalé d'une couche et on a...
+            ...plus avoir de cache mémoire sur chaque serveur.
+            A la place, on met un...
+
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--left
+            img(src="/media/schema-scalable-shared-memory-11b.svg")
+        div(role='note').
+            cache partagé "as a service",
+            il connait...
+
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--left
+            img(src="/media/schema-scalable-shared-memory-11c.svg")
+        div(role='note').
+            ...la session 42,
+            mais ils connait aussi toutes les autres,
+            du coup, il peut donc répondre à...
+
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--left
+            img(src="/media/schema-scalable-shared-memory-11d.svg")
+        div(role='note').
+            ...toutes les instances du cluster.
+            En faisant ça, on a décalé le problème d'une couche et on a...
 
     section.slide-section.no-images
         .fit-title
@@ -367,56 +395,122 @@ body
             .title.title-alert Alert
         div(role='note').
             ...un bon gros Single Point Of Failure.
-            Je scale, Je scale...
-            Je met un load balancer
-            Oui mais si le mec arrive pas sur le bon ?
-            => je partage les sessions avec une BDD ou un memcached
-            => merde mais du coup j'ai un gros SPOF car si le memcache tombe on est cuit
+            [...]
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
-            img(src="/media/schema-scalable-shared-memory-12.svg")
+            img(src="/media/schema-scalable-shared-memory-11e.svg")
         div(role='note').
+            Si le cache partagé tombe,
+
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--left
+            img(src="/media/schema-scalable-shared-memory-11f.svg")
+        div(role='note').
+            on est cuit.
+            Non la solution, c'est plutôt de...
+
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--left
+            img(src="/media/schema-scalable-shared-memory-12a.svg")
+        div(role='note').
+            ...laisser un cache mémoire sur chaque instance,
+
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--left
+            img(src="/media/schema-scalable-shared-memory-12b.svg")
+        div(role='note').
+            et d'avoir de la réplication,
+            un cache distribué genre memcached, ehcache et compagnie.
+            Du coup,
+
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--left
+            img(src="/media/schema-scalable-shared-memory-12c.svg")
+        div(role='note').
+            peut importe le noeud choisi par le load balancer pour traiter une requête,
+            chaque instance à les infos de toutes les sessions.
+            Si une instance...
+
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--left
+            img(src="/media/schema-scalable-shared-memory-12d.svg")
+        div(role='note').
+            ...tombe, no soucy, le load balancer gère.
+            Côté dev, les techniques et les outils sont là.
+            Par contre, en fonction de votre contexte,
+            la difficulté peut se situer côté ops.
+            Niveau réseau, toutes les instances doivent se voir,
+            il faut ouvrir plus de ports et ça discute dans tous les sens.
+            [...]
+
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--left
+            img(src="/media/schema-scalable-shared-memory-12a.svg")
+        div(role='note').
+            L'autre technique, c'est de donner un peu d'intelligence au load balancer en utilisant des...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-13.svg")
         div(role='note').
+            ...sticky sessions.
+
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
-            img(src="/media/schema-scalable-shared-memory-14.svg")
+            img(src="/media/schema-scalable-shared-memory-14a.svg")
         div(role='note').
+            Quand une requête arrive,
+            le load balancer lit le cookie : "identifiant de session 36 !"
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
-            img(src="/media/schema-scalable-shared-memory-15.svg")
+            img(src="/media/schema-scalable-shared-memory-14b.svg")
         div(role='note').
+            "C'est par ici Monsieur !"
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
-            img(src="/media/schema-scalable-shared-memory-16.svg")
+            img(src="/media/schema-scalable-shared-memory-15a.svg")
         div(role='note').
+            "Identifiant 42, c'est par là".
+            Par contre, si le noeud...
 
-    //section
-    //    .title schema scalabilité (sticky session)
-    //    div(role='note').
-    //        du coup je vais voir pour faire du sticky session
-    //        => mais je gère pas bien l'elasticité à chaud
-    //        => les pannes : pas cool, si un serveur tombe et qu'il gérait une session, le mec est déconnecté et il a perdu tout son panier
-    //
-    //        // micro services
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--left
+            img(src="/media/schema-scalable-shared-memory-15b.svg")
+        div(role='note').
+            ...tombe,
+            une partie des sessions utilisateurs sont perdues,
+            mais le site est toujours disponible.
+            Après, rien ne vous empêche de mettre de mettre en place et de maintenir des sticky sessions avec un...
+
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--left
+            img.trigger-media-on(src="/media/schema-scalable-shared-memory-16.svg")
+            img.trigger-media-off(src="/media/schema-scalable-shared-memory-16plus.svg")
+        div(role='note').
+            ...cache distribué en plus, en mode ceinture/airbag.
+            Tout va dépendre de votre budget.
+            [...]
+            Le choix de l'architecture et la difficulté de mise en place vont forcément dépendre de votre contexte, de votre stack, de vos devs, de vos ops, etc...
+            mais je ne peux pas m'empêcher de me dire que ça serait plus simple si l'état de la session était complètement géré...
+
+    section
+        figure.fs-media.fs-media-cover
+            img(src="/media/lemmings-code-notebook.jpg")
+        div(role='note').
+            ...côté client.
+            Le seul truc qui manque, c'est un moyen pour le serveur de faire confiance au navigateur pour qu'il ne puisse pas tricher.
+            Quand la navigateur de John envoie un cookie qui dit "Je suis John et je suis Admin",
+            le serveur doit trouver un moyen pour lui faire confiance.
 
     section
         div(role='note').
-            Ces techniques, on les utilises depuis des années,
-            Ça fonctionne mais c'est pas toujours ce qu'il y a de plus simple à mettre en place et à maintenir.
-            Pour éviter une bonne partie de ces problèmes,
-            l'IETF nous propose la RFC rfc7519 :
+            C'est là que l'IETF nous propose la RFC 7519 :
 
     section.slide-section
-        //.title <span class="title-info">J</span>SON <span class="title-info">W</span>eb <span class="title-info">T</span>oken
-        //.title c'est quoi ?
         .title-initials
             .title.trigger-off <span class="title-info">J</span>SON
             .title.trigger-off <span class="title-info">W</span>eb
@@ -426,10 +520,13 @@ body
             .title.trigger-on <span class="title-info">T</span>songa
         div(role='note').
             Les JSON Web Token !
-            Deux choses à retenir :
-            1 : Ça n'a strictement rien à voir avec GWT.
-            2 : Ce sont les mêmes initiales que Jo Wilfried Tsonga [...] coincidence ??
+            Alors d'abord, il y a deux points importants :
+            Primo : Ça n'a strictement rien à voir avec GWT !!!
+            Deuxio : Ce sont les mêmes initiales que Jo Wilfried Tsonga [...] coincidence ??
             Mais alors qu'est ce qu'un JWT ?
+            Si vous lisez quelques articles,
+            vous allez peut-être tomber sur :
+            //Il faut déjà bien préciser qu'un JWT ne doit pas être comparé à un cookie
             //Bref, si vous faite un peu de lecture sur le sujet,
             //vous verrez souvent des articles qui opposent et comparent les JWT aux cookies.
             //C'est une erreur, il faut opposer et comparer les JWT aux IDs de session.
@@ -437,82 +534,127 @@ body
             //=> Remplacer des sessions
             //Token par valeur, token par référence
 
+    section
+        figure.fs-media.fs-media-cover
+            img(src="/media/schema-cookie-vs-jwt-1.svg")
+        div(role='note').
+            "Cookies ou JWT : coment choisir ?"
+            Il faut rester subtil sur les définitions !!
+            Comparer des cookies à des JWT n'a...
+
     section.no-transition
+        figure.fs-media.fs-media-cover
+            img(src="/media/schema-cookie-vs-jwt-2.svg")
+        div(role='note').
+            ...aucun sens.
+            Un cookie n'est qu'un moyen de transport.
+            Ce sont les...
+
+    section.no-transition
+        figure.fs-media.fs-media-cover
+            img(src="/media/schema-cookie-vs-jwt-3.svg")
+        div(role='note').
+            ...identifiant de session qu'il faut comparer au JWT,
+            par ce que comme son nom l'indique, un JWT c'est avant tout un...
+
+    section
         figure.fs-media.fs-media-cover
             img(src="/media/schema-value-vs-reference-01.svg")
         div(role='note').
-            C'est un token.
-            Mais il y a plusieurs sortes de tokens.
-            Car si les session ID sont bien des tokens par référence qui nécessite une forme de stockage pour les faire correspondre à des données,
-            les JWT sont des tokens par valeur, ils contiennent directement les informations.
-            En gros côté client
+            ...token.
+            Et il y a...
 
     section.no-transition
         figure.fs-media.fs-media-cover
             img(src="/media/schema-value-vs-reference-02.svg")
         div(role='note').
+            ...plusieurs sortes de tokens.
+            Par référence et valeur.
 
     section.no-transition
         figure.fs-media.fs-media-cover
             img(src="/media/schema-value-vs-reference-03.svg")
         div(role='note').
+            Les identifiants de session sont bien des tokens par référence,
+            Comme pour une carte bleue,
+            j'ai besoin d'un tiers pour savoir ce qu'il y a derrière.
 
     section.no-transition
         figure.fs-media.fs-media-cover
             img(src="/media/schema-value-vs-reference-04.svg")
         div(role='note').
-
-    section.no-transition
-        figure.fs-media.fs-media-cover
-            img(src="/media/schema-value-vs-reference-05.svg")
-        div(role='note').
+            Les JWT sont des tokens par valeur,
+            Je n'ai pas besoin de tiers pour savoir qu'il s'agit d'un billet de 100 euros,
+            il faut juste que je sache reconnaitre s'il a bien été émis par l'imprimerie nationale ou s'il s'agit d'une contrefaçon.
+            Si je reprends mon...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-jwt-01.svg")
         div(role='note').
-            On est toujours sur ...
-            Explications en plusieurs étapes du fonctionnement des cookies classiques
-            Fonctionnement badge conférence
-            Confiance ?
+            ...exemple de tout à l'heure,
+            mon serveur n'a plus besoin de cache mémoire,
+            il a simplement besoin...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-jwt-02.svg")
         div(role='note').
+            ...de générer un JWT qui dit qu'il s'agit de John,
+            et de calculer la signature à l'aide d'un secret partagé.
+            Il ne reste plus qu'à...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-jwt-03.svg")
         div(role='note').
+            ...envoyer le JWT au navigateur dans un cookie.
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-jwt-04.svg")
         div(role='note').
+            A la prochaine visite, le navigateur renvoie le cookie avec le JWT,
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-jwt-05.svg")
         div(role='note').
+            le serveur va pouvoir vérifier la signature et lire les informations,
+            "Ah, oui, c'est bien John !"
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-jwt-06.svg")
         div(role='note').
+            "Tiens navigateur, voici une page Web contextualisée pour John!"
+            Le tout a été fait sans avoir besoin d'un tiers,
+            du coup : pas besoin de cache mémoire.
+            [...]
+            Alors, à quoi il ressemble ce token ?
+            Et bien ça ressemble à...
+
+    //section.no-transition
+    //    div(role='note').
+    //        L'idée de signer le contenu des cookies n'est pas nouvelle.
+    //        Ce qui est intéressant avec JWT, c'est d'avoir un standard pour
 
     section
         pre.wrap
             code.
                 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19.fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo
         div(role='note').
-            Montrer le token et demander si qq parle le base 64 url couramment ?
+            ...ça.
+            Bon, je sais pas vous mais moi j'ai pas fait base64URL en LV3,
+            du coup, je vous propose une petite explication !
+            Un JWT est composé de...
 
     section.no-transition
         pre.wrap
             code.
                 <span class="jwt-header">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span><span class="code-hl">.</span><span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span><span class="code-hl">.</span><span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
         div(role='note').
+            ...3 parties séparées par des points.
 
     section.no-transition
         pre.wrap
@@ -533,6 +675,10 @@ body
 
 
         div(role='note').
+            Un header, un payload et une signature.
+            Le header et le payload sont encodé en base64URL.
+            C'est un peu comme base64 mais avec quelques différences pour être "URL safe".
+            J'ai bien dit encodé et pas chiffré.
 
     section.no-transition
         pre.wrap
@@ -542,86 +688,6 @@ body
 
 
 
-
-                > encodedPayload
-                <span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span>
-
-                > signature
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
-
-
-
-        div(role='note').
-
-    section.no-transition
-        pre.wrap
-            code.
-                > <span class="code-hl">parseJSON(</span> base64URLdecode(encodedHeader) <span class="code-hl">)</span>;
-                <span class="jwt-header">{
-                    "alg": "HS256",
-                    "typ": "JWT"
-                }</span>
-
-                > encodedPayload
-                <span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span>
-
-                > signature
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
-
-
-
-        div(role='note').
-
-    section.no-transition
-        pre.wrap
-            code.
-                > parseJSON( base64URLdecode(encodedHeader) );
-                <span class="jwt-header">{
-                    "alg": "HS256",
-                    "typ": "JWT"
-                }</span>
-
-                > encodedPayload
-                <span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span>
-
-                > signature
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
-                > <span class="code-hl">hmacSha256(</span>encodedHeader + '.' + encodedPayload, 's3cr3t'<span class="code-hl">)</span>;
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
-        div(role='note').
-
-    section.no-transition
-        pre.wrap
-            code.
-                > parseJSON( base64URLdecode(encodedHeader) );
-                <span class="jwt-header">{
-                    "alg": "HS256",
-                    "typ": "JWT"
-                }</span>
-
-                > encodedPayload
-                <span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span>
-
-                > signature
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
-                > hmacSha256(encodedHeader + '.' + encodedPayload, <span class="code-hl">'foobar'</span>);
-                <span class="jwt-signature">C61YChOynsK0bDfD1X8YP4SzFdACgL02EKI2u4XxqLU</span>
-
-        div(role='note').
-
-    section.no-transition
-        pre.wrap
-            code.markdown.
-                > parseJSON( base64URLdecode(encodedHeader) );
-                <span class="jwt-header">{
-                    "alg": "HS256",
-                    "typ": "JWT"
-                }</span>
 
                 > <span class="code-hl">base64URLdecode(</span>encodedPayload<span class="code-hl">)</span>;
                 <span class="jwt-payload">'{"iss":"auth-backend","sub":"hsablonniere","aud":"web-frontend","exp":1458638618,"nbf":null,"iat":1458635018,"jti":"85a3cb4c-5720-4dba-ae94-931d60937c47","name":"Hubert SABLONNIÈRE","permissions":["EDITOR","REVIEWER"]}'</span>
@@ -634,10 +700,20 @@ body
 
 
         div(role='note').
+            N'importe qui peut lire ce qu'il y a dans un JWT.
+            Il suffit d'appliquer une fonction qui décode le base64URL sur le header et le payload.
+            Hum ça ressemble à du JSON tout ça,
+            j'ai plus qu'à...
 
     section.no-transition
         pre.wrap
             code.markdown.
+                > <span class="code-hl">parseJSON(</span> base64URLdecode(encodedHeader) <span class="code-hl">)</span>;
+                <span class="jwt-header">{
+                    "alg": "HS256",
+                    "typ": "JWT"
+                }</span>
+
                 > <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
                 <span class="jwt-payload">{
                     "iss": "auth-backend",
@@ -651,19 +727,38 @@ body
                     "permissions": ["EDITOR", "REVIEWER"]
                 }</span>
 
-                > signature
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
-                > hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
         div(role='note').
+            ...parser tout ça pour obtenir des objets que je peux lire et manipuler avec mon langage préféré.
+            Si on regarde d'un peu plus près le payload...
 
     section.no-transition
         pre.wrap
             code.markdown.
                 > <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
                 <span class="jwt-payload">{
+
+                    "iss": "auth-backend",
+                    "sub": "hsablonniere",
+                    "aud": "web-frontend",
+                    "exp": 1458638618,
+                    "nbf": null,
+                    "iat": 1458635018,
+                    "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+                    "name": "Hubert SABLONNIÈRE",
+                    "permissions": ["EDITOR", "REVIEWER"]
+                }</span>
+        div(role='note').
+            ...il contient pas mal d'information intéressantes.
+            On appelle ça des claims.
+            Il y a les claims réservé qui sont definis par la spec et les claims privés en mode c'est la fête.
+            Premier claim public :
+
+    section.no-transition
+        pre.wrap
+            code.markdown.
+                > <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+                <span class="jwt-payload">{
+                    <span class="code-hlnow">// Issuer</span>
                     <span class="code-hlnow">"iss": "auth-backend"</span>,
                     "sub": "hsablonniere",
                     "aud": "web-frontend",
@@ -674,14 +769,10 @@ body
                     "name": "Hubert SABLONNIÈRE",
                     "permissions": ["EDITOR", "REVIEWER"]
                 }</span>
-
-                > signature
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
-                > hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
         div(role='note').
+            "Issuer" décrit celui qui a généré le token.
+            Ici, il s'agit de mon backend d'authentification.
+            Vous mettez n'importe quelle chaine de caractère, c'est votre truc à vous.
 
     section.no-transition
         pre.wrap
@@ -689,6 +780,7 @@ body
                 > <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
                 <span class="jwt-payload">{
                     "iss": "auth-backend",
+                    <span class="code-hlnow">// Subject</span>
                     <span class="code-hlnow">"sub": "hsablonniere"</span>,
                     "aud": "web-frontend",
                     "exp": 1458638618,
@@ -698,14 +790,10 @@ body
                     "name": "Hubert SABLONNIÈRE",
                     "permissions": ["EDITOR", "REVIEWER"]
                 }</span>
-
-                > signature
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
-                > hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
         div(role='note').
+            "Subject" décrit le sujet du token.
+            La plupart des claims concerne directement le sujet.
+            On y met un identifiant métier : login, email, etc...
 
     section.no-transition
         pre.wrap
@@ -714,6 +802,7 @@ body
                 <span class="jwt-payload">{
                     "iss": "auth-backend",
                     "sub": "hsablonniere",
+                    <span class="code-hlnow">// Audience</span>
                     <span class="code-hlnow">"aud": "web-frontend"</span>,
                     "exp": 1458638618,
                     "nbf": null,
@@ -722,14 +811,8 @@ body
                     "name": "Hubert SABLONNIÈRE",
                     "permissions": ["EDITOR", "REVIEWER"]
                 }</span>
-
-                > signature
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
-                > hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
         div(role='note').
+            "Audience" décrit le destinataire pour lequel le token a été généré.
 
     section.no-transition
         pre.wrap
@@ -739,6 +822,7 @@ body
                     "iss": "auth-backend",
                     "sub": "hsablonniere",
                     "aud": "web-frontend",
+                    <span class="code-hlnow">// Expiration Time</span>
                     <span class="code-hlnow">"exp": 1458638618</span>,
                     "nbf": null,
                     "iat": 1458635018,
@@ -746,14 +830,8 @@ body
                     "name": "Hubert SABLONNIÈRE",
                     "permissions": ["EDITOR", "REVIEWER"]
                 }</span>
-
-                > signature
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
-                > hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
         div(role='note').
+            "Expiration time" décrit la date/heure à laquelle le token ne sera plus accepté par le système.
 
     section.no-transition
         pre.wrap
@@ -764,20 +842,16 @@ body
                     "sub": "hsablonniere",
                     "aud": "web-frontend",
                     "exp": 1458638618,
+                    <span class="code-hlnow">// Not Before</span>
                     <span class="code-hlnow">"nbf": null</span>,
                     "iat": 1458635018,
                     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
                     "name": "Hubert SABLONNIÈRE",
                     "permissions": ["EDITOR", "REVIEWER"]
                 }</span>
-
-                > signature
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
-                > hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
         div(role='note').
+            "Not Before" décrit la date/heure avant laquelle le token ne peut pas être accepté.
+
 
     section.no-transition
         pre.wrap
@@ -789,19 +863,14 @@ body
                     "aud": "web-frontend",
                     "exp": 1458638618,
                     "nbf": null,
+                    <span class="code-hlnow">// Issued At</span>
                     <span class="code-hlnow">"iat": 1458635018</span>,
                     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
                     "name": "Hubert SABLONNIÈRE",
                     "permissions": ["EDITOR", "REVIEWER"]
                 }</span>
-
-                > signature
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
-                > hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
         div(role='note').
+            "Issued At" décrit la date/heure à laquelle le token a été généré.
 
     section.no-transition
         pre.wrap
@@ -814,18 +883,14 @@ body
                     "exp": 1458638618,
                     "nbf": null,
                     "iat": 1458635018,
+                    <span class="code-hlnow">// JWT ID</span>
                     <span class="code-hlnow">"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47"</span>,
                     "name": "Hubert SABLONNIÈRE",
                     "permissions": ["EDITOR", "REVIEWER"]
                 }</span>
-
-                > signature
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
-                > hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
         div(role='note').
+            "JWT ID" décrit un identifiant pour le token.
+            Il doit être absolument unique parmis l'ensemble des tokens générés par l'application.
 
     section.no-transition
         pre.wrap
@@ -839,22 +904,122 @@ body
                     "nbf": null,
                     "iat": 1458635018,
                     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+                    <span class="code-hlnow">// Private claims</span>
                     <span class="code-hlnow">"name": "Hubert SABLONNIÈRE"</span>,
                     <span class="code-hlnow">"permissions": ["EDITOR", "REVIEWER"]</span>
                 }</span>
-
-                > signature
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
-                > hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
-                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
-
         div(role='note').
+            Enfin, on retrouve les private claims.
+            En fonction des besoins de mon application,
+            je vais pouvoir placer différentes informations sur mon utilisateur connecté.
+            Ici, le prénom et les permissions.
 
     section.no-transition
         pre.wrap
             code.markdown.
                 > <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+                <span class="jwt-payload">{
+                    "iss": "auth-backend",
+                    "sub": "hsablonniere",
+                    "aud": "web-frontend",
+                    "exp": 1458638618,
+                    "nbf": null,
+                    "iat": 1458635018,
+                    "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+                    "name": "Hubert SABLONNIÈRE",
+                    "permissions": ["EDITOR", "REVIEWER"]
+                }</span>
+        div(role='note').
+            OK, du coup, comment le serveur va pouvoir faire confiance à ce truc là ?
+            C'est le navigateur qui dit, je suis Hubert, j'ai telles permissions...
+            mais souvenez vous,
+
+    section.no-transition
+        pre.wrap
+            code.
+                > parseJSON( base64URLdecode(encodedHeader) );
+                <span class="jwt-header">{ <span class="code-hl">"alg": "HS256"</span>, "typ": "JWT" }</span>
+
+                > parseJSON( base64URLdecode(encodedPayload) );
+                <span class="jwt-payload">{
+                    "iss": "auth-backend",
+                    "sub": "hsablonniere",
+                    "aud": "web-frontend",
+                    "exp": 1458638618,
+                    "nbf": null,
+                    "iat": 1458635018,
+                    "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+                    "name": "Hubert SABLONNIÈRE",
+                    "permissions": ["EDITOR", "REVIEWER"]
+                }</span>
+
+                > signature
+                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+        div(role='note').
+            il y a 3 parties,
+            on a aussi le header et la signature
+            et dans le header,
+            on retrouve le nom de l'algorithme qui a servi à calculer la signature.
+
+    section.no-transition
+        pre.wrap
+            code.
+                > parseJSON( base64URLdecode(encodedPayload) );
+                <span class="jwt-payload">{
+                    "iss": "auth-backend",
+                    "sub": "hsablonniere",
+                    "aud": "web-frontend",
+                    "exp": 1458638618,
+                    "nbf": null,
+                    "iat": 1458635018,
+                    "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+                    "name": "Hubert SABLONNIÈRE",
+                    "permissions": ["EDITOR", "REVIEWER"]
+                }</span>
+
+                > signature
+                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+                > <span class="code-hl">hmacSha256(</span>encodedHeader + '.' + encodedPayload, 's3cr3t'<span class="code-hl">)</span>;
+
+
+        div(role='note').
+            Du coup, on applique la fonction hmacSha256 sur une concatenation du header et du payload,
+            dans leur forme encodé en base64URL
+            avec un point au milieu.
+            Pour appliquer la fonction, il faut un secret partagé.
+            C'est ce qui garanti que seul les détenteurs du secret partagé pourront signer et vérifier des tokens.
+            Je calcule...
+
+    section.no-transition
+        pre.wrap
+            code.
+                > parseJSON( base64URLdecode(encodedPayload) );
+                <span class="jwt-payload">{
+                    "iss": "auth-backend",
+                    "sub": "hsablonniere",
+                    "aud": "web-frontend",
+                    "exp": 1458638618,
+                    "nbf": null,
+                    "iat": 1458635018,
+                    "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+                    "name": "Hubert SABLONNIÈRE",
+                    "permissions": ["EDITOR", "REVIEWER"]
+                }</span>
+
+                > signature
+                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+                > hmacSha256(encodedHeader + '.' + encodedPayload, <span class="code-hl">'s3cr3t'</span>);
+                <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+        div(role='note').
+            ...et je tombe sur la même chose, parfait !
+            Le serveur peux faire confiance à ce que dit le client.
+
+    section.no-transition
+        pre.wrap
+            code.markdown.
+                > parseJSON( base64URLdecode(encodedPayload) );
                 <span class="jwt-payload" data-code-id="jwt-body">{
                     "iss": "auth-backend",
                     "sub": "hsablonniere",
@@ -874,7 +1039,9 @@ body
                 <span class="jwt-signature" data-code-id="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
 
         div(role='note').
-            Exliquer les claims
+            Par contre, si le client comment à faire le malin genre,
+            salut en fait je suis trop un admin et ce token expire dans très longtemps.
+            Le serveur ne fera pas confiance à ces données car la signature n'est pas la même.
 
     //section.no-transition
     //    pre.wrap
@@ -936,9 +1103,7 @@ body
             .title Avantages
             .title des <span class="title-info">JWT</span> ?
         div(role='note').
-            Load balancing easy
-            Pas de sticky session à configurer
-            Plus de SPOF dans une architecture distribué voir micro service
+            Quels sont les avantages des JWT ?
 
     section.slide-section.no-images
         .title.title-info #1
@@ -946,39 +1111,40 @@ body
             .title Load balancing
             .title.title-info facile
         div(role='note').
-            Load balancing easy
-            Pas de sticky session à configurer
-            Plus de SPOF dans une architecture distribué voir micro service
+            Premier avantage, niveau load balancing,
+            c'est presque trop facile.
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-jwt-scalable-01.svg")
         div(role='note').
-            Load balancing easy
-            Pas de sticky session à configurer
-            Plus de SPOF dans une architecture distribué voir micro service
+            Pas de sticky session,
+            pas de cache distribué,
+            ni même de cache tout court.
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-jwt-scalable-02.svg")
         div(role='note').
-            Load balancing easy
-            Pas de sticky session à configurer
-            Plus de SPOF dans une architecture distribué voir micro service
+            On a juste besoin d'un secret partagé et de calculer une signature.
 
     section.slide-section.no-images
         .title.title-info #2
         .fit-title--small
             .title <span class="title-info">Multi</span>-langage
         div(role='note').
+            Deuxième avantage,
+            c'est un standard.
+            Il y a des implémentations dans...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
-            img(src="/media/schema-jwt-scalable-02.svg")
+            img(src="/media/schema-jwt-languages.svg")
         div(role='note').
-            Load balancing easy
-            Pas de sticky session à configurer
-            Plus de SPOF dans une architecture distribué voir micro service
+            ...tous les langages.
+            que vous soyez dans un navigateur,
+            sur iOS, Android et quelle que soit votre stack côté serveur,
+            il y a une implémentation.
 
     section.slide-section.no-images
         .title.title-info #3
@@ -986,9 +1152,29 @@ body
             .title Architectures
             .title.title-info microservices
         div(role='note').
+            3ème avantage : les architectures micro-services.
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
+            img(src="/media/schema-jwt-scalable-microservices-01.svg")
+        div(role='note').
+            Si on reprend un exemple avec un cluster de deux noeuds,
+            c'est
+
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--right-nt
+            img(src="/media/schema-jwt-scalable-microservices-02.svg")
+        div(role='note').
+            Micro services
+
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--right-nt
+            img(src="/media/schema-jwt-scalable-microservices-03.svg")
+        div(role='note').
+            Micro services
+
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--right-nt
             img(src="/media/schema-jwt-scalable-microservices-04.svg")
         div(role='note').
             Micro services
@@ -1001,20 +1187,8 @@ body
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--right-nt
-            img(src="/media/schema-jwt-scalable-microservices-06.svg")
-        div(role='note').
-            Micro services
-
-    section.no-transition
-        figure.fs-media.fs-media-cover.fs-media-cover--right-nt
-            img(src="/media/schema-jwt-scalable-microservices-07.svg")
-        div(role='note').
-            Micro services
-
-    section.no-transition
-        figure.fs-media.fs-media-cover.fs-media-cover--right-nt
-            img.trigger-media-on(src="/media/schema-jwt-scalable-microservices-08.svg")
-            img.trigger-media-off(src="/media/schema-jwt-scalable-microservices-09.svg")
+            img.trigger-media-on(src="/media/schema-jwt-scalable-microservices-06.svg")
+            img.trigger-media-off(src="/media/schema-jwt-scalable-microservices-07.svg")
         div(role='note').
             Micro services
 
@@ -1140,6 +1314,12 @@ body
                 => short lived c'est mieux
                 expiration
 
+    section.no-transition
+        figure.fs-media.fs-media-cover.fs-media-cover--left
+            img.trigger-media-on(src="/media/schema-jwt-blacklist-1.svg")
+            img.trigger-media-off(src="/media/schema-jwt-blacklist-2.svg")
+        div(role='note').
+
     section.slide-section.no-images.fit-title
         .title Securite des
         .title <span class="title-info">S</span>ingle <span class="title-info">P</span>age <span class="title-info">A</span>pplications
@@ -1213,9 +1393,8 @@ body
                       method="POST">
 
                     &lt;input type="hidden" name="status"
-                           value="La Normandie c'est mieux">
+                           value="J'adore l'épisode I de Star Wars">
                 &lt;/form>
-
 
 
 
@@ -1228,7 +1407,7 @@ body
                       method="POST">
 
                     &lt;input type="text" name="status"
-                           value="I &lt;3 Bretagne">
+                           value="Non je déconne">
                     &lt;input type="hidden" name="<span class="code-hl">authenticity_token</span>"
                            value="125d260e57fd924fc363534713e4bc43b774">
                 &lt;/form>
@@ -1338,8 +1517,9 @@ body
 
     section.slide-quote
         .quote Stateless<br>is priceless.
-        .quote-author Thomas Recloux
+        .quote-author Thomas Recloux<br>Jérémy Sevellec
         img.quote-author-avatar(src="./media/thomas-recloux.jpg")
+        img.quote-author-avatar.quote-author-avatar-two(src="./media/jeremy-sevellec.jpg")
         div(role='note').
             De manière générale, vous gagnerez toujours en simplicité avec des architectures stateless.
             Sauvons les Lemmings...
@@ -1381,6 +1561,12 @@ body
         .fit-title
             .title Taille des
             .title <span class="title-info">tokens</span> ?
+        div(role='note').
+
+    section.slide-section.no-images
+        .fit-title
+            .title Les autres specs
+            .title <span class="title-info">JW*</span> ?
         div(role='note').
 
     section.slide-section.no-images

@@ -492,6 +492,9 @@ section.black {
   position: absolute;
   width: 150px; }
 
+.quote-author-avatar-two {
+  left: 200px; }
+
 /* CODE */
 .hljs {
   background: #FFF;
