@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d69d9c3-1534-4035-9da8-cddbf94fbae8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/media/foo/schema-csrf-04.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/media/foo/schema-csrf-05.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/media/foo/schema-csrf-06.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/media/foo/schema-csrf-07.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/media/foo/schema-csrf-08.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/media/foo/schema-csrf-09.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/media/foo/schema-csrf-10.svg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.one-gulp/dev/index.html" afterPath="$PROJECT_DIR$/.one-gulp/dev/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.jade" afterPath="$PROJECT_DIR$/src/index.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-03.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-03.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-04.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-04.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-05.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-05.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-06.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-06.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-07.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-07.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-08.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-08.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-09.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-09.svg" />
     </list>
     <ignored path="talk-jwt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +22,35 @@
     <favorites_list name="talk-jwt" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="index.jade" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/index.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="1457" column="25" selection-start-line="1457" selection-start-column="25" selection-end-line="1457" selection-end-column="25" />
+              <folding>
+                <element signature="n#picture#0;n#figure#0;n#section#3;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#76;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#77;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#78;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#79;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#82;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#83;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#84;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#85;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#86;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#87;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#88;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#89;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#90;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#128;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#code#0;n#pre#0;n#section#129;n#body#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,7 +89,6 @@
     </gulpfiles>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1600" />
     <option name="y" value="24" />
     <option name="width" value="1600" />
     <option name="height" value="876" />
@@ -125,38 +136,7 @@
     <panes>
       <pane id="Scratches" />
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="talk-jwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="talk-jwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="talk-jwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="talk-jwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="talk-jwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="Scope" />
     </panes>
@@ -274,19 +254,19 @@
       <workItem from="1461241831016" duration="661000" />
       <workItem from="1461242580446" duration="633000" />
       <workItem from="1461258595515" duration="618000" />
-      <workItem from="1461302571428" duration="27000" />
+      <workItem from="1461302571428" duration="795000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152516000" />
+    <option name="totallyTimeSpent" value="153284000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1600" y="24" width="1600" height="876" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="24" width="1600" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="true" show_stripe_button="true" weight="0.2175" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.2175" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -324,6 +304,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2310">
           <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding>
+            <element signature="n#picture#0;n#figure#0;n#section#3;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#76;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#77;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#78;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#79;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#82;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#83;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#84;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#85;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#86;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#87;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#88;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#89;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#90;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#128;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#129;n#body#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -362,6 +360,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5061">
           <caret line="493" column="44" selection-start-line="493" selection-start-column="44" selection-end-line="493" selection-end-column="44" />
+          <folding>
+            <element signature="n#picture#0;n#figure#0;n#section#3;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#76;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#77;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#78;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#79;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#82;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#83;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#84;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#85;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#86;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#87;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#88;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#89;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#90;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#128;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#129;n#body#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -428,6 +444,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4578">
           <caret line="234" column="57" selection-start-line="234" selection-start-column="57" selection-end-line="234" selection-end-column="57" />
+          <folding>
+            <element signature="n#picture#0;n#figure#0;n#section#3;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#76;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#77;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#78;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#79;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#82;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#83;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#84;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#85;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#86;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#87;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#88;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#89;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#90;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#128;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#129;n#body#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -452,6 +486,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#picture#0;n#figure#0;n#section#3;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#76;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#77;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#78;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#79;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#82;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#83;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#84;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#85;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#86;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#87;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#88;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#89;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#90;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#128;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#129;n#body#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -459,6 +511,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2751">
           <caret line="131" column="25" selection-start-line="131" selection-start-column="25" selection-end-line="131" selection-end-column="25" />
+          <folding>
+            <element signature="n#picture#0;n#figure#0;n#section#3;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#76;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#77;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#78;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#79;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#82;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#83;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#84;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#85;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#86;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#87;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#88;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#89;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#90;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#128;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#129;n#body#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -637,13 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="1227" column="25" selection-start-line="1227" selection-start-column="25" selection-end-line="1227" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/editor.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -669,6 +732,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="1457" column="25" selection-start-line="1457" selection-start-column="25" selection-end-line="1457" selection-end-column="25" />
+          <folding>
+            <element signature="n#picture#0;n#figure#0;n#section#3;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#76;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#77;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#78;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#79;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#82;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#83;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#84;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#85;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#86;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#87;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#88;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#89;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#90;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#128;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#code#0;n#pre#0;n#section#129;n#body#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
