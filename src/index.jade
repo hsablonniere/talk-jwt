@@ -1196,9 +1196,17 @@ body
         figure.fs-media.fs-media-contain
             img(src="/media/microservices-and-shared-db.png")
         div(role='note').
+            Grâce au JSON Web Token,
+            l'ensemble des microservices de mon architecture sont autonomes pour accetper ou non une requêtes.
 
     section.no-transition
         div(role='note').
+            Par contre depuis le début, je partage un secret.
+            Quand je réplique le même service sur un cluster,
+            ça ne me choque pas tant que ça.
+            Par contre partager un secret sur plein de projets qui ont des cycles de vie différents,
+            c'est un peu plus chaud.
+            On va vite finir avec un secret qui n'est plus secret.
 
     section.no-transition
         figure.fs-media.fs-media-cover
@@ -1209,6 +1217,8 @@ body
         figure.fs-media.fs-media-cover
             img(src="/media/schema-signatures-01.svg")
         div(role='note').
+            Si on regarde de plus près comment sont calculée les signatures.
+            On a la solution.
 
     section.no-transition
         figure.fs-media.fs-media-cover
