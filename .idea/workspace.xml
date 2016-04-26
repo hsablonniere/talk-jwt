@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d69d9c3-1534-4035-9da8-cddbf94fbae8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.jade" afterPath="$PROJECT_DIR$/src/index.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="talk-jwt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,12 +22,12 @@
     <favorites_list name="talk-jwt" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.jade" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="1457" column="25" selection-start-line="1457" selection-start-column="25" selection-end-line="1457" selection-end-column="25" />
+            <state relative-caret-position="147">
+              <caret line="1459" column="25" selection-start-line="1459" selection-start-column="25" selection-end-line="1459" selection-end-column="25" />
               <folding>
                 <element signature="n#picture#0;n#figure#0;n#section#3;n#body#0;n#!!top" expanded="false" />
                 <element signature="n#code#0;n#pre#0;n#section#76;n#body#0;n#!!top" expanded="false" />
@@ -90,8 +90,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="24" />
-    <option name="width" value="1600" />
-    <option name="height" value="876" />
+    <option name="width" value="1920" />
+    <option name="height" value="1176" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -120,7 +120,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -133,13 +133,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -255,14 +249,16 @@
       <workItem from="1461242580446" duration="633000" />
       <workItem from="1461258595515" duration="618000" />
       <workItem from="1461302571428" duration="795000" />
+      <workItem from="1461443426646" duration="9000" />
+      <workItem from="1461499618678" duration="10000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153284000" />
+    <option name="totallyTimeSpent" value="153303000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1600" height="876" extended-state="6" />
+    <frame x="0" y="24" width="1920" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -333,13 +329,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/abstract-and-links.adoc">
-      <provider editor-type-id="AsciiDocPreviewEditor">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2793">
           <caret line="133" column="21" selection-start-line="133" selection-start-column="21" selection-end-line="133" selection-end-column="21" />
         </state>
+      </provider>
+      <provider editor-type-id="AsciiDocPreviewEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jwt.js">
@@ -389,13 +385,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/abstract-and-links.adoc">
-      <provider editor-type-id="AsciiDocPreviewEditor">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2793">
           <caret line="133" column="21" selection-start-line="133" selection-start-column="21" selection-end-line="133" selection-end-column="21" />
         </state>
+      </provider>
+      <provider editor-type-id="AsciiDocPreviewEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jwt.js">
@@ -466,13 +462,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/abstract-and-links.adoc">
-      <provider editor-type-id="AsciiDocPreviewEditor">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2793">
           <caret line="133" column="21" selection-start-line="133" selection-start-column="21" selection-end-line="133" selection-end-column="21" />
         </state>
+      </provider>
+      <provider editor-type-id="AsciiDocPreviewEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.scss">
@@ -533,13 +529,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/abstract-and-links.adoc">
-      <provider editor-type-id="AsciiDocPreviewEditor">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2793">
           <caret line="133" column="21" selection-start-line="133" selection-start-column="21" selection-end-line="133" selection-end-column="21" />
         </state>
+      </provider>
+      <provider editor-type-id="AsciiDocPreviewEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.scss">
@@ -557,13 +553,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/story.adoc">
-      <provider editor-type-id="AsciiDocPreviewEditor">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
         </state>
+      </provider>
+      <provider editor-type-id="AsciiDocPreviewEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/links.adoc" />
@@ -583,13 +579,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/story.adoc">
-      <provider editor-type-id="AsciiDocPreviewEditor">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
         </state>
+      </provider>
+      <provider editor-type-id="AsciiDocPreviewEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/media/schema-cookies-basic-06.svg">
@@ -691,13 +687,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/abstract-and-links.adoc">
-      <provider editor-type-id="AsciiDocPreviewEditor">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="716">
           <caret line="133" column="21" selection-start-line="133" selection-start-column="21" selection-end-line="133" selection-end-column="21" />
         </state>
+      </provider>
+      <provider editor-type-id="AsciiDocPreviewEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jwt.js">
@@ -737,8 +733,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="1457" column="25" selection-start-line="1457" selection-start-column="25" selection-end-line="1457" selection-end-column="25" />
+        <state relative-caret-position="147">
+          <caret line="1459" column="25" selection-start-line="1459" selection-start-column="25" selection-end-line="1459" selection-end-column="25" />
           <folding>
             <element signature="n#picture#0;n#figure#0;n#section#3;n#body#0;n#!!top" expanded="false" />
             <element signature="n#code#0;n#pre#0;n#section#76;n#body#0;n#!!top" expanded="false" />
