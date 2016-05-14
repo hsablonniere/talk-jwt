@@ -1,0 +1,24 @@
+.article {
+  margin: 20px auto;
+  max-width: 700px;
+  width: 100%;
+}
+
+.imageblock .content img,
+.videoblock .content video {
+  box-shadow: 0 0 5px #DDD;
+  width: 100%;
+}
+
+.listingblock .content pre {
+  background: #DDD;
+  word-break: break-all;
+  white-space: pre-wrap;
+  width: 100%;
+}
+
+p {
+  line-height: 1.6;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 20px;
+}

@@ -1,0 +1,158 @@
+:docinfo:
+:imagesdir: ../media
+:last-update-label!:
+
+= 100%{nbsp}Stateless avec{nbsp}JWT
+
+:author: Hubert Sablonnière
+:email: hubert.sablonniere@gmail.com
+
+// http://www.obsolete-tears.com/compaq-presario-cds-520-machine-359.html
+
+Si vous avez assisté à ma présentation *100% Stateless avec JWT (JSON Web Token)*
+au http://lanyrd.com/2016/breizhcamp/sfbbxd/[BreizhCamp^],
+à http://lanyrd.com/2016/devoxx-france/sfbbxp/[Devoxx^]
+ou à http://lanyrd.com/2016/mixit16/sfbbxq/[Mix-IT^]
+et que vous cherchez mes slides, vous êtes au bon endroit.
+J'ai toujours pensé que voir ou revoir mon support de présentation sans les explications n'a que très peu d'interêt c'est pourquoi, je vous propose cet "article compagnon".
+Vous y retrouverez l'arc narratif, les explications, les exemples, les schémas et les images de la présentation dans une forme plus propice à la lecture à posteriori.
+
+J'espère que vous apprécierez cette version.
+Bonne lecture{nbsp}!
+
+== Il était une fois, les cookies HTTP...
+
+Noël 1994, mes parents achètent le premier ordinateur de la famille.
+Un Compaq Presario CDS 520 avec un processeur Intel 486DX à 33 Mhz.
+Une bête de course pour l'époque{nbsp}!
+
+.Mon{nbsp}premier{nbsp}ordinateur{nbsp}: Compaq{nbsp}Presario{nbsp}CDS{nbsp}520
+[.image-line]
+--
+image::compaq-1-article.jpg[Compaq Presario CDS 520]
+image::compaq-2-article.jpg[Compaq Presario CDS 520]
+image::compaq-4-article.jpg[Compaq Presario CDS 520]
+--
+
+Quand mon père l'a ramené à la maison, on était fou de joie.
+Avec ma sœur, on a tout de suite cherché les jeux mais après quelques jours de démineur et de solitaire, on s'est un peu lassé.
+C'est en allant chez nos cousins qu'on a pu découvrir les jeux MS-DOS ; une petite révolution graphique et ludique qui nous a fait perdre pas mal de samedis après-midi.
+
+Un de mes jeux préférés, c'était les Lemmings{nbsp}!
+
+video::yRMqXWI1Oh8[youtube, start=40]
+
+Le principe est simple.
+Il y a des petits bonshommes qui rentrent dans le monde par la trappe et il faut les aider à sortir par la grande porte.
+Le problème c'est qu'ils sont très très cons et il faut parfois les empêcher de mourir.
+Pour cela, on doit les faire creuser, piocher, grimper, construire des escaliers...
+À la fin, si on en a sauvé assez, le niveau est validé et on obtient un code.
+
+.Le système de code des Lemmings
+[.image-line]
+--
+image::lemmings-code-info-43.jpg[Code à la fin d'un niveau]
+image::lemmings-code-input.png[Saisi d'un code]
+--
+
+Ce système constitue la parade ultime au désormais classique _"Hubert, tu viens manger{nbsp}?"_ :
+
+* Pas d'hésitation pour éteindre le jeu et l'ordinateur.
+* Pas besoin de se retaper les 17 niveaux le lendemain.
+* Il suffit de saisir le code pour revenir directement au niveau qui va bien.
+
+//'''
+
+[.image-separation]
+image::netscape-sharp.png[Netscape logo, 150, 150, align="center"]
+
+Pendant ce temps là, chez Netscape, Lou Montulli invente pour notre plus grand plaisir la balise HTML +++<code class="blink">&lt;blink></code>+++{nbsp}!
+Mais Lou a aussi de très bonnes idées.
+En juin 1994, Netscape travaille pour un client qui développe une solution de panier virtuel pour du e-commerce.
+A l'époque, pour gérer ça, on était obligé de stocker l'état dans l'URL.
+Cela résumait à peu près l'expérience d'achat à celle d'un distributeur de canettes :
+un seul produit à la fois.
+
+[quote, Lou Montulli (netscape)]
+____
+image::loumontulli.jpg[Lou Montulli]
+The <blink> tag is the worst thing I've ever done for the Internet.
+____
+
+
+
+C'est dans ce contexte que Lou propose d'appliquer le concept existant de magic-cookies sur le Web et c'est ainsi que les cookies HTTP voient le jour.
+Lou travaille sur une spécification avec John Giannandrea et le support arrive dans Netscape assez rapidement.
+Le premier usage officiel était de savoir si un visiteur de netscape.com est déjà venu sur le site.
+
+Le fonctionnement des cookies n'a pas beaucoup changé depuis 1994.
+Prenons l'exemple d'un utilisateur qui se connecte sur un site avec son navigateur.
+
+1. Le *navigateur* envoie au *serveur* l'identifiant et le mot de passe dans une requête `POST`.
+2. Le *serveur* demande à la *base de données* si l'utilisateur existe.
+3. La *base de données* répond : _"Oui John existe, voici le mot de passe haché et salé."_.
++
+Le *serveur* passe sa moulinette sécurisée (bcrypt, pbkdf2 ou autre) pour valider le mot de passe.
+4. Si tout va bien, le *serveur* peut enfin envoyer la réponse. Cette réponse contient notamment un cookie. C'est un couple clé/valeur, par exemple `name=John`.
++
+Le *navigateur* enregistre ce cookie pour les prochaines visites.
+5. Quand l'utilisateur revient sur le site, le *navigateur* envoiee automatiquement au *serveur* les cookies enregistrés pour le site en question.
+6. Le *serveur* lit les informations présentes dans les cookies et envoie une page contextualisée à l'utilisateur qui contient par exemple : _"Bonjour John"_.
+
+.Fonctionnement de base des cookies
+[.image-line.full.interactive]
+--
+image::schema-cookies-basic-paper.svg[Fonctionnement de base des cookies, opts="inline", items="browser | server | db | browser-post | server-request-db | db-reply | server-reply-with-cookie | browser-request-with-cookie | server-reply-with-context", scenario="(0) | (0-1);(3) | 0;(1-2);3-(4) | 0;(1-2);3-(5) | (0-1);2;3-(6) | (0-1);2;3-(7) | (0-1);2;3-(8) | (0-8)"]
+--
+
+Ce système me rapelle étrangement le système de codes des Lemmings sauf qu'à l'époque, du haut de mes 8 ans, c'est moi qui faisait le navigateur{nbsp}!
+J'avais mon propre framework maison : le bloc-notes.
+
+.blocNote.js : mon "framework" de cookies en 1994
+[.image-line.full]
+--
+image::lemmings-code-notebook.jpg[Mon "framework" de cookies en 1994]
+--
+
+La force de ce système, c'est qu'on ne pouvait pas tricher.
+C'était impossible de deviner le code du niveau suivant.
+Ça serait trop facile.
+
+Alors que là, le navigateur peux très bien se faire passer pour Paul alors qu'il est John.
+
+.Le contenu d'un cookie peut être altéré par le navigateur
+[.image-line.full]
+--
+image::schema-cookies-basic-08.svg[Le contenu d'un cookie peut être altéré par le navigateur, opts="inline"]
+--
+
+
+Le serveur doit trouver un moyen pour faire confiance aux cookies qu'il reçoit du navigateur.
+C'est une des raisons pour laquelle on a introduit le concept d'identifiant de session.
+Si on reprend l'exemple précédent, il y a une petite différence après la validation du mot de passe :
+
+1. Le *navigateur* envoie au *serveur* l'identifiant et le mot de passe dans une requête `POST`.
+2. Le *serveur* demande à la *base de données* si l'utilisateur existe.
+3. La *base de données* répond, _"Oui John existe, voici le mot de passe haché et salé"_.
++
+Le *serveur* passe sa moulinette sécurisée (bcrypt, pbkdf2 ou autre) pour valider le mot de passe.
+4. Le *serveur* génère un identifiant unique (par exemple{nbsp}:{nbsp}42) et associe dans un *cache mémoire* cet identifiant avec les informations de l'utilisateur.
+5. Le *serveur* envoie la réponse. Cette réponse contient notamment le cookie avec l'identifiant de session `SESSIONID=42`.
++
+Le *navigateur* enregistre ce cookie pour les prochaines visites.
+6. Quand l'utilisateur revient sur le site, le *navigateur* envoie automatiquement au *serveur* les cookies enregistrés pour le site en question.
+7. Le *serveur* lit les informations présentes dans les cookies et retrouve l'identifiant de session 42 mais pour savoir qui a demandé la page, il a besoin du *cache mémoire* pour transformer un identifiant opaque en informations sur l'utilisateur.
+8. Le *cache mémoire* répond : _"Il s'agit, de John. Voici les informations."_.
+9. Le *serveur* se sert de ces informations et envoie une page contextualisée à l'utilisateur qui contient par exemple : _"Bonjour John"_.
+
+.Fonctionnement d'un identifiant de session échangé par cookie
+[.image-line.full.interactive]
+--
+image::schema-cookies-session-paper.svg[Fonctionnement d'un identifiant de session échangé par cookie, opts="inline", items="browser | server | memory | db | browser-post | server-request-db | db-reply | server-set-memory | server-reply-with-cookie | browser-request-with-cookie | server-get-memory | memory-reply | server-reply-with-context", scenario= "(0) | (0-1);(4) | 0;(1);(3);4-(5) | 0;(1);(3);4-(6) | 0;(1-2);3;4-(7) | (0-1);2-3;4-(8) | (0-1);2-3;4-(9) | 0;(1-2);3;4-(10) | 0;(1-2);3;4-(11) | (0-1);2-3;4-(12) | (0-12)"]
+--
+
+Il y a plusieurs inconvénients à utiliser des identifiants de session.
+
+Si votre site a du succès,
+un seul serveur ne suffira pas,
+il risque de tomber.

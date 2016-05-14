@@ -1,8 +1,14 @@
 {
   "name": "6-ans-plus-tard",
   "version": "0.0.0",
+  "scripts": {
+    "watch-adoc": "nodemon src/article/article.adoc -a linkcss -a stylesheet=article.css"
+  },
   "dependencies": {
     "gulp": "^3.8.11",
     "one-gulp": "git://github.com/one-gulp/one-gulp"
+  },
+  "devDependencies": {
+    "nodemon": "1.9.2"
   }
 }

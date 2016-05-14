@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.4">
+<title>100% Stateless avec JWT (JSON Web Token)</title>
+<link rel="stylesheet" href="./article.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>100% Stateless avec JWT (JSON Web Token)</h1>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bonjour à tous !
+Je m&#8217;appelle Hubert SABLONNIÈRE,
+je suis développeur Web chez INEAT Conseil à Lille
+et aujourd&#8217;hui j&#8217;ai envie de vous parler de&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/compaq-2.jpg" alt="compaq 2">
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;mon premier ordinateur.
+Bon OK {&#8230;&#8203;} c&#8217;était pas "MON" ordinateur,
+c&#8217;était pour toute la famille, bien sûr.
+On l&#8217;a eu pour Noël 1994.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/compaq-1.jpg" alt="compaq 1">
+</div>
+</div>
+<div class="paragraph">
+<p>Un Compaq Presario avec 33Mz de processeur.
+Une bête de course à l&#8217;époque.
+Quand mon père l&#8217;a ramené à la maison, on était tout fou.
+Avec ma soeur, on a tout de suite cherché où étaient&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/solitaire-demineur-169.png" alt="solitaire demineur 169">
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;les jeux mais on s&#8217;est vite lassé du démineur et du soliaire et
+c&#8217;est à peu près à ce moment là que nos cousins nous on fait découvrir&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/msdos.png" alt="msdos">
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;les jeux MS-DOS {&#8230;&#8203;} wouahhh.
+Dès que j&#8217;allais chez un pote et qu&#8217;il me montrait un nouveau jeu, je lui demandais direct : "Ça rentre sur une disquette ?"
+Bon du coup, ça fait un peu peur quand tu vois qu&#8217;en 2016, il faut 4 disquettes pour stocker la page d&#8217;accueil d&#8217;amazon mais bon.
+Un de mes jeux préférés c&#8217;était les&#8230;&#8203;</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="media/lemmings-fun-level-1-just-dig-1991-ms-dos.webm#t=24" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;Lemmings. [???] Il y en a qui jouait aux Lemmings ici ?
+Bon le principe est simple. Il y a des petits bonshommes qui rentrent dans le monde par la trappe et il faut les aider à sortir par la grande porte. Le problème c&#8217;est qu&#8217;ils sont très très cons et qu&#8217;il faut parfois les empêcher de mourir. Alors on leur dit de creuser, de grimper, de construire des escaliers, comme dans la vraie vie quoi.
+A la fin, si on en a sauvé assez, le niveau est validé et on obtient un code.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/lemmings-code-info.jpg" alt="lemmings code info">
+</div>
+</div>
+<div class="paragraph">
+<p>C&#8217;est vachement pratique ce système de code parce qu&#8217;après 3 ou 4 "Hubert, tu viens manger ?",
+bah t&#8217;es bien obligé d&#8217;éteindre l&#8217;ordinateur et le lendemain,
+si tu veux pas te retaper les 17 niveaux&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/lemmings-code-input.png" alt="lemmings code input">
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;tu saisis le code et t&#8217;arrives direct au niveau qui va bien.</p>
+</div>
+<div class="paragraph">
+<p>Pendant ce temps là, chez Netscape {&#8230;&#8203;}
+Lou Montulli invente pour notre plus grand plaisir&#8230;&#8203;</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+The &lt;blink&gt; tag is the worst thing I&#8217;ve ever done for the Internet.
+</blockquote>
+<div class="attribution">
+&#8212; Lou Montulli (netscape)
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/loumontulli.jpg" alt="loumontulli">
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;la balise HTML &lt; blink &gt; [COUGH]
+Mais Lou a aussi de très bonnes idées.
+On est en juin 1994, Netscape bosse pour un client qui développe une solution de panier virtuel pour du e-commerce.
+A l&#8217;époque, pour gérer ça, on était obligé de stocker l&#8217;état dans l&#8217;URL.
+Ça résumait à peu près l&#8217;expérience d&#8217;achat à celle d&#8217;un distributeur de canettes :
+un produit à la fois.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_il_était_une_fois_les_cookies_http">Il était une fois, les cookies HTTP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Du coup, Lou propose d&#8217;appliquer le concept existant de magic-cookies sur le Web
+et c&#8217;est ainsi que les cookies HTTP voient le jour.
+Lou travaille sur une spécification avec John Giannandrea
+et le support arrive dans Netscape assez rapidement.
+Le premier usage officiel, c&#8217;était de savoir si un visiteur de netscape.com est déjà venu sur le site.</p>
+</div>
+<div class="paragraph">
+<p>Le fonctionnement n&#8217;a pas beaucoup changé depuis mais voici un petit rappel.
+Quand un utilisateur se connecte sur un site avec&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;son navigateur,
+il saisit son login/mdp et il valide le formulaire de login.</p>
+</div>
+<div class="paragraph">
+<p>Le navigateur envoi une requête POST côté serveur.</p>
+</div>
+<div class="paragraph">
+<p>Le serveur demande à la base de donnée si l&#8217;utilisateur existe.</p>
+</div>
+<div class="paragraph">
+<p>La base répond, "oui John existe, voici le mot de passe haché et salé".
+Le serveur passe sa moulinette sécurisée (bcrypt, pbkdf2 ou autre) pour valider le mot de passe.</p>
+</div>
+<div class="paragraph">
+<p>Si tout va bien, le serveur peut enfin envoyer la réponse
+et c&#8217;est là que le navigateur va enregistrer pour les prochaines visites le couple clé/valeur name=John,
+le fameux cookie.</p>
+</div>
+<div class="paragraph">
+<p>Du coup quand l&#8217;utilisateur revient,
+son navigateur renvoie automatiquement ce cookie au serveur,
+et le serveur se sert de ces données pour</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-cookies-basic-paper.svg" alt="schema cookies basic paper">
+</div>
+<div class="title">Figure 1. Fonctionnement de base des cookies</div>
+</div>
+<div class="paragraph">
+<p>afficher à l&#8217;utilisateur une page qui se souvient qu&#8217;il s&#8217;appelle John.
+Je sais pas vous, mais moi ça me rapelle étrangement le système de codes des Lemmings,
+sauf qu&#8217;à l&#8217;époque,</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/lemmings-code-notebook.jpg" alt="lemmings code notebook">
+</div>
+<div class="title">Figure 2. Mon "framework" de cookies en 1994</div>
+</div>
+<div class="paragraph">
+<p>du haut de mes 8 ans,
+c&#8217;est moi qui faisait le navigateur.
+J&#8217;avais mon framework maison : le bloc notes&#8230;&#8203; [clac]
+Bref, le truc avec les codes des Lemmings, c&#8217;est qu&#8217;on ne pouvait pas deviner le code du niveau suivant.
+Ça serait trop facile.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-cookies-basic-08.svg" alt="schema cookies basic 08">
+</div>
+<div class="title">Figure 3. Le contenu d&#8217;un cookie peut être altéré par le client</div>
+</div>
+<div class="paragraph">
+<p>Alors que là, je peux très bien me faire passer pour Paul alors que je suis John.</p>
+</div>
+<div class="paragraph">
+<p>Le serveur doit trouver un moyen pour faire confiance au cookie que je lui donne.
+C&#8217;est une des raisons pour laquelle on a introduit le concept d&#8217;identifiant de session.</p>
+</div>
+<div class="paragraph">
+<p>En gros, si je reprens la situation prédécente :
+Juste avant d&#8217;envoyer la réponse,</p>
+</div>
+<div class="paragraph">
+<p>le serveur va générer un identifiant bien aléatoire,
+genre 42,
+et il va associer dans un cache mémoire l&#8217;identifiant 42 avec les informations de l&#8217;utilisateur.
+Et du coup, au lieu d&#8217;envoyer le nom de la personne connectée,</p>
+</div>
+<div class="paragraph">
+<p>le serveur envoie juste cet identifiant de session dans un cookie,
+et quand le visiteur navigue sur le site,</p>
+</div>
+<div class="paragraph">
+<p>le navigateur renvoie les cookies au serveur.</p>
+</div>
+<div class="paragraph">
+<p>Pour savoir qui a demandé la page,
+le serveur a besoin de son cache mémoire pour transformer un identifiant opaque&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;en informations sur l&#8217;utilisateur et ainsi&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-cookies-session-paper.svg" alt="schema cookies session paper">
+</div>
+<div class="title">Figure 4. Fonctionnement d&#8217;un identifiant de session échangé par cookie</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;envoyer une réponse contextualisée à l&#8217;utilisateur.
+Génial.</p>
+</div>
+<div class="paragraph">
+<p>Il y a plusieurs inconvénients à utiliser des identifiants de session.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-scalable-shared-memory-02.svg" alt="schema scalable shared memory 02">
+</div>
+<div class="title">Figure 5. Architecture simple</div>
+</div>
+<div class="paragraph">
+<p>Si votre site a du succès,
+un seul serveur ne suffira pas,
+il risque de tomber.</p>
+</div>
+<div class="paragraph">
+<p>Pas de soucis, une archi avec deux instances et un load balancer, merci au revoir.
+Après, je dis deux mais on va imaginer que vous aillez&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;vraiment,</p>
+</div>
+<div class="paragraph">
+<p>beaucoup,</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-scalable-shared-memory-06.svg" alt="schema scalable shared memory 06">
+</div>
+<div class="title">Figure 6. Architecture cluster "haute-dispo"</div>
+</div>
+<div class="paragraph">
+<p>beaucoup de succès.</p>
+</div>
+<div class="paragraph">
+<p>Toutes les instances de ce cluster sont les mêmes.
+Peut importe la technique (provisionning, VM, conteneurs&#8230;&#8203;)
+on a répliqué la même conf partout.
+Du coup, ils&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;ont tous leur propre cache mémoire,
+et si j&#8217;arrive avec l&#8217;identifiant de session&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-scalable-shared-memory-09.svg" alt="schema scalable shared memory 09">
+</div>
+<div class="title">Figure 7. Un load balancer peut tomber sur le serveur qui connait la session</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;42 sur le serveur qui a les infos dans son cache mémoire,
+tout va bien.
+Maintenant imaginez que le load balancer&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-scalable-shared-memory-10.svg" alt="schema scalable shared memory 10">
+</div>
+<div class="title">Figure 8. Un load balancer peut tomber sur un serveur qui ne connait pas la session</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;me redirige sur un noeud qui n&#8217;a pas les infos de la session 42,
+je suis mal barré.
+La solution facile et naïve, c&#8217;est de ne&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;plus avoir de cache mémoire sur chaque serveur.
+A la place, on met un&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>cache partagé "as a service",
+il connait&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-scalable-shared-memory-11c.svg" alt="schema scalable shared memory 11c">
+</div>
+<div class="title">Figure 9. Un cache partagé par tous les noeuds du cluster connait la session 42</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;la session 42,
+mais ils connait aussi toutes les autres,
+du coup, il peut donc répondre à&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-scalable-shared-memory-11d.svg" alt="schema scalable shared memory 11d">
+</div>
+<div class="title">Figure 10. Un cache partagé par tous les noeuds du cluster connait toutes les sessions</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;toutes les instances du cluster.
+En faisant ça, on a décalé le problème d&#8217;une couche et on a&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>SPOF Alert</p>
+</div>
+<div class="paragraph">
+<p>Si le cache partagé tombe,</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-scalable-shared-memory-11f.svg" alt="schema scalable shared memory 11f">
+</div>
+<div class="title">Figure 11. La mise en place d&#8217;un cache partagé par tous les noeuds du cluster est un Single Point Of Failure</div>
+</div>
+<div class="paragraph">
+<p>on est cuit.
+Non la solution, c&#8217;est plutôt de&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;laisser un cache mémoire sur chaque instance,</p>
+</div>
+<div class="paragraph">
+<p>et d&#8217;avoir de la réplication,
+un cache distribué genre memcached, ehcache et compagnie.
+Du coup,</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-scalable-shared-memory-12c.svg" alt="schema scalable shared memory 12c">
+</div>
+<div class="title">Figure 12. Un cache distribué réparti les sessions partout et résiste aux noeuds qui tombent</div>
+</div>
+<div class="paragraph">
+<p>peut importe le noeud choisi par le load balancer pour traiter une requête,
+chaque instance à les infos de toutes les sessions.
+Si une instance&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;tombe, no soucy, le load balancer gère.
+Côté dev, les techniques et les outils sont là.
+Par contre, en fonction de votre contexte,
+la difficulté peut se situer côté ops.
+Niveau réseau, toutes les instances doivent se voir,
+il faut ouvrir plus de ports et ça discute dans tous les sens.
+{&#8230;&#8203;}</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;autre technique, c&#8217;est de donner un peu d&#8217;intelligence au load balancer en utilisant des&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;sticky sessions.</p>
+</div>
+<div class="paragraph">
+<p>Quand une requête arrive,
+le load balancer lit le cookie : "identifiant de session 36 !"</p>
+</div>
+<div class="paragraph">
+<p>"C&#8217;est par ici Monsieur !"</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-scalable-shared-memory-15a.svg" alt="schema scalable shared memory 15a">
+</div>
+<div class="title">Figure 13. Grâce aux sticky sessions, le load balancer sait où rediriger</div>
+</div>
+<div class="paragraph">
+<p>"Identifiant 42, c&#8217;est par là".
+Par contre, si le noeud&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;tombe,
+une partie des sessions utilisateurs sont perdues,
+mais le site est toujours disponible.
+Après, rien ne vous empêche de mettre de mettre en place et de maintenir des sticky sessions avec un&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-scalable-shared-memory-16.svg" alt="schema scalable shared memory 16">
+</div>
+<div class="title">Figure 14. Rien empêche de cumuler des sticky sessions avec un cache distribué</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;cache distribué en plus, en mode ceinture/airbag.
+Tout va dépendre de votre budget.
+{&#8230;&#8203;}
+Le choix de l&#8217;architecture et la difficulté de mise en place vont forcément dépendre de votre contexte, de votre stack, de vos devs, de vos ops, etc&#8230;&#8203;
+mais je ne peux pas m&#8217;empêcher de me dire que ça serait plus simple si l&#8217;état de la session était complètement géré&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;côté client.
+Le seul truc qui manque, c&#8217;est un moyen pour le serveur de faire confiance au navigateur pour qu&#8217;il ne puisse pas tricher.
+Quand la navigateur de John envoie un cookie qui dit "Je suis John et je suis Admin",
+le serveur doit trouver un moyen pour lui faire confiance.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est là que l&#8217;IETF nous propose la RFC 7519 :</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_json_web_token">JSON Web Token</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Les JSON Web Token !
+Alors d&#8217;abord, il y a deux points importants :
+Primo : Ça n&#8217;a strictement rien à voir avec GWT !!!
+Deuxio : Ce sont les mêmes initiales que Jo Wilfried Tsonga {&#8230;&#8203;} coincidence ??
+Mais alors qu&#8217;est ce qu&#8217;un JWT ?
+Si vous lisez quelques articles,
+vous allez peut-être tomber sur :</p>
+</div>
+<div class="paragraph">
+<p>"Cookies ou JWT : coment choisir ?"
+Il faut rester subtil sur les définitions !!
+Comparer des cookies à des JWT n&#8217;a&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-cookie-vs-jwt-2.svg" alt="schema cookie vs jwt 2">
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;aucun sens.
+Un cookie n&#8217;est qu&#8217;un moyen de transport.
+Ce sont les&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-cookie-vs-jwt-3.svg" alt="schema cookie vs jwt 3">
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;identifiant de session qu&#8217;il faut comparer au JWT,
+par ce que comme son nom l&#8217;indique, un JWT c&#8217;est avant tout un&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;token.
+Et il y a&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;plusieurs sortes de tokens.
+Par référence et valeur.</p>
+</div>
+<div class="paragraph">
+<p>Les identifiants de session sont bien des tokens par référence,
+Comme pour une carte bleue,
+j&#8217;ai besoin d&#8217;un tiers pour savoir ce qu&#8217;il y a derrière.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-value-vs-reference-04.svg" alt="schema value vs reference 04">
+</div>
+<div class="title">Figure 15. Deux types de tokens : par référence et par valeur</div>
+</div>
+<div class="paragraph">
+<p>Les JWT sont des tokens par valeur,
+Je n&#8217;ai pas besoin de tiers pour savoir qu&#8217;il s&#8217;agit d&#8217;un billet de 100 euros,
+il faut juste que je sache reconnaitre s&#8217;il a bien été émis par l&#8217;imprimerie nationale ou s&#8217;il s&#8217;agit d&#8217;une contrefaçon.
+Si je reprends mon&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;exemple de tout à l&#8217;heure,
+mon serveur n&#8217;a plus besoin de cache mémoire,
+il a simplement besoin&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;de générer un JWT qui dit qu&#8217;il s&#8217;agit de John,
+et de calculer la signature à l&#8217;aide d&#8217;un secret partagé.
+Il ne reste plus qu&#8217;à&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;envoyer le JWT au navigateur dans un cookie.</p>
+</div>
+<div class="paragraph">
+<p>A la prochaine visite, le navigateur renvoie le cookie avec le JWT,</p>
+</div>
+<div class="paragraph">
+<p>le serveur va pouvoir vérifier la signature et lire les informations,
+"Ah, oui, c&#8217;est bien John !"</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-jwt-06.svg" alt="schema jwt 06">
+</div>
+<div class="title">Figure 16. Utilisation d&#8217;un JWT à la place d&#8217;un identifiant de session</div>
+</div>
+<div class="paragraph">
+<p>"Tiens navigateur, voici une page Web contextualisée pour John!"
+Le tout a été fait sans avoir besoin d&#8217;un tiers,
+du coup : pas besoin de cache mémoire.
+{&#8230;&#8203;}
+Alors, à quoi il ressemble ce token ?
+Et bien ça ressemble à&#8230;&#8203;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19.fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;ça.
+Bon, je sais pas vous mais moi j&#8217;ai pas fait base64URL en LV3,
+du coup, je vous propose une petite explication !
+Un JWT est composé de&#8230;&#8203;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;span class="jwt-header"&gt;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9&lt;/span&gt;&lt;span class="code-hl"&gt;.&lt;/span&gt;&lt;span class="jwt-payload"&gt;eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19&lt;/span&gt;&lt;span class="code-hl"&gt;.&lt;/span&gt;&lt;span class="jwt-signature"&gt;fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;3 parties séparées par des points.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; encodedHeader
+&lt;span class="jwt-header"&gt;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9&lt;/span&gt;
+
+&gt; encodedPayload
+&lt;span class="jwt-payload"&gt;eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19&lt;/span&gt;
+
+&gt; signature
+&lt;span class="jwt-signature"&gt;fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Un header, un payload et une signature.
+Le header et le payload sont encodé en base64URL.
+C&#8217;est un peu comme base64 mais avec quelques différences pour être "URL safe".
+J&#8217;ai bien dit encodé et pas chiffré.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; &lt;span class="code-hl"&gt;base64URLdecode(&lt;/span&gt;encodedHeader&lt;span class="code-hl"&gt;)&lt;/span&gt;;
+&lt;span class="jwt-header"&gt;'{"alg":"HS256","typ":"JWT"}'&lt;/span&gt;
+
+&gt; &lt;span class="code-hl"&gt;base64URLdecode(&lt;/span&gt;encodedPayload&lt;span class="code-hl"&gt;)&lt;/span&gt;;
+&lt;span class="jwt-payload"&gt;'{"iss":"auth-backend","sub":"hsablonniere","aud":"web-frontend","exp":1458638618,"nbf":null,"iat":1458635018,"jti":"85a3cb4c-5720-4dba-ae94-931d60937c47","name":"Hubert SABLONNIÈRE","permissions":["EDITOR","REVIEWER"]}'&lt;/span&gt;
+
+&gt; signature
+&lt;span class="jwt-signature"&gt;fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>N&#8217;importe qui peut lire ce qu&#8217;il y a dans un JWT.
+Il suffit d&#8217;appliquer une fonction qui décode le base64URL sur le header et le payload.
+Hum ça ressemble à du JSON tout ça,
+j&#8217;ai plus qu&#8217;à&#8230;&#8203;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; &lt;span class="code-hl"&gt;parseJSON(&lt;/span&gt; base64URLdecode(encodedHeader) &lt;span class="code-hl"&gt;)&lt;/span&gt;;
+&lt;span class="jwt-header"&gt;{
+"alg": "HS256",
+"typ": "JWT"
+}&lt;/span&gt;
+
+&gt; &lt;span class="code-hl"&gt;parseJSON(&lt;/span&gt; base64URLdecode(encodedPayload) &lt;span class="code-hl"&gt;)&lt;/span&gt;;
+&lt;span class="jwt-payload"&gt;{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;parser tout ça pour obtenir des objets que je peux lire et manipuler avec mon langage préféré.
+Si on regarde d&#8217;un peu plus près le payload&#8230;&#8203;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; &lt;span class="code-hl"&gt;parseJSON(&lt;/span&gt; base64URLdecode(encodedPayload) &lt;span class="code-hl"&gt;)&lt;/span&gt;;
+&lt;span class="jwt-payload"&gt;{
+
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;il contient pas mal d&#8217;information intéressantes.
+On appelle ça des claims.
+Il y a les claims réservé qui sont definis par la spec et les claims privés en mode c&#8217;est la fête.
+Premier claim public :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; &lt;span class="code-hl"&gt;parseJSON(&lt;/span&gt; base64URLdecode(encodedPayload) &lt;span class="code-hl"&gt;)&lt;/span&gt;;
+&lt;span class="jwt-payload"&gt;{
+&lt;span class="code-hlnow"&gt;// Issuer&lt;/span&gt;
+&lt;span class="code-hlnow"&gt;"iss": "auth-backend"&lt;/span&gt;,
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>"Issuer" décrit celui qui a généré le token.
+Ici, il s&#8217;agit de mon backend d&#8217;authentification.
+Vous mettez n&#8217;importe quelle chaine de caractère, c&#8217;est votre truc à vous.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; &lt;span class="code-hl"&gt;parseJSON(&lt;/span&gt; base64URLdecode(encodedPayload) &lt;span class="code-hl"&gt;)&lt;/span&gt;;
+&lt;span class="jwt-payload"&gt;{
+"iss": "auth-backend",
+&lt;span class="code-hlnow"&gt;// Subject&lt;/span&gt;
+&lt;span class="code-hlnow"&gt;"sub": "hsablonniere"&lt;/span&gt;,
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>"Subject" décrit le sujet du token.
+La plupart des claims concerne directement le sujet.
+On y met un identifiant métier : login, email, etc&#8230;&#8203;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; &lt;span class="code-hl"&gt;parseJSON(&lt;/span&gt; base64URLdecode(encodedPayload) &lt;span class="code-hl"&gt;)&lt;/span&gt;;
+&lt;span class="jwt-payload"&gt;{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+&lt;span class="code-hlnow"&gt;// Audience&lt;/span&gt;
+&lt;span class="code-hlnow"&gt;"aud": "web-frontend"&lt;/span&gt;,
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>"Audience" décrit le destinataire pour lequel le token a été généré.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; &lt;span class="code-hl"&gt;parseJSON(&lt;/span&gt; base64URLdecode(encodedPayload) &lt;span class="code-hl"&gt;)&lt;/span&gt;;
+&lt;span class="jwt-payload"&gt;{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+&lt;span class="code-hlnow"&gt;// Expiration Time&lt;/span&gt;
+&lt;span class="code-hlnow"&gt;"exp": 1458638618&lt;/span&gt;,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>"Expiration time" décrit la date/heure à laquelle le token ne sera plus accepté par le système.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; &lt;span class="code-hl"&gt;parseJSON(&lt;/span&gt; base64URLdecode(encodedPayload) &lt;span class="code-hl"&gt;)&lt;/span&gt;;
+&lt;span class="jwt-payload"&gt;{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+&lt;span class="code-hlnow"&gt;// Not Before&lt;/span&gt;
+&lt;span class="code-hlnow"&gt;"nbf": null&lt;/span&gt;,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>"Not Before" décrit la date/heure avant laquelle le token ne peut pas être accepté.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; &lt;span class="code-hl"&gt;parseJSON(&lt;/span&gt; base64URLdecode(encodedPayload) &lt;span class="code-hl"&gt;)&lt;/span&gt;;
+&lt;span class="jwt-payload"&gt;{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+&lt;span class="code-hlnow"&gt;// Issued At&lt;/span&gt;
+&lt;span class="code-hlnow"&gt;"iat": 1458635018&lt;/span&gt;,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>"Issued At" décrit la date/heure à laquelle le token a été généré.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; &lt;span class="code-hl"&gt;parseJSON(&lt;/span&gt; base64URLdecode(encodedPayload) &lt;span class="code-hl"&gt;)&lt;/span&gt;;
+&lt;span class="jwt-payload"&gt;{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+&lt;span class="code-hlnow"&gt;// JWT ID&lt;/span&gt;
+&lt;span class="code-hlnow"&gt;"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47"&lt;/span&gt;,
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>"JWT ID" décrit un identifiant pour le token.
+Il doit être absolument unique parmis l&#8217;ensemble des tokens générés par l&#8217;application.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; &lt;span class="code-hl"&gt;parseJSON(&lt;/span&gt; base64URLdecode(encodedPayload) &lt;span class="code-hl"&gt;)&lt;/span&gt;;
+&lt;span class="jwt-payload"&gt;{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+&lt;span class="code-hlnow"&gt;// Private claims&lt;/span&gt;
+&lt;span class="code-hlnow"&gt;"name": "Hubert SABLONNIÈRE"&lt;/span&gt;,
+&lt;span class="code-hlnow"&gt;"permissions": ["EDITOR", "REVIEWER"]&lt;/span&gt;
+}&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Enfin, on retrouve les private claims.
+En fonction des besoins de mon application,
+je vais pouvoir placer différentes informations sur mon utilisateur connecté.
+Ici, le prénom et les permissions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; &lt;span class="code-hl"&gt;parseJSON(&lt;/span&gt; base64URLdecode(encodedPayload) &lt;span class="code-hl"&gt;)&lt;/span&gt;;
+&lt;span class="jwt-payload"&gt;{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>OK, du coup, comment le serveur va pouvoir faire confiance à ce truc là ?
+C&#8217;est le navigateur qui dit, je suis Hubert, j&#8217;ai telles permissions&#8230;&#8203;
+mais souvenez vous,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; parseJSON( base64URLdecode(encodedHeader) );
+&lt;span class="jwt-header"&gt;{ &lt;span class="code-hl"&gt;"alg": "HS256"&lt;/span&gt;, "typ": "JWT" }&lt;/span&gt;
+
+&gt; parseJSON( base64URLdecode(encodedPayload) );
+&lt;span class="jwt-payload"&gt;{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}&lt;/span&gt;
+
+&gt; signature
+&lt;span class="jwt-signature"&gt;fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>il y a 3 parties,
+on a aussi le header et la signature
+et dans le header,
+on retrouve le nom de l&#8217;algorithme qui a servi à calculer la signature.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; parseJSON( base64URLdecode(encodedPayload) );
+&lt;span class="jwt-payload"&gt;{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}&lt;/span&gt;
+
+&gt; signature
+&lt;span class="jwt-signature"&gt;fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo&lt;/span&gt;
+
+&gt; &lt;span class="code-hl"&gt;hmacSha256(&lt;/span&gt;encodedHeader + '.' + encodedPayload, 's3cr3t'&lt;span class="code-hl"&gt;)&lt;/span&gt;;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Du coup, on applique la fonction hmacSha256 sur une concatenation du header et du payload,
+dans leur forme encodé en base64URL
+avec un point au milieu.
+Pour appliquer la fonction, il faut un secret partagé.
+C&#8217;est ce qui garanti que seul les détenteurs du secret partagé pourront signer et vérifier des tokens.
+Je calcule&#8230;&#8203;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; parseJSON( base64URLdecode(encodedPayload) );
+&lt;span class="jwt-payload"&gt;{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}&lt;/span&gt;
+
+&gt; signature
+&lt;span class="jwt-signature"&gt;fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo&lt;/span&gt;
+
+&gt; hmacSha256(encodedHeader + '.' + encodedPayload, &lt;span class="code-hl"&gt;'s3cr3t'&lt;/span&gt;);
+&lt;span class="jwt-signature"&gt;fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;et je tombe sur la même chose, parfait !
+Le serveur peux faire confiance à ce que dit le client.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; parseJSON( base64URLdecode(encodedPayload) );
+&lt;span class="jwt-payload" data-code-id="jwt-body"&gt;{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}&lt;/span&gt;
+
+&gt; signature
+&lt;span class="jwt-signature"&gt;fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo&lt;/span&gt;
+
+&gt; hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
+&lt;span class="jwt-signature" data-code-id="jwt-signature"&gt;fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Par contre, si le client comment à faire le malin genre,
+salut en fait je suis trop un admin et ce token expire dans très longtemps.
+Le serveur ne fera pas confiance à ces données car la signature n&#8217;est pas la même.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_avantages_des_jwt">Avantages des JWT ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Quels sont les avantages des JWT ?</p>
+</div>
+<div class="sect2">
+<h3 id="__1_load_balancing_facile">#1 Load balancing facile</h3>
+<div class="paragraph">
+<p>Premier avantage, niveau load balancing,
+c&#8217;est presque trop facile.</p>
+</div>
+<div class="paragraph">
+<p>Pas de sticky session,
+pas de cache distribué,
+ni même de cache tout court.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-jwt-scalable-02.svg" alt="schema jwt scalable 02">
+</div>
+<div class="title">Figure 17. Le load balancing est très simple à mettre en place quand il n&#8217;y a pas de session côté serveur</div>
+</div>
+<div class="paragraph">
+<p>On a juste besoin d&#8217;un secret partagé et de calculer une signature.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__2_multi_langage">#2 Multi-langage</h3>
+<div class="paragraph">
+<p>Deuxième avantage,
+c&#8217;est un standard.
+Il y a des implémentations dans&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-jwt-languages.svg" alt="schema jwt languages">
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;tous les langages.
+que vous soyez dans un navigateur,
+sur iOS, Android et quelle que soit votre stack côté serveur,
+il y a une implémentation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__3_architecture_microservices">#3 Architecture microservices</h3>
+<div class="paragraph">
+<p>3ème avantage : les architectures micro-services.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-jwt-scalable-microservices-01.svg" alt="schema jwt scalable microservices 01">
+</div>
+<div class="title">Figure 18. Architecture monolithique</div>
+</div>
+<div class="paragraph">
+<p>Si on reprend un exemple avec un cluster de deux noeuds,
+c&#8217;est</p>
+</div>
+<div class="paragraph">
+<p>Micro services</p>
+</div>
+<div class="paragraph">
+<p>Micro services</p>
+</div>
+<div class="paragraph">
+<p>Micro services</p>
+</div>
+<div class="paragraph">
+<p>Micro services</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-jwt-scalable-microservices-06.svg" alt="schema jwt scalable microservices 06">
+</div>
+<div class="title">Figure 19. Architecture micro-services</div>
+</div>
+<div class="paragraph">
+<p>Micro services</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/microservices-and-shared-db.png" alt="microservices and shared db">
+</div>
+</div>
+<div class="paragraph">
+<p>Grâce au JSON Web Token,
+l&#8217;ensemble des microservices de mon architecture sont autonomes pour accetper ou non une requêtes.</p>
+</div>
+<div class="paragraph">
+<p>Par contre depuis le début, je partage un secret.
+Quand je réplique le même service sur un cluster,
+ça ne me choque pas tant que ça.
+Par contre partager un secret sur plein de projets qui ont des cycles de vie différents,
+c&#8217;est un peu plus chaud.
+On va vite finir avec un secret qui n&#8217;est plus secret.</p>
+</div>
+<div class="paragraph">
+<p>Si on regarde de plus près comment sont calculée les signatures.
+On a la solution.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-signatures-03.svg" alt="schema signatures 03">
+</div>
+<div class="title">Figure 20. Deux types de signatures : symétrique et asymétrique</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; decodedHeader
+&lt;span class="jwt-header"&gt;{
+&lt;span class="code-hl"&gt;"alg": "RS256"&lt;/span&gt;,
+"typ": "JWT"
+}&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-jwt-asym.svg" alt="schema jwt asym">
+</div>
+<div class="title">Figure 21. Une seule brique de l&#8217;architecture peut signer avec la clé privée et toutes les autres peuvent vérifier avec la clé publique.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-jwt-asym-keys.svg" alt="schema jwt asym keys">
+</div>
+</div>
+<div class="paragraph">
+<p>Micro services</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_oauth2">oAuth2?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Schéma d&#8217;architecture
+JWT en tant que Bearer token (à la place d&#8217;un opaque)
+Bearer token devient un token par référence
+pertinence de le faire que dans le SI</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-oauth-token.svg" alt="schema oauth token">
+</div>
+<div class="title">Figure 22. Utilisation de tokens oAuth2 par valeur</div>
+</div>
+<div class="paragraph">
+<p>Check access_token
+Check refresh_token
+stateless</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_open_id_connect">Open-ID Connect</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ID token
+est un JWT</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_inconvénients_des_jwt">Inconvénients des JWT ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>revokation
+Verre à moitié plein &#8658; verre à moitié vide
+whitelist vs blacklist
+optimisme du nombre de fois ou il faut expirer des session
+&#8658; short lived c&#8217;est mieux</p>
+</div>
+<div class="sect2">
+<h3 id="_révocation_de_tokens">Révocation de tokens</h3>
+<div class="paragraph">
+<p>Expiration != revokation
+Black list vs white list
+Verre à moitié plein &#8658; verre à moitié vide
+whitelist vs blacklist
+optimisme du nombre de fois ou il faut expirer des session
+&#8658; short lived c&#8217;est mieux
+expiration</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-jwt-blacklist-1.svg" alt="schema jwt blacklist 1">
+</div>
+<div class="title">Figure 23. Révocation de token à base de blacklist en BDD</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-jwt-blacklist-2.svg" alt="schema jwt blacklist 2">
+</div>
+<div class="title">Figure 24. L&#8217;introduction d&#8217;une forme de stockage pour blacklister les JWT révoqués repose les mêmes problèmes ?</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sécurité_des_single_page_applications">Sécurité des Single Page Applications</h3>
+<div class="sect3">
+<h4 id="_attaques_xss">Attaques XSS</h4>
+<div class="paragraph">
+<p>Utiliser un cookie secure et HTTP only &#8658; XSS
+Ajouter un XSRF token dans le payload et qui est stoké aussi à part</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/xss-twitter.jpg" alt="xss twitter">
+</div>
+<div class="title">Figure 25. Tentative d&#8217;attaque XSS sur Twitter</div>
+</div>
+<div class="paragraph">
+<p>explication de l&#8217;attaque XSS
+Script tiers
+Commentaires clients</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Injections</strong> de contenus utilisateurs</p>
+</li>
+<li>
+<p><strong>Scripts</strong> partenaires</p>
+</li>
+<li>
+<p>WIFIs publics (HTTP <strong>pas S</strong>)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># Single Page App / App Mobile / Serveur tiers
+
+200 OK
+Set-Cookie: jwt=&lt;span class="jwt-header"&gt;H34DER&lt;/span&gt;.&lt;span class="jwt-payload"&gt;P4YL04D&lt;/span&gt;.&lt;span class="jwt-signature"&gt;S1GN47URE&lt;/span&gt;;
+Path=/;
+Domain=api.myapp.com;
+&lt;span class="code-hl"&gt;Secure;&lt;/span&gt;
+&lt;span class="code-hl"&gt;HTTPOnly&lt;/span&gt;</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># App Mobile / Serveur tiers
+
+200 OK
+Authorization: Bearer &lt;span class="jwt-header"&gt;H34DER&lt;/span&gt;.&lt;span class="jwt-payload"&gt;P4YL04D&lt;/span&gt;.&lt;span class="jwt-signature"&gt;S1GN47URE&lt;/span&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_attaques_csrf">Attaques CSRF</h4>
+<div class="paragraph">
+<p>Utiliser un cookie secure et HTTP only &#8658; XSS
+Ajouter un XSRF token dans le payload et qui est stoké aussi à part</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;!-- http://malicious.com --&gt;
+
+&lt;form action="https://twitter.com/i/tweet/create"
+method="POST"&gt;
+
+&lt;input type="hidden" name="status"
+value="J'adore l'épisode I de Star Wars"&gt;
+&lt;/form&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;!-- https://twitter.com --&gt;
+
+&lt;form action="https://twitter.com/i/tweet/create"
+method="POST"&gt;
+
+&lt;input type="text" name="status"
+value="Non je déconne"&gt;
+&lt;input type="hidden" name="&lt;span class="code-hl"&gt;authenticity_token&lt;/span&gt;"
+value="125d260e57fd924fc363534713e4bc43b774"&gt;
+&lt;/form&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Synchronizer Token Pattern
+attention au content-type</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-csrf-paper.svg" alt="schema csrf paper">
+</div>
+<div class="title">Figure 26. Synchronizer token pattern sur Twitter</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="media/schema-csrf-jwt-paper.svg" alt="schema csrf jwt paper">
+</div>
+<div class="title">Figure 27. Synchronizer token pattern avec une SPA et JWT</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_autres_usages_des_jwt">Autres usages des JWT</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_formulaires_en_plusieurs_parties">Formulaires en plusieurs parties</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_email_de_confirmation">Email de confirmation</h3>
+<div class="paragraph">
+<p>Voilà, j&#8217;espère que vous avez une meilleure idée de ce que sont les JSON Web Token,
+de comment ils fonctionnent et dans quelle contexte ils sont utiles.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Stateless is priceless
+</blockquote>
+<div class="attribution">
+&#8212; Thomas Recloux & Jérémy Sevellec
+</div>
+</div>
+<div class="paragraph">
+<p>De manière générale, vous gagnerez toujours en simplicité avec des architectures stateless.
+Sauvons les Lemmings&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<div class="title">title.zoom Merci <strong>;-)</strong></div>
+<p>Merci bcp.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stormpath.com/blog" class="bare">https://stormpath.com/blog</a></p>
+</li>
+<li>
+<p><a href="https://auth0.com/blog" class="bare">https://auth0.com/blog</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org" class="bare">https://owasp.org</a></p>
+</li>
+<li>
+<p><a href="https://jwt.io" class="bare">https://jwt.io</a></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_aller_plus_loin">Aller plus loin</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+</div>
+</div>
+</body>
+</html>
