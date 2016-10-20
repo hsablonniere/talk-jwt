@@ -13,11 +13,17 @@ Si vous avez assisté à ma présentation *100% Stateless avec JWT (JSON Web Tok
 au http://lanyrd.com/2016/breizhcamp/sfbbxd/[BreizhCamp^],
 à http://lanyrd.com/2016/devoxx-france/sfbbxp/[Devoxx^]
 ou à http://lanyrd.com/2016/mixit16/sfbbxq/[Mix-IT^]
-et que vous cherchez mes slides, vous êtes au bon endroit.
-J'ai toujours pensé que voir ou revoir mon support de présentation sans les explications n'a que très peu d'interêt c'est pourquoi, je vous propose cet "article compagnon".
-Vous y retrouverez l'arc narratif, les explications, les exemples, les schémas et les images de la présentation dans une forme plus propice à la lecture à posteriori.
+et que vous cherchez mes slides, vous êtes au bon endroit{nbsp}!
 
+J'ai toujours pensé que voir ou revoir un support de présentation sans les explications n'a que très peu d'interêt c'est pourquoi, je vous propose cet "article compagnon".
+Il s'agit d'une expérimentation créée dans le but de proposer le même récit mais sous une forme plus propice à la lecture à posteriori.
+Vous y retrouverez l'arc narratif, les explications, les exemples, les schémas interactifs et les images de la présentation.
+
+Il m'a fallu beaucoup (trop) de temps pour réaliser cette page Web.
+Le résultat est probablement trop riche et trop long à lire mais je pense sincèrement que la problématique de partage de supports de présentation méritent plus d'expérimentations.
 J'espère que vous apprécierez cette version.
+N'hésitez pas à me faire des retours constructifs.
+
 Bonne lecture{nbsp}!
 
 == Il était une fois, les cookies HTTP...
@@ -29,9 +35,9 @@ Une bête de course pour l'époque{nbsp}!
 .Mon{nbsp}premier{nbsp}ordinateur{nbsp}: Compaq{nbsp}Presario{nbsp}CDS{nbsp}520
 [.image-line]
 --
-image::compaq-1-article.jpg[Compaq Presario CDS 520]
-image::compaq-2-article.jpg[Compaq Presario CDS 520]
-image::compaq-4-article.jpg[Compaq Presario CDS 520]
+image::compaq-1-article.jpg[Compaq Presario CDS 520 1]
+image::compaq-2-article.jpg[Compaq Presario CDS 520 2]
+image::compaq-4-article.jpg[Compaq Presario CDS 520 3]
 --
 
 Quand mon père l'a ramené à la maison, on était fou de joie.
@@ -44,9 +50,10 @@ video::yRMqXWI1Oh8[youtube, start=40]
 
 Le principe est simple.
 Il y a des petits bonshommes qui rentrent dans le monde par la trappe et il faut les aider à sortir par la grande porte.
-Le problème c'est qu'ils sont très très cons et il faut parfois les empêcher de mourir.
+Le problème c'est qu'ils sont très très cons.
+Ils avancent sans se poser de question et il faut parfois les empêcher de mourir.
 Pour cela, on doit les faire creuser, piocher, grimper, construire des escaliers...
-À la fin, si on en a sauvé assez, le niveau est validé et on obtient un code.
+À la fin, si on en a sauvé assez, le niveau est validé et on obtient un code pour le niveau suivant.
 
 .Le système de code des Lemmings
 [.image-line]
@@ -55,7 +62,7 @@ image::lemmings-code-info-43.jpg[Code à la fin d'un niveau]
 image::lemmings-code-input.png[Saisi d'un code]
 --
 
-Ce système constitue la parade ultime au désormais classique _"Hubert, tu viens manger{nbsp}?"_ :
+Ce système constitue la parade ultime au désormais classique _"Hubert, tu viens manger{nbsp}?"_{nbsp}:
 
 * Pas d'hésitation pour éteindre le jeu et l'ordinateur.
 * Pas besoin de se retaper les 17 niveaux le lendemain.
@@ -69,8 +76,8 @@ image::netscape-sharp.png[Netscape logo, 150, 150, align="center"]
 Pendant ce temps là, chez Netscape, Lou Montulli invente pour notre plus grand plaisir la balise HTML +++<code class="blink">&lt;blink></code>+++{nbsp}!
 Mais Lou a aussi de très bonnes idées.
 En juin 1994, Netscape travaille pour un client qui développe une solution de panier virtuel pour du e-commerce.
-A l'époque, pour gérer ça, on était obligé de stocker l'état dans l'URL.
-Cela résumait à peu près l'expérience d'achat à celle d'un distributeur de canettes :
+A l'époque, pour gérer cela, on était obligé de stocker l'état dans l'URL.
+Cela résumait à peu près l'expérience d'achat à celle d'un distributeur de canettes{nbsp}:
 un seul produit à la fois.
 
 [quote, Lou Montulli (netscape)]
@@ -79,25 +86,25 @@ image::loumontulli.jpg[Lou Montulli]
 The <blink> tag is the worst thing I've ever done for the Internet.
 ____
 
-
-
 C'est dans ce contexte que Lou propose d'appliquer le concept existant de magic-cookies sur le Web et c'est ainsi que les cookies HTTP voient le jour.
 Lou travaille sur une spécification avec John Giannandrea et le support arrive dans Netscape assez rapidement.
 Le premier usage officiel était de savoir si un visiteur de netscape.com est déjà venu sur le site.
+
+== Les cookies HTTP, comment ça marche ?
 
 Le fonctionnement des cookies n'a pas beaucoup changé depuis 1994.
 Prenons l'exemple d'un utilisateur qui se connecte sur un site avec son navigateur.
 
 1. Le *navigateur* envoie au *serveur* l'identifiant et le mot de passe dans une requête `POST`.
 2. Le *serveur* demande à la *base de données* si l'utilisateur existe.
-3. La *base de données* répond : _"Oui John existe, voici le mot de passe haché et salé."_.
+3. La *base de données* répond{nbsp}: _"Oui John existe, voici le mot de passe haché et salé"_.
 +
 Le *serveur* passe sa moulinette sécurisée (bcrypt, pbkdf2 ou autre) pour valider le mot de passe.
 4. Si tout va bien, le *serveur* peut enfin envoyer la réponse. Cette réponse contient notamment un cookie. C'est un couple clé/valeur, par exemple `name=John`.
 +
 Le *navigateur* enregistre ce cookie pour les prochaines visites.
-5. Quand l'utilisateur revient sur le site, le *navigateur* envoiee automatiquement au *serveur* les cookies enregistrés pour le site en question.
-6. Le *serveur* lit les informations présentes dans les cookies et envoie une page contextualisée à l'utilisateur qui contient par exemple : _"Bonjour John"_.
+5. Quand l'utilisateur revient sur le site, le *navigateur* envoie automatiquement au *serveur* les cookies enregistrés pour le site en question.
+6. Le *serveur* lit les informations présentes dans les cookies et envoie une page contextualisée à l'utilisateur qui contient par exemple{nbsp}: _"Bonjour John"_.
 
 .Fonctionnement de base des cookies
 [.image-line.full.interactive]
@@ -106,30 +113,31 @@ image::schema-cookies-basic-paper.svg[Fonctionnement de base des cookies, opts="
 --
 
 Ce système me rapelle étrangement le système de codes des Lemmings sauf qu'à l'époque, du haut de mes 8 ans, c'est moi qui faisait le navigateur{nbsp}!
-J'avais mon propre framework maison : le bloc-notes.
+J'avais mon propre framework maison{nbsp}: le bloc-notes.
 
-.blocNote.js : mon "framework" de cookies en 1994
-[.image-line.full]
+.Mon "framework" de cookies en 1994{nbsp}: *`blocnote.js`*
+[.image-line]
 --
 image::lemmings-code-notebook.jpg[Mon "framework" de cookies en 1994]
 --
 
 La force de ce système, c'est qu'on ne pouvait pas tricher.
 C'était impossible de deviner le code du niveau suivant.
-Ça serait trop facile.
+Cela serait trop facile.
 
-Alors que là, le navigateur peux très bien se faire passer pour Paul alors qu'il est John.
+Alors que dans mon exemple, le navigateur peut très bien se faire passer pour Paul alors qu'il est John.
 
 .Le contenu d'un cookie peut être altéré par le navigateur
 [.image-line.full]
 --
-image::schema-cookies-basic-08.svg[Le contenu d'un cookie peut être altéré par le navigateur, opts="inline"]
+image::schema-cookies-basic-alter.svg[Le contenu d'un cookie peut être altéré par le navigateur, opts="inline"]
 --
 
+== Les identifiants de session
 
 Le serveur doit trouver un moyen pour faire confiance aux cookies qu'il reçoit du navigateur.
 C'est une des raisons pour laquelle on a introduit le concept d'identifiant de session.
-Si on reprend l'exemple précédent, il y a une petite différence après la validation du mot de passe :
+Si on reprend l'exemple précédent, il y a une petite différence après la validation du mot de passe (à partir de l'étape 4){nbsp}:
 
 1. Le *navigateur* envoie au *serveur* l'identifiant et le mot de passe dans une requête `POST`.
 2. Le *serveur* demande à la *base de données* si l'utilisateur existe.
@@ -141,9 +149,9 @@ Le *serveur* passe sa moulinette sécurisée (bcrypt, pbkdf2 ou autre) pour vali
 +
 Le *navigateur* enregistre ce cookie pour les prochaines visites.
 6. Quand l'utilisateur revient sur le site, le *navigateur* envoie automatiquement au *serveur* les cookies enregistrés pour le site en question.
-7. Le *serveur* lit les informations présentes dans les cookies et retrouve l'identifiant de session 42 mais pour savoir qui a demandé la page, il a besoin du *cache mémoire* pour transformer un identifiant opaque en informations sur l'utilisateur.
-8. Le *cache mémoire* répond : _"Il s'agit, de John. Voici les informations."_.
-9. Le *serveur* se sert de ces informations et envoie une page contextualisée à l'utilisateur qui contient par exemple : _"Bonjour John"_.
+7. Le *serveur* lit les informations présentes dans les cookies et retrouve l'identifiant de session 42 mais pour savoir qui a demandé la page, il a besoin du *cache mémoire*. Il pourra ainsi transformer un identifiant opaque en informations sur l'utilisateur.
+8. Le *cache mémoire* répond{nbsp}: _"Il s'agit, de John. Voici les informations"_.
+9. Le *serveur* se sert de ces informations et envoie une page contextualisée à l'utilisateur qui contient par exemple{nbsp}: _"Bonjour John"_.
 
 .Fonctionnement d'un identifiant de session échangé par cookie
 [.image-line.full.interactive]
@@ -151,8 +159,854 @@ Le *navigateur* enregistre ce cookie pour les prochaines visites.
 image::schema-cookies-session-paper.svg[Fonctionnement d'un identifiant de session échangé par cookie, opts="inline", items="browser | server | memory | db | browser-post | server-request-db | db-reply | server-set-memory | server-reply-with-cookie | browser-request-with-cookie | server-get-memory | memory-reply | server-reply-with-context", scenario= "(0) | (0-1);(4) | 0;(1);(3);4-(5) | 0;(1);(3);4-(6) | 0;(1-2);3;4-(7) | (0-1);2-3;4-(8) | (0-1);2-3;4-(9) | 0;(1-2);3;4-(10) | 0;(1-2);3;4-(11) | (0-1);2-3;4-(12) | (0-12)"]
 --
 
-Il y a plusieurs inconvénients à utiliser des identifiants de session.
+== Stateful is not beautiful!
 
-Si votre site a du succès,
-un seul serveur ne suffira pas,
-il risque de tomber.
+Ce système fonctionne plutôt bien lorsque vous n'avez qu'un seul serveur mais dans la vraie vie, c'est rarement aussi simple.
+Si vous voulez faire du _"blue-green deployement"_ ou tout simplement si vous voulez tenir la charge, vous finirez par avoir besoin d'un cluster de "haute-dispo".
+Dans ce genre d'architecture, on met en place un load balancer et on réplique le serveur *N* fois.
+Le nombre de nœuds dépendra des besoins et du budget.
+La configuration du serveur étant la même partout, chaque instance du cluster a son propre cache mémoire.
+
+Du coup, quand une requête arrive avec un identifiant de session (42 par exemple), le load balancer redirige la requête vers un des nœuds du cluster.
+S'il s'agit du serveur qui a les infos de la session 42 dans son cache mémoire, tout va bien.
+En revanche, s'il s'agit d'un serveur dont le cache mémoire n'a pas les infos, la requête échouera.
+
+.Le load balancer peut rediriger la requête vers un serveur qui ne connaît pas la session
+[.image-line.full.interactive]
+--
+image::schema-scalable-shared-memory-paper.svg[Le load balancer peut rediriger la requête vers un serveur qui ne connaît pas la session, opts="inline", items="browser | browser-to-server-4 | req-id42 | browser-to-lb | lb | one-server-label | server-4-id42 | server-4 | server-1 | server-2 | server-3 | server-5 | server-6 | server-7 | n-servers-label | server-5-id42 | lb-to-server-5 | req-id42-server-5 | lb-to-server-2 | req-id42-server-2 | server-2-id42", scenario="(0-2);(5-7) | (0);(4);(7-15) | (0);(4);7-15;(2-3) | (0);(4);7-10;(11);12-14;(15);2-3;(16-17) | (0);(4);7-15 | (0);(4);7-15;(2-3) | (0);(4);7-8;(9);10-15;2-3;(18-19) | (0);(4);7-8;(9);10-15;2-3;(18-20)"]
+--
+
+On constate alors que la gestion d'un *état côté serveur* avec un cluster "haute-dispo" apporte son lot de défis.
+Il va falloir trouver des solutions pour régler ces problèmes de synchronisation.
+
+== Un seul cache partagé
+
+L'idée facile et naïve pour résoudre ce problème est d'enlever le cache mémoire de chaque serveur.
+A la place, on ajoute un cache partagé _"as a service"_ dans l'architecture.
+Ce serveur de cache partagé connaît la session 42 ainsi que toutes les autres sessions.
+Il peut donc répondre à toutes les instances du cluster.
+
+En faisant cela, on a décalé le problème d'une couche et on a créé un bon gros *Single Point Of Failure*.
+Si le cache partagé tombe, c'est tout le site qui est indisponible.
+
+----
+40 - état du shéma précédent
+41-42 - ajout du cache partagé
+43 - flèche id42 vers cache
+44 - flèches partout
+46 - cache tombé
+47 - trollface
+----
+
+== Cache distribué
+
+Une des solutions efficaces dans ce genre de cas est de distribuer le cache.
+On garde un cache mémoire sur chaque instance et leur permet de se répliquer entre eux avec un *cache distribué*.
+// genre memcached, ehcache et compagnie.
+Ainsi, peut importe le nœud choisi par le load balancer pour traiter une requête, chaque instance a les infos de toutes les sessions.
+Si une instance tombe, cela ne pose pas de problème pour le load balancer.
+Il redirigera le traffic sur un des nœuds disponibles.
+
+Côté dev, il n'y a rien de bien nouveau.
+Les techniques, la littérature et les outils sont là.
+Par contre, en fonction de votre contexte, la difficulté peut se situer côté ops.
+Au niveau du réseau, toutes les instances doivent se voir.
+Il faut ouvrir des ports supplémentaires et cela discute dans tous les sens.
+// Pour un bon nombre d'équipes, cela ne posera pas de problème.
+J'ai recontré plusieurs clients et discuté avec certains collègues pour qui cette partie avait pris beaucoup plus de temps que nécessaire.
+
+----
+40 - état du shéma précédent
+49 - ajout du cache distribué (en plus)
+?? - (ajouter que la session 42 est partout)
+51 - serveur tombe
+?? - demande au serveur 5
+----
+
+== Sticky sessions
+
+L'autre solution, c'est de donner un peu d'intelligence au load balancer en utilisant des *sticky sessions*.
+Quand une requête arrive, le load balancer lit le cookie et fait la circulation.
+Il maintient une table d'association entre les identifiants de session et les serveurs pour rediriger à chaque fois sur le bon nœud{nbsp}:
+
+* _"Identifiant de session 36{nbsp}?"_
++
+_"Deuxième serveur Monsieur{nbsp}!"_
+* _"Identifiant de session 42{nbsp}?"_
++
+_"C'est par là Madame, cinquième serveur{nbsp}!"_
+
+Si jamais un nœud tombe, une partie des sessions utilisateurs sont perdues.
+Cependant, le site est toujours disponible.
+De nouvelles sessions pourront être créées et prises en charge.
+
+----
+53 - état du shéma avec 36 et 42
+53 - ajout des sticky session
+54 - req 36
+55 - req 36 => serveur 2
+56 - req 42
+56 - req 42 => serveur 5
+----
+
+Rien ne vous empêche de mettre de mettre en place et de maintenir des sticky sessions avec un cache distribué en même temps.
+Cela permet d'avoir une tolérance à la panne assez confortable en mode _"ceinture + airbag"_.
+Bien entendu, le choix de l'architecture et la difficulté de mise en place vont beaucoup dépendre de :
+
+* votre budget
+* votre stack
+* vos équipes de dev
+* vos équipes ops
+
+Néanmoins, quel que soit le contexte, je ne peux pas m'empêcher de penser que la gestion des sessions côté serveur apporte son lot de complexité.
+Pour simplifier l'architecture et devenir *100% Stateless*, il va falloir stocker et gérer l'état de la session côté client.
+
+.Pour une architecture *100% Stateless*, il faut quand même stocker et gérer une session côté client.
+[.image-line]
+--
+image::lemmings-code-notebook.jpg[Mon "framework" de cookies en 1994]
+--
+
+On retombe alors sur la problématique de confiance.
+Quand le navigateur de John envoie un cookie au serveur, il prétend être John et il prétend avoir le rôle ADMIN.
+Le serveur doit trouver un moyen pour lui faire confiance.
+
+== JSON Web Token
+
+Fin décembre 2010, plusieurs chercheurs dont des employés de Google et Microsoft proposent un brouillon de spec pour adresser ce problème.
+Il propose un format compact et _"URL-safe"_ pour représenter des _"claims"_ (prétentions) pouvant être échangées entre deux parties.
+
+[quote, RFC 7519]
+____
+JSON Web Token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties.
+____
+
+Ce brouillon a évolué pour enfin devenir un standard IETF en mai 2015 avec la publication de la https://tools.ietf.org/html/rfc7519[RFC 7519].
+
+Il y a deux points importants concernant les **J**SON **W**eb **T**oken{nbsp}:
+
+1. Cela n'a strictement rien à voir avec GWT{nbsp}!
+2. Le fait que **J**o **W**ilfried **T**songa ait les mêmes initiales n'est que pure coincidence.
+
+Si vous lisez quelques articles sur le sujet, vous allez peut-être tomber sur des titres du genre : _"Cookies ou JWT{nbsp}: coment choisir{nbsp}?"_.
+Il faut rester subtil sur les définitions.
+Comparer des cookies à des JWT n'a aucun sens.
+Un cookie n'est qu'un moyen de transport.
+Ce sont les identifiants de session qu'il faut comparer au JWT, parce que comme le nom l'indique, un JWT est avant tout un token.
+
+.Comparer JWT aux cookies HTTP n'a aucun sens. Il faut comparer JWT aux identifiants de session.
+[.image-line]
+--
+image::schema-cookie-vs-jwt-paper.svg[Comparer JWT aux cookies HTTP n'a aucun sens. Il faut comparer JWT aux identifiants de session., opts="inline"]
+--
+
+Il y a plusieurs sortes de tokens, les tokens par référence et les tokens par valeur.
+
+Les identifiants de session sont bien des tokens par référence.
+Comme pour une carte bleue, j'ai besoin d'un tiers pour savoir ce qu'il y a derrière.
+
+Les JWT sont des tokens par valeur.
+Je n'ai pas besoin de tiers pour savoir qu'il s'agit d'un billet de 100 euros.
+Il faut juste que je sache reconnaitre s'il a bien été émis par l'imprimerie nationale ou s'il s'agit d'une contrefaçon.
+
+.Ai-je besoin d'un tiers pour avoir les informations derrière un token{nbsp}?
+[.image-line]
+--
+image::schema-value-vs-reference-paper.svg[f, opts="inline"]
+--
+
+// [TIP]
+// ====
+// * https://tools.ietf.org/html/rfc7519[RFC 7519 (tools.ietf.org)^]
+// ====
+
+Si on reprend l'exemple de connexion et de navigation, mon serveur n'a plus besoin de cache mémoire.
+Il a simplement besoin de générer un JWT qui dit : _"Il s'agit de John"_ et de calculer une signature à l'aide d'un secret partagé.
+
+Il ne reste plus qu'à envoyer le JWT au navigateur dans un cookie.
+A la prochaine visite, le navigateur renvoie le cookie avec le JWT,
+
+le serveur va pouvoir vérifier la signature et lire les informations,
+"Ah, oui, c'est bien John{nbsp}!"
+
+"Tiens navigateur, voici une page Web contextualisée pour John!"
+Le tout a été fait sans avoir besoin d'un tiers,
+du coup{nbsp}: pas besoin de cache mémoire.
+
+
+
+.Utilisation d'un JWT à la place d'un identifiant de session
+// image::schema-jwt-06.svg[]
+
+
+{...}
+Alors, à quoi il ressemble ce token{nbsp}?
+Et bien ça ressemble à...
+
+----
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19.fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo
+----
+...ça.
+Bon, je sais pas vous mais moi j'ai pas fait base64URL en LV3,
+du coup, je vous propose une petite explication{nbsp}!
+Un JWT est composé de...
+
+----
+<span class="jwt-header">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span><span class="code-hl">.</span><span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span><span class="code-hl">.</span><span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+----
+
+...3 parties séparées par des points.
+
+----
+> encodedHeader
+<span class="jwt-header">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>
+
+> encodedPayload
+<span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+----
+
+Un header, un payload et une signature.
+Le header et le payload sont encodé en base64URL.
+C'est un peu comme base64 mais avec quelques différences pour être "URL safe".
+J'ai bien dit encodé et pas chiffré.
+
+----
+> <span class="code-hl">base64URLdecode(</span>encodedHeader<span class="code-hl">)</span>;
+<span class="jwt-header">'{"alg":"HS256","typ":"JWT"}'</span>
+
+> <span class="code-hl">base64URLdecode(</span>encodedPayload<span class="code-hl">)</span>;
+<span class="jwt-payload">'{"iss":"auth-backend","sub":"hsablonniere","aud":"web-frontend","exp":1458638618,"nbf":null,"iat":1458635018,"jti":"85a3cb4c-5720-4dba-ae94-931d60937c47","name":"Hubert SABLONNIÈRE","permissions":["EDITOR","REVIEWER"]}'</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+----
+
+N'importe qui peut lire ce qu'il y a dans un JWT.
+Il suffit d'appliquer une fonction qui décode le base64URL sur le header et le payload.
+Hum ça ressemble à du JSON tout ça,
+j'ai plus qu'à...
+
+----
+> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedHeader) <span class="code-hl">)</span>;
+<span class="jwt-header">{
+"alg": "HS256",
+"typ": "JWT"
+}</span>
+
+> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}</span>
+----
+
+...parser tout ça pour obtenir des objets que je peux lire et manipuler avec mon langage préféré.
+Si on regarde d'un peu plus près le payload...
+
+----
+> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}</span>
+----
+
+...il contient pas mal d'information intéressantes.
+On appelle ça des claims.
+Il y a les claims réservé qui sont definis par la spec et les claims privés en mode c'est la fête.
+Premier claim public{nbsp}:
+
+----
+> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+<span class="code-hlnow">// Issuer</span>
+<span class="code-hlnow">"iss": "auth-backend"</span>,
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}</span>
+----
+
+"Issuer" décrit celui qui a généré le token.
+Ici, il s'agit de mon backend d'authentification.
+Vous mettez n'importe quelle chaine de caractère, c'est votre truc à vous.
+
+----
+> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+"iss": "auth-backend",
+<span class="code-hlnow">// Subject</span>
+<span class="code-hlnow">"sub": "hsablonniere"</span>,
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}</span>
+----
+
+"Subject" décrit le sujet du token.
+La plupart des claims concerne directement le sujet.
+On y met un identifiant métier{nbsp}: login, email, etc...
+
+----
+> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+<span class="code-hlnow">// Audience</span>
+<span class="code-hlnow">"aud": "web-frontend"</span>,
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}</span>
+----
+
+"Audience" décrit le destinataire pour lequel le token a été généré.
+
+----
+> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+<span class="code-hlnow">// Expiration Time</span>
+<span class="code-hlnow">"exp": 1458638618</span>,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}</span>
+----
+
+"Expiration time" décrit la date/heure à laquelle le token ne sera plus accepté par le système.
+
+----
+> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+<span class="code-hlnow">// Not Before</span>
+<span class="code-hlnow">"nbf": null</span>,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}</span>
+----
+
+"Not Before" décrit la date/heure avant laquelle le token ne peut pas être accepté.
+
+----
+> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+<span class="code-hlnow">// Issued At</span>
+<span class="code-hlnow">"iat": 1458635018</span>,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}</span>
+----
+
+"Issued At" décrit la date/heure à laquelle le token a été généré.
+
+----
+> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+<span class="code-hlnow">// JWT ID</span>
+<span class="code-hlnow">"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47"</span>,
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}</span>
+----
+
+"JWT ID" décrit un identifiant pour le token.
+Il doit être absolument unique parmis l'ensemble des tokens générés par l'application.
+
+----
+> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+<span class="code-hlnow">// Private claims</span>
+<span class="code-hlnow">"name": "Hubert SABLONNIÈRE"</span>,
+<span class="code-hlnow">"permissions": ["EDITOR", "REVIEWER"]</span>
+}</span>
+----
+
+Enfin, on retrouve les private claims.
+En fonction des besoins de mon application,
+je vais pouvoir placer différentes informations sur mon utilisateur connecté.
+Ici, le prénom et les permissions.
+
+----
+> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+<span class="jwt-payload">{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}</span>
+----
+
+OK, du coup, comment le serveur va pouvoir faire confiance à ce truc là{nbsp}?
+C'est le navigateur qui dit, je suis Hubert, j'ai telles permissions...
+mais souvenez vous,
+
+----
+> parseJSON( base64URLdecode(encodedHeader) );
+<span class="jwt-header">{ <span class="code-hl">"alg": "HS256"</span>, "typ": "JWT" }</span>
+
+> parseJSON( base64URLdecode(encodedPayload) );
+<span class="jwt-payload">{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+----
+
+il y a 3 parties,
+on a aussi le header et la signature
+et dans le header,
+on retrouve le nom de l'algorithme qui a servi à calculer la signature.
+
+----
+> parseJSON( base64URLdecode(encodedPayload) );
+<span class="jwt-payload">{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> <span class="code-hl">hmacSha256(</span>encodedHeader + '.' + encodedPayload, 's3cr3t'<span class="code-hl">)</span>;
+----
+
+Du coup, on applique la fonction hmacSha256 sur une concatenation du header et du payload,
+dans leur forme encodé en base64URL
+avec un point au milieu.
+Pour appliquer la fonction, il faut un secret partagé.
+C'est ce qui garanti que seul les détenteurs du secret partagé pourront signer et vérifier des tokens.
+Je calcule...
+
+----
+> parseJSON( base64URLdecode(encodedPayload) );
+<span class="jwt-payload">{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> hmacSha256(encodedHeader + '.' + encodedPayload, <span class="code-hl">'s3cr3t'</span>);
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+----
+
+...et je tombe sur la même chose, parfait{nbsp}!
+Le serveur peux faire confiance à ce que dit le client.
+
+----
+> parseJSON( base64URLdecode(encodedPayload) );
+<span class="jwt-payload" data-code-id="jwt-body">{
+"iss": "auth-backend",
+"sub": "hsablonniere",
+"aud": "web-frontend",
+"exp": 1458638618,
+"nbf": null,
+"iat": 1458635018,
+"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
+"name": "Hubert SABLONNIÈRE",
+"permissions": ["EDITOR", "REVIEWER"]
+}</span>
+
+> signature
+<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+
+> hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
+<span class="jwt-signature" data-code-id="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+----
+
+Par contre, si le client comment à faire le malin genre,
+salut en fait je suis trop un admin et ce token expire dans très longtemps.
+Le serveur ne fera pas confiance à ces données car la signature n'est pas la même.
+
+== Avantages des JWT{nbsp}?
+
+Quels sont les avantages des JWT{nbsp}?
+
+=== #1 Load balancing facile
+
+Premier avantage, niveau load balancing,
+c'est presque trop facile.
+
+//--talk-only i mage::schema-jwt-scalable-01.svg[]
+
+Pas de sticky session,
+pas de cache distribué,
+ni même de cache tout court.
+
+.Le load balancing est très simple à mettre en place quand il n'y a pas de session côté serveur
+// image::schema-jwt-scalable-02.svg[]
+
+On a juste besoin d'un secret partagé et de calculer une signature.
+
+=== #2 Multi-langage
+
+Deuxième avantage,
+c'est un standard.
+Il y a des implémentations dans...
+
+// image::schema-jwt-languages.svg[]
+
+...tous les langages.
+que vous soyez dans un navigateur,
+sur iOS, Android et quelle que soit votre stack côté serveur,
+il y a une implémentation.
+
+=== #3 Architecture microservices
+
+3ème avantage{nbsp}: les architectures micro-services.
+
+.Architecture monolithique
+// image::schema-jwt-scalable-microservices-01.svg[]
+
+Si on reprend un exemple avec un cluster de deux noeuds,
+c'est
+
+//--talk-only i mage::schema-jwt-scalable-microservices-02.svg[]
+
+Micro services
+
+//--talk-only i mage::schema-jwt-scalable-microservices-03.svg[]
+
+Micro services
+
+//--talk-only i mage::schema-jwt-scalable-microservices-04.svg[]
+
+Micro services
+
+//--talk-only i mage::schema-jwt-scalable-microservices-05.svg[]
+
+Micro services
+
+.Architecture micro-services
+// image::schema-jwt-scalable-microservices-06.svg[]
+
+//--talk-only i mage::schema-jwt-scalable-microservices-07.svg[]
+
+Micro services
+
+// image::microservices-and-shared-db.png[]
+
+Grâce au JSON Web Token,
+l'ensemble des microservices de mon architecture sont autonomes pour accetper ou non une requêtes.
+
+Par contre depuis le début, je partage un secret.
+Quand je réplique le même service sur un cluster,
+ça ne me choque pas tant que ça.
+Par contre partager un secret sur plein de projets qui ont des cycles de vie différents,
+c'est un peu plus chaud.
+On va vite finir avec un secret qui n'est plus secret.
+
+//--talk-only i mage::schema-signatures-00.svg[]
+
+//--talk-only i mage::schema-signatures-01.svg[]
+
+Si on regarde de plus près comment sont calculée les signatures.
+On a la solution.
+
+//--talk-only i mage::schema-signatures-02.svg[]
+
+.Deux types de signatures{nbsp}: symétrique et asymétrique
+// image::schema-signatures-03.svg[]
+
+----
+> decodedHeader
+<span class="jwt-header">{
+<span class="code-hl">"alg": "RS256"</span>,
+"typ": "JWT"
+}</span>
+----
+
+.Une seule brique de l'architecture peut signer avec la clé privée et toutes les autres peuvent vérifier avec la clé publique.
+// image::schema-jwt-asym.svg[]
+
+// image::schema-jwt-asym-keys.svg[]
+
+Micro services
+
+== oAuth2?
+
+Schéma d'architecture
+JWT en tant que Bearer token (à la place d'un opaque)
+Bearer token devient un token par référence
+pertinence de le faire que dans le SI
+
+.Utilisation de tokens oAuth2 par valeur
+// image::schema-oauth-token.svg[]
+
+Check access_token
+Check refresh_token
+stateless
+
+== Open-ID Connect
+
+ID token
+est un JWT
+
+== Inconvénients des JWT{nbsp}?
+
+revokation
+Verre à moitié plein => verre à moitié vide
+whitelist vs blacklist
+optimisme du nombre de fois ou il faut expirer des session
+=> short lived c'est mieux
+
+=== Révocation de tokens
+
+Expiration{nbsp}!= revokation
+Black list vs white list
+Verre à moitié plein => verre à moitié vide
+whitelist vs blacklist
+optimisme du nombre de fois ou il faut expirer des session
+=> short lived c'est mieux
+expiration
+
+.Révocation de token à base de blacklist en BDD
+// image::schema-jwt-blacklist-1.svg[]
+
+.L'introduction d'une forme de stockage pour blacklister les JWT révoqués repose les mêmes problèmes{nbsp}?
+// image::schema-jwt-blacklist-2.svg[]
+
+=== Sécurité des Single Page Applications
+
+==== Attaques XSS
+
+Utiliser un cookie secure et HTTP only => XSS
+Ajouter un XSRF token dans le payload et qui est stoké aussi à part
+
+.Tentative d'attaque XSS sur Twitter
+// image::xss-twitter.jpg[]
+
+explication de l'attaque XSS
+Script tiers
+Commentaires clients
+
+* *Injections* de contenus utilisateurs
+* *Scripts* partenaires
+* WIFIs publics (HTTP *pas S*)
+
+----
+# Single Page App / App Mobile / Serveur tiers
+
+200 OK
+Set-Cookie: jwt=<span class="jwt-header">H34DER</span>.<span class="jwt-payload">P4YL04D</span>.<span class="jwt-signature">S1GN47URE</span>;
+Path=/;
+Domain=api.myapp.com;
+<span class="code-hl">Secure;</span>
+<span class="code-hl">HTTPOnly</span>
+----
+
+----
+# App Mobile / Serveur tiers
+
+200 OK
+Authorization: Bearer <span class="jwt-header">H34DER</span>.<span class="jwt-payload">P4YL04D</span>.<span class="jwt-signature">S1GN47URE</span>
+----
+
+==== Attaques CSRF
+
+Utiliser un cookie secure et HTTP only => XSS
+Ajouter un XSRF token dans le payload et qui est stoké aussi à part
+
+[source,html]
+----
+<!-- http://malicious.com -->
+
+<form action="https://twitter.com/i/tweet/create"
+method="POST">
+
+<input type="hidden" name="status"
+value="J'adore l'épisode I de Star Wars">
+</form>
+----
+
+[source,html]
+----
+<!-- https://twitter.com -->
+
+<form action="https://twitter.com/i/tweet/create"
+method="POST">
+
+<input type="text" name="status"
+value="Non je déconne">
+<input type="hidden" name="<span class="code-hl">authenticity_token</span>"
+value="125d260e57fd924fc363534713e4bc43b774">
+</form>
+----
+
+//--talk-only i mage::schema-csrf-03.svg[]
+
+Synchronizer Token Pattern
+attention au content-type
+
+//--talk-only i mage::schema-csrf-04.svg[]
+
+//--talk-only i mage::schema-csrf-05.svg[]
+
+//--talk-only i mage::schema-csrf-06.svg[]
+
+//--talk-only i mage::schema-csrf-07.svg[]
+
+//--talk-only i mage::schema-csrf-08.svg[]
+
+//--talk-only i mage::schema-csrf-09.svg[]
+
+.Synchronizer token pattern sur Twitter
+// image::schema-csrf-paper.svg[]
+
+//--talk-only i mage::schema-csrf-jwt-01.svg[]
+
+//--talk-only i mage::schema-csrf-jwt-02.svg[]
+
+//--talk-only i mage::schema-csrf-jwt-03.svg[]
+
+//--talk-only i mage::schema-csrf-jwt-04.svg[]
+
+//--talk-only i mage::schema-csrf-jwt-05.svg[]
+
+//--talk-only i mage::schema-csrf-jwt-06.svg[]
+
+//--talk-only i mage::schema-csrf-jwt-07.svg[]
+
+//--talk-only i mage::schema-csrf-jwt-08.svg[]
+
+//--talk-only i mage::schema-csrf-jwt-09.svg[]
+
+.Synchronizer token pattern avec une SPA et JWT
+// image::schema-csrf-jwt-paper.svg[]
+
+== Autres usages des JWT
+
+=== Formulaires en plusieurs parties
+
+=== Email de confirmation
+
+Voilà, j'espère que vous avez une meilleure idée de ce que sont les JSON Web Token,
+de comment ils fonctionnent et dans quelle contexte ils sont utiles.
+
+[quote, Thomas Recloux & Jérémy Sevellec]
+____
+image::thomas-recloux.jpg[Lou Montulli]
+image::jeremy-sevellec.jpg[Lou Montulli]
+Stateless is priceless!
+____
+
+De manière générale, vous gagnerez toujours en simplicité avec des architectures stateless.
+Sauvons les Lemmings...
+
+.title.zoom Merci *;-)*
+Merci bcp.
+
+//[NOTE]
+//====
+//* https://stormpath.com/blog
+//* https://auth0.com/blog
+//* https://owasp.org
+//* https://jwt.io
+//====
+
+== Aller plus loin
+
+.fit-title
+.title HTTP/*2*{nbsp}?
+
+.fit-title
+.title Taille des
+.title *tokens*{nbsp}?
+
+.fit-title
+.title Les autres specs
+.title *JW**{nbsp}?
+
+.fit-title
+.title Chiffrement du
+.title *payload*{nbsp}?

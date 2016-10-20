@@ -133,6 +133,10 @@ window.onload = function (argument) {
 
     function makeInteractive(interactiveSvgParent) {
 
+        qsAll('[style="display:none"]', interactiveSvgParent).forEach(function (layer) {
+          layer.removeAttribute('style');
+        });
+
         qsAll('path', interactiveSvgParent).forEach(function (path) {
             var da = path.style.strokeDasharray;
             if (da === 'none') {
@@ -152,7 +156,11 @@ window.onload = function (argument) {
 
         var allItems = parseList(interactiveSvgParent.dataset.items)
             .map(function (selector) {
-                return qsOne('#' + selector, interactiveSvgParent);
+                var node = qsOne('#' + selector, interactiveSvgParent);
+                if (node == null) {
+                  throw new Error('cannot find #' + selector);
+                }
+                return node;
             });
 
         var scenarioSteps = parseList(interactiveSvgParent.dataset.scenario)
@@ -188,6 +196,8 @@ window.onload = function (argument) {
         interactiveSvgParent.appendChild(playButton);
     }
 
-    qsAll('.interactiveSvg', document)
+    qsAll('.interactive [data-items][data-scenario]', document)
         .forEach(makeInteractive);
+
+    // $('.openblock .title').balanceText();
 }
