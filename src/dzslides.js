@@ -393,6 +393,10 @@
         e.source.postMessage({ command: 'SLIDE_DECK_DETAILS', slideDeckDetails }, '*')
       }
 
+      if (e.data.command === 'DISABLE_TRANSITIONS') {
+        document.body.classList.add('transitions--off')
+      }
+
       if (e.data.command === 'GO_TO') {
         const state = statesByCursor[e.data.cursor]
         const idx = states.indexOf(state) + e.data.shift
@@ -403,4 +407,5 @@
         triggerAction(e.data.on)
       }
     });
+
 })();

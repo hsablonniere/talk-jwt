@@ -885,3 +885,17 @@ pre.wrap {
   color: #000 !important;
   padding: 8px 0;
 }
+
+.rotate-180 {
+  transform: rotate(180deg);
+  transform-origin: 50% 50%;
+}
+
+.rotate-trigger {
+
+  transition: 150ms transform linear;
+
+  .triggerAction & {
+    transform: rotate(180deg);
+  }
+}
