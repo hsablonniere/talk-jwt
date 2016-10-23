@@ -382,4 +382,25 @@
             messageHandlers[action](arg);
         }
     });
+
+    // NEW NEW protocol
+    window.addEventListener('message', function (e) {
+
+      if (e.data.command === 'GIVE_ME_SLIDE_DECK_DETAILS') {
+        const slideDeckDetails = states.map(({ cursor, nextCursor, notes, step }) => {
+          return { cursor, nextCursor, notes, step }
+        })
+        e.source.postMessage({ command: 'SLIDE_DECK_DETAILS', slideDeckDetails }, '*')
+      }
+
+      if (e.data.command === 'GO_TO') {
+        const state = statesByCursor[e.data.cursor]
+        const idx = states.indexOf(state) + e.data.shift
+        loadCursorInHref(states[idx].cursor)
+      }
+
+      if (e.data.command === 'TRIGGER') {
+        triggerAction(e.data.on)
+      }
+    });
 })();
