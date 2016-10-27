@@ -1077,3 +1077,19 @@ pre.wrap {
   background: #FFFF55;
   color: #000 !important;
   padding: 8px 0; }
+
+.rotate-180 {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%; }
+
+.rotate-trigger {
+  -webkit-transition: 150ms -webkit-transform linear;
+          transition: 150ms transform linear; }
+  .triggerAction .rotate-trigger {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg); }
