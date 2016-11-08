@@ -384,28 +384,48 @@
     });
 
     // NEW NEW protocol
-    window.addEventListener('message', function (e) {
+    window.addEventListener('message', function ({ source, data: { command, commandArgs } }) {
 
-      if (e.data.command === 'GIVE_ME_SLIDE_DECK_DETAILS') {
-        const slideDeckDetails = states.map(({ cursor, nextCursor, notes, step }) => {
-          return { cursor, nextCursor, notes, step }
+        const metas = {}
+        Array.from(document.querySelectorAll('head meta')).forEach((meta) => {
+            metas[meta.getAttribute('name')] = meta.getAttribute('content')
         })
-        e.source.postMessage({ command: 'SLIDE_DECK_DETAILS', slideDeckDetails }, '*')
-      }
 
-      if (e.data.command === 'DISABLE_TRANSITIONS') {
-        document.body.classList.add('transitions--off')
-      }
+        const steps = states.map((step) => {
+            return {
+                cursor: step.cursor,
+                states: [],
+                notes: step.notes.join('\n'),
+            }
+        })
 
-      if (e.data.command === 'GO_TO') {
-        const state = statesByCursor[e.data.cursor]
-        const idx = states.indexOf(state) + e.data.shift
-        loadCursorInHref(states[idx].cursor)
-      }
+        const details = {
+            title: document.title || '',
+            authors: metas.author || '',
+            description: metas.description || '',
+            vendor: 'custor-dzslides',
+            steps,
+            ratios: ['auto', '4/3', '16/9'],
+            themes: ['default'],
+        }
 
-      if (e.data.command === 'TRIGGER') {
-        triggerAction(e.data.on)
-      }
+        switch (command) {
+
+            case 'get-slide-deck-details':
+                source.postMessage({ event: 'slide-deck-details', eventData: { details } }, '*')
+                break;
+
+            case 'go-to-step':
+                loadCursorInHref(commandArgs.cursor)
+                break;
+
+            case 'toggle-slide-deck-state':
+                triggerAction(commandArgs.enabled)
+                break;
+
+            default:
+                console.error(`unknown protocol command ${command} with args`, commandArgs)
+        }
     });
 
 })();

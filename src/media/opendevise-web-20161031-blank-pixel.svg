@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="37.7045mm"
+   width="338.667mm"
+   version="1.1"
+   viewBox="0 0 1200 133.59856"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="opendevise-web-20161031-blank.svg">
+  <defs
+     id="defs38" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="982"
+     inkscape:window-height="480"
+     id="namedview36"
+     showgrid="false"
+     inkscape:zoom="0.343333"
+     inkscape:cx="600.00058"
+     inkscape:cy="66.799308"
+     inkscape:window-x="0"
+     inkscape:window-y="51"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <title
+     id="title4">OpenDevise</title>
+  <metadata
+     id="metadata6">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>OpenDevise</dc:title>
+        <dc:date>2016-10-31</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>OpenDevise Inc.</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>OpenDevise Inc.</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:contributor>
+          <cc:Agent>
+            <dc:title>Sarah White</dc:title>
+          </cc:Agent>
+        </dc:contributor>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>OpenDevise</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-1.56635e-6,-918.76364)"
+     id="g8"
+     style="fill:#ffffff">
+    <g
+       style="fill:#ffffff"
+       transform="matrix(.418611 0 0 .418611 -505.611 417.928)"
+       id="g10">
+      <path
+         style="fill:#ffffff"
+         d="m1346.42 1196.42c-35.4531 4.6072-65.9795 19.4572-91.5743 44.569-31.346 30.4589-47.0146 68.6099-47.0146 114.446 0 45.5405 15.6686 83.6821 47.0146 114.437 31.346 30.4589 70.0855 45.6957 116.217 45.6957 46.1319 0 84.8713-15.2368 116.217-45.6957 31.346-30.7546 47.0141-68.8962 47.0141-114.437 0-45.8361-15.6681-83.9871-47.0141-114.446-25.5949-25.1118-56.1218-39.9618-91.5743-44.569v48.9397c20.1881 4.4082 37.8582 14.4625 52.9827 30.2263 21.2916 21.883 31.9399 48.503 31.9399 79.849 0 31.0503-10.6483 57.5141-31.9399 79.3972-20.996 21.883-46.8712 32.8256-77.6258 32.8256s-56.7772-10.9426-78.0689-32.8256c-20.9959-21.8831-31.4968-48.3469-31.4968-79.3972 0-31.346 10.5009-57.966 31.4968-79.849 15.3463-15.7726 33.1637-25.8319 53.4258-30.2362v-48.9298z"
+         id="path12" />
+      <path
+         style="fill:#ffffff"
+         d="m1690.75 1202.4q70.5286 0 102.91 27.0581 32.381 27.0582 32.381 83.3923t-33.2682 82.5051q-32.8246 26.171-101.135 26.171h-55.0034v90.933h-52.3419v-310.06h106.458zm6.6536 171.664q43.4705 0 58.9956-16.4123 15.9688-16.8559 15.9688-48.7934 0-32.381-19.961-45.6883-19.9609-13.3073-62.5442-13.3073h-53.2291v124.201h60.7699z"
+         id="path14" />
+      <path
+         style="fill:#ffffff"
+         d="m2093.84 1202.4v49.2369h-165.454v82.0616h148.598v46.5754h-148.598v82.9487h170.777v49.2369h-223.119v-310.06h217.796z"
+         id="path16" />
+      <path
+         style="fill:#ffffff"
+         d="m2381.6 1202.4h52.3419v310.06h-56.7777l-175.656-226.224v226.224h-52.3419v-310.06h52.3419l180.092 231.547v-231.547z"
+         id="path18" />
+      <path
+         style="fill:#ffffff"
+         d="m2483.94 1202.4v130.387h52.3474v-82.0345h52.338c81.3222 0 121.983 35.4841 121.983 106.456 0 34.8946-10.0505 61.3584-30.1593 79.3971-19.813 17.743-48.502 26.6165-86.0581 26.6165h-58.104v-81.1492h-52.3474v130.387h102.914c59.7349 0 104.092-14.0505 133.073-42.1436 28.9803-28.0931 43.4626-66.2343 43.4626-114.436 0-48.2019-14.9333-85.7644-44.8007-112.675-29.8675-27.206-72.5971-40.8055-128.192-40.8055h-106.457z"
+         id="path20" />
+      <path
+         style="fill:#ffffff"
+         d="m3031.18 1202.4v49.2369h-165.454v82.0616h148.598v46.5754h-148.598v82.9487h170.777v49.2369h-223.119v-310.06h217.796z"
+         id="path22" />
+      <path
+         style="fill:#ffffff"
+         d="m3249.78 1512.46h-58.552l-124.645-310.06h58.552l95.3689 231.547 95.3688-231.547h58.552l-124.645 310.06z"
+         id="path24" />
+      <path
+         style="fill:#ffffff"
+         d="m3409.74 1202.4h52.342v310.06h-52.342v-310.06z"
+         id="path26" />
+      <path
+         style="fill:#ffffff"
+         d="m3851.34 1202.4v82.1788h52.3474v-32.9409h165.445v-49.2379h-217.793zm0 131.465v46.4177h52.3474 148.59v-46.4079h-200.937zm0 95.7039v82.891h223.116v-49.2379h-170.769v-33.6531h-52.3474z"
+         id="path28" />
+      <g
+         style="fill:#ffffff"
+         transform="matrix(4.92862 0 0 4.92861 9734.62 -10516)"
+         id="g30">
+        <path
+           style="fill:#ffffff"
+           d="m-1233.83 2377.63 1.2999 9.9902h28.6891v-9.9902zm-28.7001 52.9202v9.99h27.7691l1.5004-9.99z"
+           id="path32" />
+        <path
+           style="fill:#ffffff"
+           d="m-1234.11 2377.69 10.4587 1.3443-10.9242 61.4547-10.4587-1.3445z"
+           id="path34" />
+      </g>
+    </g>
+  </g>
+</svg>

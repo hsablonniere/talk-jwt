@@ -212,7 +212,7 @@ $footer-margin: 45px;
 }
 
 .startEnd-companyLogo {
-  height: 120px;
+  width: 300px;
 }
 
 .startEnd-talkInfos {
@@ -831,7 +831,7 @@ pre.wrap {
   }
 }
 
-@media (max-width: 801px) {
+@media (max-width: 700px) {
   *,
   *:before,
   *:after {
