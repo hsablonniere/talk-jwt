@@ -22,13 +22,13 @@ body
             img.startEnd-authorAvatar(src='media/hsablonniere-avatar.jpg')
             .startEnd-authorTwitter @hsablonniere<br>@OpenDevise
         .startEnd-title
-            .startEnd-subtitle 100% Stateless avec
+            .startEnd-subtitle 100% Stateless with
             .startEnd-maintitle JWT
         .startEnd-footer
             img.startEnd-companyLogo.zoom(src='./media/opendevise-web-20161031-blank.png')
             .startEnd-talkInfos
-                .startEnd-hashtags #JWT
-                .startEnd-locationDate Devoxx Maroc<br>2016-11-02
+                .startEnd-hashtags #SaveTheLemmings #JWT
+                .startEnd-locationDate Devoxx BE / 2016-11-09
         div(role='note').
             Bonjour à tous ! Je m'appelle Hubert SABLONNIÈRE, je suis dev Web et il y a qq mois j'ai rejoint un petite boite aux Etats-Unis qui s'appelle OpenDevise.
             En gros, on travaille sur des outils open-source pour améliorer la création, la gestion et la publication de contenus pédagogiques :
@@ -39,19 +39,8 @@ body
 
     section
         figure.fs-media.fs-media-cover
-            img(src="/media/mutualab.jpg")
-            figcaption Mutualab (Lille)
-        div(role='note').
-            ...le Mutualab.
-            pour ceux qui cherchent un endroit sympa pour bosser,
-            louer des salles de réunion ou faire des meetups,
-            n'hésitez pas.
-            Aujourd'hui, j'ai envie de vous parler de...
-
-    section
-        figure.fs-media.fs-media-cover
             img(src="/media/compaq-2.jpg")
-            figcaption Noël 1994
+            figcaption Christmas 1994
         div(role='note').
             ...mon premier ordinateur.
             Bon OK [...] c'était pas "MON" ordinateur,
@@ -128,8 +117,8 @@ body
             un produit à la fois.
 
     section.slide-section.fit-title
-        .title Il etait une fois
-        .title les <span class="title-info">cookies HTTP</span>
+        .title Once upon a time
+        .title <span class="title-info">HTTP cookies</span>
         div(role='note').
             Du coup, Lou propose d'appliquer le concept existant de magic-cookies sur le Web
             et c'est ainsi que les cookies HTTP voient le jour.
@@ -301,9 +290,7 @@ body
 
     section
         figure.fs-media.fs-media-cover
-            video(src="/media/drinking-cat2.webm", autoplay="false", muted="true")
-            figcaption
-                .blink Je vends une C3 Diesel !
+            figcaption insert lemmings video here
 
     section
         div(role='note').
@@ -1123,16 +1110,16 @@ body
 
     section.slide-section
         .fit-title
-            .title Avantages
-            .title des <span class="title-info">JWT</span> ?
+            .title What are JWT's
+            .title <span class="title-info">benefits</span>?
         div(role='note').
             Quels sont les avantages des JWT ?
 
     section.slide-section.no-images
         .title.title-info #1
         .fit-title--small
+            .title.title-info Dead simple
             .title Load balancing
-            .title.title-info facile
         div(role='note').
             Premier avantage, niveau load balancing,
             c'est presque trop facile.
@@ -1154,7 +1141,7 @@ body
     section.slide-section.no-images
         .title.title-info #2
         .fit-title--small
-            .title <span class="title-info">Multi</span>-langage
+            .title <span class="title-info">Multi</span>-language
         div(role='note').
             Deuxième avantage,
             c'est un standard.
@@ -1172,8 +1159,8 @@ body
     section.slide-section.no-images
         .title.title-info #3
         .fit-title--small
-            .title Architectures
             .title.title-info microservices
+            .title Architectures
         div(role='note').
             3ème avantage : les architectures micro-services.
 
@@ -1313,8 +1300,8 @@ body
 
     section.slide-section.no-images
         .fit-title.incremental.incremental-full
-            .title ID token
-            .title est un <span class="title-info">JWT</span>
+            .title The ID token
+            .title is a <span class="title-info">JWT</span>!
         div(role='note').
 
     //section
@@ -1324,19 +1311,20 @@ body
     //        Les token d'identité sont des JWT
 
     section.slide-section.fit-title
-        .title Inconvenients
-        .title des <span class="title-red">JWT</span> ?
+        .title What are JWT's
+        .title <span class="title-red">drawbacks</span>?
         div(role='note').
             revokation
             Verre à moitié plein => verre à moitié vide
                 whitelist vs blacklist
                 optimisme du nombre de fois ou il faut expirer des session
-            => short lived c'est mieux
+            => short lived cest mieux
 
     section.slide-section.no-images
         .fit-title--small
-            .title revocation
-            .title de <span class="title-info">Tokens</span>
+        .title <span class="title-info">Tokens</span>
+        .title.trigger-off revocation
+        .title.trigger-on revokation
         .title.title-red :-(
         div(role='note').
             Expiration != revokation
@@ -1354,8 +1342,8 @@ body
         div(role='note').
 
     section.slide-section.no-images.fit-title
-        .title Securite des
         .title <span class="title-info">S</span>ingle <span class="title-info">P</span>age <span class="title-info">A</span>pplications
+        .title security<span class="title-info">!!!</span>
         div(role='note').
             revokation
             Verre à moitié plein => verre à moitié vide
@@ -1369,8 +1357,8 @@ body
     //        expiration
 
     section.slide-section.fit-title--small
-        .title.shake Attaques
         .title <span class="title-info">XSS</span>
+        .title.shake Attacks
         div(role='note').
             Utiliser un cookie secure et HTTP only => XSS
             Ajouter un XSRF token dans le payload et qui est stoké aussi à part
@@ -1385,15 +1373,15 @@ body
 
     section.slide-section.no-images
         .fit-title.incremental
-            .title <span class="title-info">Injections</span> de contenus utilisateurs
-            .title <span class="title-info">Scripts</span> partenaires
-            .title WIFIs publics (HTTP <span class="title-info">pas S</span>)
+            .title User content <span class="title-info">injections</span>
+            .title Third party <span class="title-info">Scripts</span>
+            .title <span class="title-info">Non-secured HTTP</span> over public WIFIs
         div(role='note').
 
     section
         pre.nowrap
             code.
-                # Single Page App / App Mobile / Serveur tiers
+                # Single Page App / Mobile App / Third-party server
 
                 200 OK
                 Set-Cookie: jwt=<span class="jwt-header">H34DER</span>.<span class="jwt-payload">P4YL04D</span>.<span class="jwt-signature">S1GN47URE</span>;
@@ -1405,14 +1393,14 @@ body
     section
         pre.nowrap
             code.
-                # App Mobile / Serveur tiers
+                # Mobile App / Third-party server
 
                 200 OK
                 Authorization: Bearer <span class="jwt-header">H34DER</span>.<span class="jwt-payload">P4YL04D</span>.<span class="jwt-signature">S1GN47URE</span>
 
     section.slide-section.fit-title--small
-        .title.shake Attaques
         .title <span class="title-info">CSRF</span>
+        .title Attacks
         div(role='note').
             Utiliser un cookie secure et HTTP only => XSS
             Ajouter un XSRF token dans le payload et qui est stoké aussi à part
@@ -1426,7 +1414,7 @@ body
                       method="POST">
 
                     &lt;input type="hidden" name="status"
-                           value="J'adore l'épisode I de Star Wars">
+                           value="Star Wars I is my favorite!">
                 &lt;/form>
 
 
@@ -1440,7 +1428,7 @@ body
                       method="POST">
 
                     &lt;input type="text" name="status"
-                           value="Non je déconne">
+                           value="Just kidding">
                     &lt;input type="hidden" name="<span class="code-hl">authenticity_token</span>"
                            value="125d260e57fd924fc363534713e4bc43b774">
                 &lt;/form>
@@ -1534,13 +1522,13 @@ body
         div(role='note').
 
     section.slide-section.no-images.fit-title--small
-        .title Formulaire en
-        .title <span class="title-info">plusieurs</span> parties
+        .title <span class="title-info">multi</span>-part
+        .title user forms
         div(role='note').
 
     section.slide-section.no-images.fit-title--small
-        .title <span class="title-info">Email</span> de
         .title confirmation
+        .title <span class="title-info">Emails</span>
         div(role='note').
 
     section.slide-section.no-images
@@ -1558,7 +1546,7 @@ body
             Sauvons les Lemmings...
 
     section.slide-section.fit-title--small.slide-thx
-        .title.zoom Merci <span class="title-info">;-)</span>
+        .title.zoom Dank u <span class="title-info">;-)</span>
         div(role='note').
             Merci bcp.
 
@@ -1571,10 +1559,10 @@ body
             .startEnd-subtitle Game Over
             .startEnd-maintitle ?
         .startEnd-footer
-            img.startEnd-companyLogo(src='./media/opendevise-blank-pixel.png')
+            img.startEnd-companyLogo.zoom(src='./media/opendevise-web-20161031-blank.png')
             .startEnd-talkInfos
-                .startEnd-hashtags #JWT
-                .startEnd-locationDate Devoxx Maroc<br>2016-11-02
+                .startEnd-hashtags #SaveTheLemmings #JWT
+                .startEnd-locationDate Devoxx BE / 2016-11-09
         div(role='note').
 
     section.slide-section.no-images
@@ -1592,20 +1580,26 @@ body
 
     section.slide-section.no-images
         .fit-title
-            .title Taille des
-            .title <span class="title-info">tokens</span> ?
+            .title <span class="title-info">tokens</span> size ?
         div(role='note').
 
     section.slide-section.no-images
         .fit-title
-            .title Les autres specs
+            .title Other specs:
             .title <span class="title-info">JW*</span> ?
         div(role='note').
 
     section.slide-section.no-images
         .fit-title
-            .title Chiffrement du
-            .title <span class="title-info">payload</span> ?
+            .title <span class="title-info">payload</span>
+            .title encryption?
+        div(role='note').
+
+    section.slide-section.no-images
+        .fit-title
+            .title JWT can be
+            .title pronouned <span class="title-info">"JOT"</span>
+            .title (I don't like it)
         div(role='note').
 
     script(src="dzslides.js")
