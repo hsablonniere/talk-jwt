@@ -6661,7 +6661,7 @@
            sodipodi:role="line"
            id="tspan7615"
            x="1195.483"
-           y="715.85059">clé privée</tspan></text>
+           y="715.85059">private key</tspan></text>
       <path
          style="fill:#00cf00;fill-opacity:1"
          id="path7619"
@@ -6677,7 +6677,7 @@
            y="892.46924"
            x="1195.483"
            id="tspan7623"
-           sodipodi:role="line">clé publique</tspan></text>
+           sodipodi:role="line">public key</tspan></text>
     </g>
   </g>
 </svg>

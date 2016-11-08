@@ -5479,7 +5479,7 @@
        y="174.75572"
        x="655.21765"
        id="tspan4318"
-       sodipodi:role="line">clé publique</tspan></text>
+       sodipodi:role="line">public key</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96.38951874px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ff0000;fill-opacity:1;stroke:none;"
@@ -5490,7 +5490,7 @@
        sodipodi:role="line"
        id="tspan5848"
        x="1123.411"
-       y="778.50574">clé privée</tspan></text>
+       y="778.50574">private key</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96.38951874px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#00cf00;fill-opacity:1;stroke:none;"
@@ -5501,7 +5501,7 @@
        sodipodi:role="line"
        id="tspan5852"
        x="1074.2749"
-       y="334.6282">clé publique</tspan></text>
+       y="334.6282">public key</tspan></text>
   <text
      sodipodi:linespacing="125%"
      id="text5854"
@@ -5512,7 +5512,7 @@
        y="556.28461"
        x="1074.2749"
        id="tspan5856"
-       sodipodi:role="line">clé publique</tspan></text>
+       sodipodi:role="line">public key</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96.38951874px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#00cf00;fill-opacity:1;stroke:none;"
@@ -5523,7 +5523,7 @@
        sodipodi:role="line"
        id="tspan5860"
        x="1513.3324"
-       y="173.93039">clé publique</tspan></text>
+       y="173.93039">public key</tspan></text>
   <text
      sodipodi:linespacing="125%"
      id="text5862"
@@ -5534,7 +5534,7 @@
        y="435.32602"
        x="1513.3325"
        id="tspan5864"
-       sodipodi:role="line">clé publique</tspan></text>
+       sodipodi:role="line">public key</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96.38951874px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#00cf00;fill-opacity:1;stroke:none;"
@@ -5545,5 +5545,5 @@
        sodipodi:role="line"
        id="tspan5868"
        x="655.21765"
-       y="969.0741">clé publique</tspan></text>
+       y="969.0741">public key</tspan></text>
 </svg>
