@@ -2320,7 +2320,7 @@
          sodipodi:role="line"
          id="tspan4683"
          x="1200.9119"
-         y="484.36215">par valeur</tspan></text>
+         y="484.36215">by value</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34.49915695px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#00cf00;fill-opacity:1;stroke:none"
@@ -2397,7 +2397,7 @@
          y="484.36215"
          x="449.74185"
          id="tspan4318-5"
-         sodipodi:role="line">par référence</tspan></text>
+         sodipodi:role="line">by reference</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text5328"
