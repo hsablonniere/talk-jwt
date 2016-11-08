@@ -51,10 +51,13 @@ OAUTH2 but what you need to know about JWT
 malicious site => location bar
 replace twitter XSS => fake social service
 add the round trip to the memory for the sync token in session
-a
+
+== questions from translation
+
+écriture + signature
+vérification + lecture
 
 == console
 
 * heart rate monitor
 * save all actions
-*
