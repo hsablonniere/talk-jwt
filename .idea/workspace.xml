@@ -2,8 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d69d9c3-1534-4035-9da8-cddbf94fbae8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.one-gulp/dev/index.html" afterPath="$PROJECT_DIR$/.one-gulp/dev/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.jade" afterPath="$PROJECT_DIR$/src/index.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-1.svg" afterPath="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-1.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-2.svg" afterPath="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-2.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-3.svg" afterPath="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-3.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-02.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-02.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-03.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-03.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-04.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-04.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-05.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-05.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-06.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-06.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-07.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-07.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-08.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-08.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-09.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-09.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-10.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-10.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11a.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11a.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11b.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11b.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11c.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11c.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11d.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11d.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11e.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11e.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11f.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11f.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12a.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12a.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12b.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12b.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12c.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12c.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12d.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12d.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-13.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-13.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-14a.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-14a.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-14b.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-14b.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-15a.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-15a.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-15b.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-15b.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-16.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-16.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-16plus.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-16plus.svg" />
     </list>
     <ignored path="talk-jwt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,108 +50,7 @@
     <favorites_list name="talk-jwt" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="schema-cookies-basic-01.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/media/schema-cookies-basic-01.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="1274" column="12" selection-start-line="1274" selection-start-column="12" selection-end-line="1274" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema-cookies-basic-02.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/media/schema-cookies-basic-02.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="1280" column="12" selection-start-line="1280" selection-start-column="12" selection-end-line="1280" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema-cookies-basic-03.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/media/schema-cookies-basic-03.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="1280" column="12" selection-start-line="1280" selection-start-column="12" selection-end-line="1280" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema-cookies-basic-04.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/media/schema-cookies-basic-04.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="1280" column="12" selection-start-line="1280" selection-start-column="12" selection-end-line="1280" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema-cookies-basic-05.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/media/schema-cookies-basic-05.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="1280" column="12" selection-start-line="1280" selection-start-column="12" selection-end-line="1280" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema-scalable-shared-memory-02.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-02.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="1227" column="12" selection-start-line="1227" selection-start-column="12" selection-end-line="1227" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema-scalable-shared-memory-03.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-03.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="1227" column="12" selection-start-line="1227" selection-start-column="12" selection-end-line="1227" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema-scalable-shared-memory-04.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-04.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="1227" column="12" selection-start-line="1227" selection-start-column="12" selection-end-line="1227" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema-scalable-shared-memory-05.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-05.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="1227" column="12" selection-start-line="1227" selection-start-column="12" selection-end-line="1227" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema-scalable-shared-memory-14b.svg" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-14b.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="1222" column="10" selection-start-line="1222" selection-start-column="10" selection-end-line="1222" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -156,7 +83,6 @@
         <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt-scalable-microservices.svg" />
         <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt.svg" />
         <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-oauth-token.svg" />
-        <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-1.svg" />
         <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-2.svg" />
         <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-3.svg" />
         <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-signatures.svg" />
@@ -169,6 +95,7 @@
         <option value="$PROJECT_DIR$/src/dzslides.js" />
         <option value="$PROJECT_DIR$/src/index.jade" />
         <option value="$PROJECT_DIR$/src/index.scss" />
+        <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-1.svg" />
       </list>
     </option>
   </component>
@@ -234,38 +161,7 @@
     <panes>
       <pane id="Scratches" />
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="talk-jwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="talk-jwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="talk-jwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="talk-jwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="talk-jwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="Scope" />
     </panes>
@@ -433,22 +329,22 @@
       <workItem from="1463440178083" duration="9000" />
       <workItem from="1478079440107" duration="1750000" />
       <workItem from="1478081662732" duration="714000" />
-      <workItem from="1478681819612" duration="229000" />
+      <workItem from="1478681819612" duration="876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199848000" />
+    <option name="totallyTimeSpent" value="200495000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="36" width="2560" height="1404" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.21757813" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32725948" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32725948" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284101" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -479,13 +375,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bower_components/kjur-jsrsasign/jsrsasign-5.0.2-all-min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jsrsasign-5.0.7-all-min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -641,13 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-1.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/media/jwt-schemas/schema-oauth-token.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -749,7 +631,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/schema-cookies-basic-02.svg">
+    <entry file="file://$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-1.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="1220" column="10" selection-start-line="1220" selection-start-column="10" selection-end-line="1220" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-14b.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="1222" column="10" selection-start-line="1222" selection-start-column="10" selection-end-line="1222" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-05.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19952">
+          <caret line="1227" column="12" selection-start-line="1227" selection-start-column="12" selection-end-line="1227" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-04.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19952">
+          <caret line="1227" column="12" selection-start-line="1227" selection-start-column="12" selection-end-line="1227" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-03.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19952">
+          <caret line="1227" column="12" selection-start-line="1227" selection-start-column="12" selection-end-line="1227" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-02.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19952">
+          <caret line="1227" column="12" selection-start-line="1227" selection-start-column="12" selection-end-line="1227" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/schema-cookies-basic-05.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="1280" column="12" selection-start-line="1280" selection-start-column="12" selection-end-line="1280" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/schema-cookies-basic-04.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
           <caret line="1280" column="12" selection-start-line="1280" selection-start-column="12" selection-end-line="1280" selection-end-column="12" />
@@ -765,7 +703,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/schema-cookies-basic-04.svg">
+    <entry file="file://$PROJECT_DIR$/src/media/schema-cookies-basic-02.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
           <caret line="1280" column="12" selection-start-line="1280" selection-start-column="12" selection-end-line="1280" selection-end-column="12" />
@@ -773,50 +711,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/schema-cookies-basic-05.svg">
+    <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-06.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="1280" column="12" selection-start-line="1280" selection-start-column="12" selection-end-line="1280" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-02.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="1227" column="12" selection-start-line="1227" selection-start-column="12" selection-end-line="1227" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-03.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="1227" column="12" selection-start-line="1227" selection-start-column="12" selection-end-line="1227" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-04.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="1227" column="12" selection-start-line="1227" selection-start-column="12" selection-end-line="1227" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-05.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="1227" column="12" selection-start-line="1227" selection-start-column="12" selection-end-line="1227" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-14b.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="1222" column="10" selection-start-line="1222" selection-start-column="10" selection-end-line="1222" selection-end-column="10" />
+        <state relative-caret-position="922">
+          <caret line="1227" column="22" selection-start-line="1227" selection-start-column="22" selection-end-line="1227" selection-end-column="22" />
           <folding />
         </state>
       </provider>

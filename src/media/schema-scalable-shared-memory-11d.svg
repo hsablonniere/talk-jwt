@@ -1115,15 +1115,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1600"
-     inkscape:window-height="876"
+     inkscape:window-width="2560"
+     inkscape:window-height="1404"
      id="namedview4"
      showgrid="false"
      inkscape:zoom="0.40035792"
-     inkscape:cx="1644.0479"
+     inkscape:cx="1048.3309"
      inkscape:cy="435.31888"
      inkscape:window-x="0"
-     inkscape:window-y="1224"
+     inkscape:window-y="36"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2"
      showguides="false"
@@ -1220,13 +1220,13 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96.38951874px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#4444ff;fill-opacity:1;stroke:none"
-       x="222.61687"
+       x="247.06725"
        y="115.43149"
        id="text4316"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4318"
-         x="222.61687"
+         x="247.06725"
          y="115.43149">browser</tspan></text>
     <g
        transform="translate(-24.241298,125.69478)"
@@ -1619,37 +1619,6 @@
          id="path4997" />
     </g>
   </g>
-  <g
-     id="g4690"
-     transform="translate(231.28973,658.02496)">
-    <g
-       transform="matrix(1.9449293,0,0,1.9449293,-1072.3278,27.898783)"
-       id="g5222"
-       style="display:inline">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96.38951874px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ff4444;fill-opacity:1;stroke:none"
-         x="1215.865"
-         y="138.9416"
-         id="text7328-1"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan7330-4"
-           x="1215.865"
-           y="138.9416">partagé</tspan></text>
-    </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:187.47079468px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ff4444;fill-opacity:1;stroke:none"
-       x="1341.371"
-       y="118.38644"
-       id="text5161-0"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5163-0"
-         x="1341.371"
-         y="118.38644">cache</tspan></text>
-  </g>
   <path
      inkscape:connector-curvature="0"
      d="m 1002.1088,165.72772 c 0,0 103.9488,1.05403 127.9995,3.63836 46.6139,5.0088 130.6107,2.61856 185.4006,4.52154 54.79,1.90299 139.4797,6.28774 139.4797,6.28774 m 5.4573,-14.01353 c 0,0 3.8185,5.60917 7.7812,9.57007 3.9626,3.96078 10.9433,10.28912 10.9433,10.28912 0,0 -7.7699,1.80348 -14.1554,4.66846 -6.3857,2.86502 -11.6768,3.33896 -11.6768,3.33896"
@@ -1730,4 +1699,35 @@
        sodipodi:role="line"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;fill:#ff4444;fill-opacity:1"
        id="tspan4755">ID=NJL</tspan></text>
+  <g
+     id="g4690"
+     transform="translate(224.10033,698.02496)">
+    <g
+       transform="matrix(1.9449293,0,0,1.9449293,-1072.3278,27.898783)"
+       id="g5222"
+       style="display:inline">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96.38951874px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ff4444;fill-opacity:1;stroke:none"
+         x="1253.1642"
+         y="138.9416"
+         id="text7328-1"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan7330-4"
+           x="1253.1642"
+           y="138.9416">cache</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:187.47079468px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ff4444;fill-opacity:1;stroke:none"
+       x="1341.371"
+       y="118.38644"
+       id="text5161-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5163-0"
+         x="1341.371"
+         y="118.38644">shared</tspan></text>
+  </g>
 </svg>

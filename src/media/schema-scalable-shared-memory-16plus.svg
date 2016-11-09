@@ -1115,15 +1115,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1176"
+     inkscape:window-width="2560"
+     inkscape:window-height="1404"
      id="namedview4"
      showgrid="false"
      inkscape:zoom="0.57077159"
-     inkscape:cx="1316.6406"
+     inkscape:cx="898.78518"
      inkscape:cy="368.71605"
      inkscape:window-x="0"
-     inkscape:window-y="24"
+     inkscape:window-y="36"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2"
      showguides="false"
@@ -1150,37 +1150,6 @@
        sodipodi:role="line"
        x="514.67456"
        y="850.44727">sessions</tspan></text>
-  <g
-     id="g4690"
-     transform="translate(231.28973,598.02496)">
-    <g
-       transform="matrix(1.9449293,0,0,1.9449293,-1072.3278,27.898783)"
-       id="g5222"
-       style="display:inline">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96.38951874px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ff4444;fill-opacity:1;stroke:none"
-         x="1204.9224"
-         y="169.79108"
-         id="text7328"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan7330"
-           x="1204.9224"
-           y="169.79108">distribué</tspan></text>
-    </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:187.47079468px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ff4444;fill-opacity:1;stroke:none"
-       x="1341.371"
-       y="178.38644"
-       id="text5161"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5163"
-         x="1341.371"
-         y="178.38644">cache</tspan></text>
-  </g>
   <circle
      style="fill:#ff4444;fill-opacity:1"
      cx="1725.6708"
@@ -1208,5 +1177,36 @@
        d="m 70.997,56.649 c 0,0.517 -0.418,0.936 -0.933,0.936 l -16.648,0 c -0.516,0 -0.933,-0.419 -0.933,-0.936 l 0,-15.126 c 0,-0.516 0.417,-0.934 0.933,-0.934 l 16.648,0 c 0.515,0 0.933,0.418 0.933,0.934 l 0,15.126 z M 100,39.675 c 0,6.928 0,13.856 0,20.784 -7.969,9.925 -15.939,-7.927 -23.909,-1.382 l 0,1.735 c 0,0.8 -0.648,1.447 -1.448,1.447 l -25.806,0 c -0.8,0 -1.448,-0.647 -1.448,-1.447 l 0,-23.451 c 0,-0.801 0.648,-1.449 1.448,-1.449 l 25.806,0 c 0.8,0 1.448,0.648 1.448,1.449 l 0,0.537 c 7.97,-6.413 15.94,11.57 23.909,1.777 z m -26.795,0.044 c 0,-0.639 -0.519,-1.157 -1.157,-1.157 l -20.616,0 c -0.639,0 -1.156,0.518 -1.156,1.157 l 0,18.734 c 0,0.64 0.518,1.157 1.156,1.157 l 20.616,0 c 0.639,0 1.157,-0.518 1.157,-1.157 l 0,-18.734 z m -28.655,0.555 -12.006,0 0,-2.733 c 0,-1.122 -0.91,-2.032 -2.032,-2.032 l -7.604,0 c -1.107,0 -2.006,0.887 -2.029,1.989 C 13.92,36.451 6.96,48.967 0,40.3 c 0,7.068 0,14.136 0,21.205 6.959,8.55 13.918,-4.077 20.878,-3.147 l 0,1.227 0,1.047 c 0,1.122 0.909,2.032 2.031,2.032 l 7.604,0 c 1.122,0 2.032,-0.91 2.032,-2.032 l 0,-2.731 12.005,0 c 1.123,0 2.032,-0.911 2.032,-2.033 l 0,-13.56 c 10e-4,-1.124 -0.909,-2.034 -2.032,-2.034 z m -1.098,13.142 c 0,0.702 -0.569,1.271 -1.271,1.271 l -6.749,0 c -0.702,0 -1.271,-0.569 -1.271,-1.271 l 0,-8.483 c 0,-0.702 0.569,-1.27 1.271,-1.27 l 6.749,0 c 0.702,0 1.271,0.568 1.271,1.27 l 0,8.483 z"
        inkscape:connector-curvature="0"
        style="fill:#00cf00;fill-opacity:1" />
+  </g>
+  <g
+     id="g4690"
+     transform="translate(224.10029,698.02496)">
+    <g
+       transform="matrix(1.9449293,0,0,1.9449293,-1108.3278,27.898783)"
+       id="g5222"
+       style="display:inline">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96.38951874px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ff4444;fill-opacity:1;stroke:none"
+         x="1253.1642"
+         y="138.9416"
+         id="text7328-1"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan7330-4"
+           x="1253.1642"
+           y="138.9416">cache</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:187.47079468px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ff4444;fill-opacity:1;stroke:none"
+       x="1221.3387"
+       y="118.38644"
+       id="text5161-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5163-0"
+         x="1221.3387"
+         y="118.38644">distributed</tspan></text>
   </g>
 </svg>
