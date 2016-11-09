@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="prezento-capable" content="yes">
   <meta name="prezento-vendor" content="dzslides">
-  <title>100% Stateless avec JWT</title>
+  <title>100% Stateless with JWT</title>
   <link href="dzslides.css" rel="stylesheet">
   <!--link(href='https://fonts.googleapis.com/css?family=Press+Start+2P', rel='stylesheet', type='text/css')-->
   <link href="fonts.css" rel="stylesheet">
@@ -27,12 +27,10 @@
       </div>
     </div>
     <div role="note">
-      Bonjour à tous ! Je m'appelle Hubert SABLONNIÈRE, je suis dev Web et il y a qq mois j'ai rejoint un petite boite aux Etats-Unis qui s'appelle OpenDevise.
-      En gros, on travaille sur des outils open-source pour améliorer la création, la gestion et la publication de contenus pédagogiques :
-      documentation, formation et présentations dans les conférences...
-      On considère que tous ces contenus, c'est comme n'importe quel composant applicatif, ça doit être outillé : versionning, build, déploiement, etc...
-      J'habite toujours à Lille,
-      d'ailleurs, je bosse dans un espace de coworking qui s'apelle...
+      Hello everyone!
+      My name is Hubert SABLONNIÈRE.
+      I'm a developer hacking on web technologies for OpenDevise and, today, I going to talk about JWT.
+      This story begins with...
       
     </div>
   </section>
@@ -41,20 +39,21 @@
       <figcaption>Christmas 1994</figcaption>
     </figure>
     <div role="note">
-      ...mon premier ordinateur.
-      Bon OK [...] c'était pas "MON" ordinateur,
-      c'était pour toute la famille, bien sûr.
-      On l'a eu pour Noël 1994.
+      ...my first computer.
+      Ooo-kay, it wasn't really "my" computer,
+      it was for the whole family to share.
+      We got it for Christmas of '94.
       
     </div>
   </section>
   <section>
     <figure class="fs-media fs-media-cover"><img src="/media/compaq-1.jpg"></figure>
     <div role="note">
-      Un Compaq Presario avec 33Mz de processeur.
-      Une bête de course à l'époque.
-      Quand mon père l'a ramené à la maison, on était tout fou.
-      Avec ma soeur, on a tout de suite cherché où étaient...
+      It was a Compaq Presario with a 33Mz processor.
+      It was state of the art.
+      When my father brought it home, we went crazy.
+      With my sister, we immediately looked for games.
+      Annnnd, for sure...
       
     </div>
   </section>
@@ -65,18 +64,19 @@
       </picture>
     </figure>
     <div role="note">
-      ...les jeux mais on s'est vite lassé du démineur et du soliaire et
-      c'est à peu près à ce moment là que nos cousins nous on fait découvrir...
+      ...we found them :(
+      But then our cousins clued us in about...
       
     </div>
   </section>
   <section>
     <figure class="fs-media"><img src="/media/msdos.png"></figure>
     <div role="note">
-      ...les jeux MS-DOS [...] wouahhh.
-      Dès que j'allais chez un pote et qu'il me montrait un nouveau jeu, je lui demandais direct : "Ça rentre sur une disquette ?"
-      Bon du coup, ça fait un peu peur quand tu vois qu'en 2016, il faut 4 disquettes pour stocker la page d'accueil d'amazon mais bon.
-      Un de mes jeux préférés c'était les...
+      ...MS-DOS games (pause...) woooooah (ray-style).
+      Each time I was over at one of my friend's house, and he showed off a new game, I was like, "Does it fit on a floppy?" ;)
+      Well, thinking about the fact that the Amazon web page in 2016 barely fits on 4 of them... 
+      (pause...)
+      One of my favorite games was...
       
     </div>
   </section>
@@ -85,34 +85,52 @@
       <video src="/media/lemmings-fun-level-1-just-dig-1991-ms-dos.webm#t=24" autoplay="false" data-playbackrate="3"></video>
     </figure>
     <div role="note">
-      ...Lemmings. [???] Il y en a qui jouait aux Lemmings ici ?
-      Bon le principe est simple. Il y a des petits bonshommes qui rentrent dans le monde par la trappe et il faut les aider à sortir par la grande porte. Le problème c'est qu'ils sont très très cons et qu'il faut parfois les empêcher de mourir. Alors on leur dit de creuser, de grimper, de construire des escaliers, comme dans la vraie vie quoi.
-      A la fin, si on en a sauvé assez, le niveau est validé et on obtient un code.
-      
+      ...Lemmings.
+      Who here has played Lemmings?
+      Incredible.
+      Every time my friend sees me with this t-shirt on, he's like, "Why are you wearing the shirt with pixelated Beatles on it again?"
+      (pause...)
+      I love this game. (You can tell?)
+      I've played it eeeeverywhere.
+      But actually, I've never played it in a movie theater.
+      So for the 2 guys in the back who don't know this game, (pause...), let's fix that.
+      (pause...)
+      So it's a simple game.
+      You have little guys who enter the world from the hatch and you have to help them find the exit.
+      The problem is, they are really stupid.
+      They only walk straight, so sometimes you have to prevent them from killing themselves.
+      You can tell them to dig, to climb, to build stairs...just like in real life.
+      At the end, if you saved enough Lemmings, the level is completed and you get a code.
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-fill zoom-code"><img src="/media/lemmings-code-info.jpg"></figure>
     <div role="note">
-      C'est vachement pratique ce système de code parce qu'après 3 ou 4 "Hubert, tu viens manger ?",
-      bah t'es bien obligé d'éteindre l'ordinateur et le lendemain,
-      si tu veux pas te retaper les 17 niveaux...
+      This code system is really handy because when you hear, "Hubert, it's dinner time."
+      Well, back then you had to shut down the computer.
+      And the next morning, if you redo all 17 levels...
       
     </div>
   </section>
   <section class="black">
     <figure class="fs-media fs-media-fill"><img src="/media/lemmings-code-input.png"></figure>
     <div role="note">
-      ...tu saisis le code et t'arrives direct au niveau qui va bien.
+      ...you just enter the code and you arrive directly at the level where you left off.
+      
+    </div>
+  </section>
+  <section> 
+    <div role="note">
+      (walk)
       
     </div>
   </section>
   <section>
     <figure class="fs-media"><img src="/media/netscape.png"></figure>
     <div role="note">
-      Pendant ce temps là, chez Netscape [...]
-      Lou Montulli invente pour notre plus grand plaisir...
+      // (phrasing?)
+      Meanwhile, at Netscape headquarters, Lou Montulli invents...
       
     </div>
   </section>
@@ -120,12 +138,15 @@
     <div class="quote">The <span class="blink">&lt;blink&gt;</span> tag is the worst thing I've ever done for the Internet.</div>
     <div class="quote-author">Lou Montulli<br>(netscape)</div><img src="./media/loumontulli.jpg" class="quote-author-avatar">
     <div role="note">
-      ...la balise HTML < blink > [COUGH]
-      Mais Lou a aussi de très bonnes idées.
-      On est en juin 1994, Netscape bosse pour un client qui développe une solution de panier virtuel pour du e-commerce.
-      A l'époque, pour gérer ça, on était obligé de stocker l'état dans l'URL.
-      Ça résumait à peu près l'expérience d'achat à celle d'un distributeur de canettes :
-      un produit à la fois.
+      ...the < blink > tag.
+      Hey, before you troll him too hard, come on, I used, you used it, everybody used it.
+      
+      But Lou also had very good ideas.
+      It's June 1994, Netscape is working for a client developing a virtual basket solution for an e-commerce website.
+      
+      Back then, in order to do this, you had to store the state in the URL.
+      It pretty much made the buying experience like a vending machine.
+      One item at a time.
       
     </div>
   </section>
@@ -133,11 +154,11 @@
     <div class="title">Once upon a time...</div>
     <div class="title"><span class="title-info">HTTP cookies</span></div>
     <div role="note">
-      Du coup, Lou propose d'appliquer le concept existant de magic-cookies sur le Web
-      et c'est ainsi que les cookies HTTP voient le jour.
-      Lou travaille sur une spécification avec John Giannandrea
-      et le support arrive dans Netscape assez rapidement.
-      Le premier usage officiel, c'était de savoir si un visiteur de netscape.com est déjà venu sur le site.
+      So, Lou proposed to apply the existing magic cookies concept on the Web.
+      And that's how HTTP cookies were born.
+      Lou works on a specification with John Giannandrea
+      and the support arrives pretty quickly in Netscape.
+      The first official usage is to know if a visitor of netscape.com has ever come to the site.
       
     </div>
     <!--L'idée générale est proche du système des Lemmings :-->
@@ -152,87 +173,93 @@
   </section>
   <section class="no-transition">
     <div role="note">
-      Le fonctionnement n'a pas beaucoup changé depuis mais voici un petit rappel.
-      Quand un utilisateur se connecte sur un site avec...
+      The behavior hasn't changed much, but just so we're all on the same page, let's do a recap.
+      When a user is signing into a website with...
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-01.svg"></figure>
     <div role="note">
-      ...son navigateur,
-      il saisit son login/mdp et il valide le formulaire de login.
+      ...his browser,
+      he enters his username/password and he validates the sign-in form.
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-02.svg"></figure>
     <div role="note">
-      Le navigateur envoi une requête POST côté serveur.
+      The browser sends a POST request to the server.
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-03.svg"></figure>
     <div role="note">
-      Le serveur demande à la base de donnée si l'utilisateur existe.
+      The server asks the database if the user exists.
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-04.svg"></figure>
     <div role="note">
-      La base répond, "oui John existe, voici le mot de passe haché et salé".
-      Le serveur passe sa moulinette sécurisée (bcrypt, pbkdf2 ou autre) pour valider le mot de passe.
+      The database responds, "John Lennon, of course, here's the hashed and salted password."
+      The server has to verify the hashed and salted password using the latest security protocol (bcrypt, pbkdf2 or whatever).
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-05.svg"></figure>
     <div role="note">
-      Si tout va bien, le serveur peut enfin envoyer la réponse
-      et c'est là que le navigateur va enregistrer pour les prochaines visites le couple clé/valeur name=John,
-      le fameux cookie.
+      If all is good, the server can finally send the response
+      and that's when the browser stores the key/value pair name=John,
+      the very cookie we're talking about.
+      
+    </div>
+  </section>
+  <section>
+    <div role="note">
+      // (wc?)
+      Now, you have to know, a browser is friendly when it comes to its cookies.
+      //Whenever a browser sends a request to a given domain, it's like, "Here are all the cookies you gave me."
+      Whenever a browser sends a request to a given domain, it's like, "I'm a browser. What do I do? I send back all my cookies."
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-06.svg"></figure>
     <div role="note">
-      Du coup quand l'utilisateur revient,
-      son navigateur renvoie automatiquement ce cookie au serveur,
-      et le serveur se sert de ces données pour
+      So when the user comes back,
+      his browser automatically sends this cookie to the server,
+      and the server uses this data...
       
     </div>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-07.svg"></figure>
     <div role="note">
-      afficher à l'utilisateur une page qui se souvient qu'il s'appelle John.
-      Je sais pas vous, mais moi ça me rapelle étrangement le système de codes des Lemmings,
-      sauf qu'à l'époque,
+      ...to display to the user a page that remembers that his name is John.
+      I don't know about you, but it reminds me of the code system from Lemmings,
+      but back then,
       
     </div>
   </section>
   <section>
     <figure class="fs-media fs-media-cover"><img src="/media/lemmings-code-notebook.jpg"></figure>
     <div role="note">
-      du haut de mes 8 ans,
-      c'est moi qui faisait le navigateur.
-      J'avais mon framework maison : le bloc notes... [clac]
-      Bref, le truc avec les codes des Lemmings, c'est qu'on ne pouvait pas deviner le code du niveau suivant.
-      Ça serait trop facile.
+      as an 8 year old,
+      I acted as the browser.
+      I handled the state myself.
+      I had my homemade framework, the notebook... [clac]
+      The thing with Lemmings is that we couldn't guess the code for the next level.
+      That would be too easy.
+      
     </div>
-    <!--Ça me rapelle bizarrement une situation,-->
-    <!--Comme quoi, en 1994, je me mettais déjà à la place du navigateur...-->
-    <!--L'idée générale étant assez proche du système des Lemmings,-->
-    <!--Bon, ça nécessite de garder une session côté client,-->
-    <!--A l'époque, le framework à la mode pour ça, c'était le bloc-notes.-->
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-cookies-basic-08.svg"></figure>
     <div role="note">
-      Alors que là, je peux très bien me faire passer pour Paul alors que je suis John.
+      But in this case, I can easily trick the server into thinking I'm Paul despite the that I'm John.
       
     </div>
   </section>
@@ -548,12 +575,6 @@
       Après, rien ne vous empêche de mettre de mettre en place et de maintenir des sticky sessions avec un...
       
     </div>
-  </section>
-  <section class="no-transition">
-    <figure class="fs-media fs-media-cover fs-media-cover--left"><img src="/media/schema-scalable-shared-memory-16.svg"></figure>
-  </section>
-  <section class="no-transition">
-    <figure class="fs-media fs-media-cover fs-media-cover--right-nt"><img src="/media/schema-scalable-shared-memory-16.svg"></figure>
   </section>
   <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--right-nt"><img src="/media/schema-scalable-shared-memory-16.svg" class="trigger-media-on"><img src="/media/schema-scalable-shared-memory-16plus.svg" class="trigger-media-off"></figure>
