@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d69d9c3-1534-4035-9da8-cddbf94fbae8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dynamic-code-in-slides.js" afterPath="$PROJECT_DIR$/src/dynamic-code-in-slides.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-10.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-10.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-jwt-paper.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-jwt-paper.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.scss" afterPath="$PROJECT_DIR$/src/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-jwt-09.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-jwt-09.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-jwt-06.svg" afterPath="$PROJECT_DIR$/src/media/schema-jwt-06.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-jwt-languages.svg" afterPath="$PROJECT_DIR$/src/media/schema-jwt-languages.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.jade" afterPath="$PROJECT_DIR$/src/index.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/editor.js" afterPath="$PROJECT_DIR$/src/editor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/jwt-schemas/schema-csrf-02.svg" afterPath="$PROJECT_DIR$/src/media/jwt-schemas/schema-csrf-02.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.one-gulp/dev/index.html" afterPath="$PROJECT_DIR$/.one-gulp/dev/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-jwt-05.svg" afterPath="$PROJECT_DIR$/src/media/schema-jwt-05.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt.svg" afterPath="$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.one-gulp/dev/editor.html" afterPath="$PROJECT_DIR$/.one-gulp/dev/editor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.one-gulp/dev/index.css" afterPath="$PROJECT_DIR$/.one-gulp/dev/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/editor.jade" afterPath="$PROJECT_DIR$/src/editor.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-jwt-08.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-jwt-08.svg" />
     </list>
     <ignored path="talk-jwt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,7 +38,38 @@
     <favorites_list name="talk-jwt" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="editor.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/editor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editor.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/editor.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="15" column="40" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dynamic-code-in-slides.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dynamic-code-in-slides.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="924">
+              <caret line="22" column="21" selection-start-line="4" selection-start-column="0" selection-end-line="22" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -132,18 +180,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="talk-jwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -310,19 +351,18 @@
       <workItem from="1478079440107" duration="1750000" />
       <workItem from="1478081662732" duration="714000" />
       <workItem from="1478681819612" duration="4541000" />
-      <workItem from="1478687647356" duration="144000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204304000" />
+    <option name="totallyTimeSpent" value="204160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="36" width="2560" height="1404" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="true" show_stripe_button="true" weight="0.21757813" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.21757813" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32725948" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -339,24 +379,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -673,24 +695,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/schema-jwt-languages.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/editor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/editor.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="630">
           <caret line="15" column="40" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="40" />
           <folding />
         </state>
@@ -700,6 +707,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="924">
           <caret line="22" column="21" selection-start-line="4" selection-start-column="0" selection-end-line="22" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/schema-jwt-languages.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
           <folding />
         </state>
       </provider>
