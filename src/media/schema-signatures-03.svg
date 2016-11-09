@@ -6609,7 +6609,7 @@
          y="527.86639"
          x="418.89478"
          id="tspan4318-5"
-         sodipodi:role="line">symétrique</tspan></text>
+         sodipodi:role="line">symmetric</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96.38951874px;line-height:125%;font-family:'Just Another Hand';-inkscape-font-specification:'Just Another Hand';letter-spacing:0px;word-spacing:0px;display:inline;fill:#00cf00;fill-opacity:1;stroke:none"
@@ -6622,7 +6622,7 @@
          x="1144.3907"
          y="527.86639"><tspan
    id="tspan7635"
-   style="fill:#ff0000;fill-opacity:1">a</tspan>symétrique</tspan></text>
+   style="fill:#ff0000;fill-opacity:1">a</tspan>symmetric</tspan></text>
     <g
        transform="translate(-51.856062,60)"
        id="g7604">
@@ -6641,7 +6641,7 @@
            y="744.15991"
            x="510.35922"
            id="tspan7602"
-           sodipodi:role="line">secret partagé</tspan></text>
+           sodipodi:role="line">shared secret</tspan></text>
     </g>
     <g
        transform="translate(29.039239,0)"

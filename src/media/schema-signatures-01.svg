@@ -6595,7 +6595,7 @@
        sodipodi:role="line"
        id="tspan4318-5"
        x="490.97882"
-       y="527.86639">symétrique</tspan></text>
+       y="527.86639">symmetric</tspan></text>
   <g
      id="g7604"
      transform="translate(20.227977,60)">
@@ -6614,7 +6614,7 @@
          sodipodi:role="line"
          id="tspan7602"
          x="510.35922"
-         y="744.15991">secret partagé</tspan></text>
+         y="744.15991">shared secret</tspan></text>
   </g>
   <text
      xml:space="preserve"

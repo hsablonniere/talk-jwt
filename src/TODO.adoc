@@ -1,61 +1,57 @@
 = TODO
 
+== MUST
+
 * Translate the slides (without changing too much)
 * Translate the story into english (without changing too much)
 * Explain the Lemmings game was also on SNES
-* Maybe try a MS-DOS emulator
-* Slides on fake IE6
 * Insister un peu plus sur les beatles
-* slide John Lennon vs Paul McCartney
-* something to replace the cat
-** loading page
-* add the animations on the SVGs
-* Jo Wilfried Tsonga ? (GWT)
 * animate the scale with ID session vs JWT
 * change hsablonniere stuffs to jlennon
-* warning this is not encrypted
 * redo the microservice series of slides
-* redo reading on oAuth2
-* redo reading on Open ID connect
-* more schema to explain revocation
 * redo XSS explain
-* autres usages => what's next
-** other usages
+** Fake social network
+* add "and beyond?"
 ** the gateway architecture
-* rework the end
-* open devise logo
 * add slides for jwe
+* more diagrams to explain revocation
+** more steps
+* white screen before netscape
+* visual for "I'm a browser, I'm sending all the cookies I have"
+** use it several times
+* change 42 and 36
+* remind lemmings code on ID=42
+* video of level something while drinking
+** enter code
+* remove double slide before airbag
+* put the forbidden sign on the special button
+* white screen before JWT base64
+* bold on base64URLdecode
+* bold on parseJSON
+* refactor the microservices diagrams (remove the high availability stuffs)
+* split asymetric key
+* add the round trip to the memory for the sync token in session
 
-NOTES with dan
+== SHOULD
 
-white screen before netscape
-visual for "I'm a browser, I'm sending all the cookies I have"
-  use it several times
-change 42 and 36
-remind lemmings code on ID=42
-video of level something while drinking
-  enter code
-SPOF => lemmings who dies
-remove double slide before airbag
-put the forbidden sign on the special button
-add "cookie is the base of the scale"
-white screen before JWT base64
-// diagram with "JWT encoded not encrypted"
-  it's the same thing representated a different way
-bold on base64URLdecode
-bold on parseJSON
-use john instead of john
-refactor the microservices diagrams (remove the high availability stuffs)
-split asymetric key
-OAUTH2 but what you need to know about JWT
-malicious site => location bar
-replace twitter XSS => fake social service
-add the round trip to the memory for the sync token in session
+* add "cookie is the base of the scale"
+* add the animations on the SVGs
+* SPOF => lemmings who dies
+* malicious site => location bar
+
+== Speech indications
+
+* OAUTH2 but what you need to know about JWT
 
 == questions from translation
 
+cache partagé => shared cache
+cache distribué => distributed cache
+
 écriture + signature
+=> write + sign
 vérification + lecture
+=> verify + read
 
 == console
 
