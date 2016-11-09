@@ -101,13 +101,13 @@ body
         div(role='note').
             This code system is really handy because when you hear, "Hubert, it's dinner time."
             Well, back then you had to shut down the computer.
-            And the next morning, if you redo all 17 levels...
+            To avoid having to go through all 17 levels the next morning...
 
     section.black
         figure.fs-media.fs-media-fill
             img(src="/media/lemmings-code-input.png")
         div(role='note').
-            ...you just enter the code and you arrive directly at the level where you left off.
+            ...you just enter the code and jump directly to the level where you left off.
 
     section 
         div(role='note').
@@ -213,9 +213,9 @@ body
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-cookies-basic-07.svg")
         div(role='note').
-            ...to display to the user a page that remembers that his name is John.
-            I don't know about you, but it reminds me of the code system from Lemmings,
-            but back then,
+            ...to display to the user a page that remembers his name is John.
+            I don't know about you, but it reminds me of the Lemmings codes.
+            But back then,
 
     section
         figure.fs-media.fs-media-cover
@@ -236,8 +236,10 @@ body
 
     section.no-transition
         div(role='note').
-            Le serveur doit trouver un moyen pour faire confiance au cookie que je lui donne.
-            C'est une des raisons pour laquelle on a introduit le concept d'identifiant de session.
+            The server must find a way to trust the cookie that I give it.
+            It's the reason why we introduced the concept of the session identifier.
+            //~ Le serveur doit trouver un moyen pour faire confiance au cookie que je lui donne.
+            //~ C'est une des raisons pour laquelle on a introduit le concept d'identifiant de session.
 
         //On est toujours sur ...
         //Explications en plusieurs étapes du fonctionnement des cookies avec session ID
@@ -265,50 +267,64 @@ body
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-cookies-session-08.svg")
         div(role='note').
-            En gros, si je reprens la situation prédécente :
-            Juste avant d'envoyer la réponse,
+            Basically, if I go back to the previous situation:
+            Just before sending the response,
+            //~ En gros, si je reprens la situation prédécente :
+            //~ Juste avant d'envoyer la réponse,
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-cookies-session-09.svg")
         div(role='note').
-            le serveur va générer un identifiant bien aléatoire,
-            genre 42,
-            et il va associer dans un cache mémoire l'identifiant 42 avec les informations de l'utilisateur.
-            Et du coup, au lieu d'envoyer le nom de la personne connectée,
+            the server generates a random identifier,
+            like a42,
+            and associates the identifier a42 in the in-memory cache with the user's information.
+            now, instead of sending the name of the person signed in,
+            //~ le serveur va générer un identifiant bien aléatoire,
+            //~ genre 42,
+            //~ et il va associer dans un cache mémoire l'identifiant 42 avec les informations de l'utilisateur.
+            //~ Et du coup, au lieu d'envoyer le nom de la personne connectée,
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-cookies-session-10.svg")
         div(role='note').
-            le serveur envoie juste cet identifiant de session dans un cookie,
-            et quand le visiteur navigue sur le site,
+            the server just sends the session identifier in a cookie,
+            and when the visitor comes to the site,
+            //~ le serveur envoie juste cet identifiant de session dans un cookie,
+            //~ et quand le visiteur navigue sur le site,
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-cookies-session-11.svg")
         div(role='note').
-            le navigateur renvoie les cookies au serveur.
+            the browser returns the cookies to the server.
+            //~ le navigateur renvoie les cookies au serveur.
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-cookies-session-12.svg")
         div(role='note').
-            Pour savoir qui a demandé la page,
-            le serveur a besoin de son cache mémoire pour transformer un identifiant opaque...
+            To know who requested the page,
+            the server looks in its in-memory cache to transform the obscure identifier...
+            //~ Pour savoir qui a demandé la page,
+            //~ le serveur a besoin de son cache mémoire pour transformer un identifiant opaque...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-cookies-session-13.svg")
         div(role='note').
-            ...en informations sur l'utilisateur et ainsi...
+            ...to the user's information and thus...
+            //~ ...en informations sur l'utilisateur et ainsi...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-cookies-session-14.svg")
         div(role='note').
-            ...envoyer une réponse contextualisée à l'utilisateur.
-            Génial.
+            ...sends a contextual response to the user.
+            Nice.
+            //~ ...envoyer une réponse contextualisée à l'utilisateur.
+            //~ Génial.
 
     section
         figure.fs-media.fs-media-cover
@@ -316,198 +332,258 @@ body
 
     section
         div(role='note').
-            Il y a plusieurs inconvénients à utiliser des identifiants de session.
+            There are several disadvantages to using session IDs.
+            //~ Il y a plusieurs inconvénients à utiliser des identifiants de session.
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-02.svg")
         div(role='note').
-            Si votre site a du succès,
-            un seul serveur ne suffira pas,
-            il risque de tomber.
+            If your site is very successful,
+            a single server won't suffice,
+            because it could fail.
+            //~ Si votre site a du succès,
+            //~ un seul serveur ne suffira pas,
+            //~ il risque de tomber.
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-03.svg")
         div(role='note').
-            Pas de soucis, une archi avec deux instances et un load balancer, merci au revoir.
-            Après, je dis deux mais on va imaginer que vous aillez...
+            No problem, an architecture with 2 instances and a load balancer, thanks goodbye.
+            I say 2 but we can imagine that you're...
+            //~ Pas de soucis, une archi avec deux instances et un load balancer, merci au revoir.
+            //~ Après, je dis deux mais on va imaginer que vous aillez...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-04.svg")
         div(role='note').
-            ...vraiment,
+            ...very,
+            //~ ...vraiment,
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-05.svg")
         div(role='note').
-            beaucoup,
+            very,
+            //~ beaucoup,
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-06.svg")
         div(role='note').
-            beaucoup de succès.
+            successful.
+            //~ beaucoup de succès.
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-07.svg")
         div(role='note').
-            Toutes les instances de ce cluster sont les mêmes.
-            Peut importe la technique (provisionning, VM, conteneurs...)
-            on a répliqué la même conf partout.
-            Du coup, ils...
+            Remind yourself that all the servers are configured the same way.
+            Regardless of the technique (provisioning, VM, containers...)
+            We can replicate the same configuration everywhere.
+            So, they...
+            //~ Toutes les instances de ce cluster sont les mêmes.
+            //~ Peut importe la technique (provisionning, VM, conteneurs...)
+            //~ on a répliqué la même conf partout.
+            //~ Du coup, ils...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-08.svg")
         div(role='note').
-            ...ont tous leur propre cache mémoire,
-            et si j'arrive avec l'identifiant de session...
+            ...all have their own in-memory cache,
+            and if I arrive with session identifier...
+            //~ ...ont tous leur propre cache mémoire,
+            //~ et si j'arrive avec l'identifiant de session...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-09.svg")
         div(role='note').
-            ...42 sur le serveur qui a les infos dans son cache mémoire,
-            tout va bien.
-            Maintenant imaginez que le load balancer...
+            ...a42 to the server that has the information in its in-memory cache,
+            everything is fine.
+            But imagine that the load balancer...
+            //~ ...42 sur le serveur qui a les infos dans son cache mémoire,
+            //~ tout va bien.
+            //~ Maintenant imaginez que le load balancer...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-10.svg")
         div(role='note').
-            ...me redirige sur un noeud qui n'a pas les infos de la session 42,
-            je suis mal barré.
+            ...redirects me to a node that knows nothing about session a42,
+            I'm screwed.
             [WALK]
-            La solution facile et naïve, c'est de ne...
+            The easy and naive solution, is no longer...
+            //~ ...me redirige sur un noeud qui n'a pas les infos de la session 42,
+            //~ je suis mal barré.
+            //~ [WALK]
+            //~ La solution facile et naïve, c'est de ne...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-11a.svg")
         div(role='note').
-            ...plus avoir de cache mémoire sur chaque serveur.
-            A la place, on met un...
+            ...to have an in-memory cache on each server.
+            Instead, we put a...
+            //~ ...plus avoir de cache mémoire sur chaque serveur.
+            //~ A la place, on met un...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-11b.svg")
         div(role='note').
-            cache partagé "as a service",
-            il connait...
+            shared cache "as a service",
+            it knows...
+            //~ cache partagé "as a service",
+            //~ il connait...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-11c.svg")
         div(role='note').
-            ...la session 42,
-            mais ils connait aussi toutes les autres,
-            du coup, il peut donc répondre à...
+            ...session a42,
+            but also knows about all the other sessions
+            so, it can therefore respond to...
+            //~ ...la session 42,
+            //~ mais ils connait aussi toutes les autres,
+            //~ du coup, il peut donc répondre à...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-11d.svg")
         div(role='note').
-            ...toutes les instances du cluster.
-            En faisant ça, on a décalé le problème d'une couche et on a...
+            ...all the nodes of the cluster.
+            By doing this, we have only shifted the problem to another layer and we have...
+            //~ ...toutes les instances du cluster.
+            //~ En faisant ça, on a décalé le problème d'une couche et on a...
 
     section.slide-section.no-images
         .fit-title
             .title insert lemmings video here
         div(role='note').
-            ...un bon gros Single Point Of Failure.
+            ...a single point of failure.
             [...]
+            //~ ...un bon gros Single Point Of Failure.
+            //~ [...]
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-11e.svg")
         div(role='note').
-            Si le cache partagé tombe,
+            If the shared cache fails,
+            //~ Si le cache partagé tombe,
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-11f.svg")
         div(role='note').
-            on est cuit.
-            Non la solution, c'est plutôt de...
+            we're toast.
+            No, the solution is rather...
+            //~ on est cuit.
+            //~ Non la solution, c'est plutôt de...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-12a.svg")
         div(role='note').
-            ...laisser un cache mémoire sur chaque instance,
+            ...to put an in-memory cache on each instance,
+            //~ ...laisser un cache mémoire sur chaque instance,
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-12b.svg")
         div(role='note').
-            et d'avoir de la réplication,
-            un cache distribué genre memcached, ehcache et compagnie.
-            Du coup,
+            and have replication,
+            using a distributed cache like memcached, ehcache and company.
+            So,
+            //~ et d'avoir de la réplication,
+            //~ un cache distribué genre memcached, ehcache et compagnie.
+            //~ Du coup,
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-12c.svg")
         div(role='note').
-            peut importe le noeud choisi par le load balancer pour traiter une requête,
-            chaque instance à les infos de toutes les sessions.
-            Si une instance...
+            no matter which node is selected by the load balancer to handle the request,
+            each instance has all the sessions.
+            If an instance...
+            //~ peut importe le noeud choisi par le load balancer pour traiter une requête,
+            //~ chaque instance à les infos de toutes les sessions.
+            //~ Si une instance...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-12d.svg")
         div(role='note').
-            ...tombe, no soucy, le load balancer gère.
-            Côté dev, les techniques et les outils sont là.
-            Par contre, en fonction de votre contexte,
-            la difficulté peut se situer côté ops.
-            Niveau réseau, toutes les instances doivent se voir,
-            il faut ouvrir plus de ports et ça discute dans tous les sens.
+            ...fails, no problem, the load balancer can manage.
+            On the dev side, the techniques and tools are there.
+            On the other hand, depending on your context,
+            the difficulty falls on the ops side.
+            At the network level, all the instances must see each other,
+            so it's necessary to open more ports and machines get very chatty.
             [...]
+            //~ ...tombe, no soucy, le load balancer gère.
+            //~ Côté dev, les techniques et les outils sont là.
+            //~ Par contre, en fonction de votre contexte,
+            //~ la difficulté peut se situer côté ops.
+            //~ Niveau réseau, toutes les instances doivent se voir,
+            //~ il faut ouvrir plus de ports et ça discute dans tous les sens.
+            //~ [...]
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-12a.svg")
         div(role='note').
-            L'autre technique, c'est de donner un peu d'intelligence au load balancer en utilisant des...
+            The other technique is to give a little intelligence to the load balancer and use some...
+            //~ L'autre technique, c'est de donner un peu d'intelligence au load balancer en utilisant des...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-13.svg")
         div(role='note').
             ...sticky sessions.
-
+            //~ ...sticky sessions.
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-14a.svg")
         div(role='note').
-            Quand une requête arrive,
-            le load balancer lit le cookie : "identifiant de session 36 !"
+            When a request arrives,
+            the load balancer reads the cookie: "session ID d71!"
+            //~ Quand une requête arrive,
+            //~ le load balancer lit le cookie : "identifiant de session 36 !"
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-14b.svg")
         div(role='note').
-            "C'est par ici Monsieur !"
+            "It's not here, sir!"
+            //~ "C'est par ici Monsieur !"
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-15a.svg")
         div(role='note').
-            "Identifiant 42, c'est par là".
-            Par contre, si le noeud...
+            "ID a42, it's over there"
+            By contrast, if the node...
+            //~ "Identifiant 42, c'est par là".
+            //~ Par contre, si le noeud...
 
     section.no-transition
         figure.fs-media.fs-media-cover.fs-media-cover--left
             img(src="/media/schema-scalable-shared-memory-15b.svg")
         div(role='note').
-            ...tombe,
-            une partie des sessions utilisateurs sont perdues,
-            mais le site est toujours disponible.
-            Après, rien ne vous empêche de mettre de mettre en place et de maintenir des sticky sessions avec un...
+            ...fails,
+            some of the users' sessions are lost,
+            but the site is always available.
+            Beyond that, nothing prevents you from putting in place and maintaining sticky sessions with a...
+            //~ ...tombe,
+            //~ une partie des sessions utilisateurs sont perdues,
+            //~ mais le site est toujours disponible.
+            //~ Après, rien ne vous empêche de mettre de mettre en place et de maintenir des sticky sessions avec un...
 
     //- section.no-transition
     //-     figure.fs-media.fs-media-cover.fs-media-cover--left
@@ -522,17 +598,23 @@ body
             img.trigger-media-on(src="/media/schema-scalable-shared-memory-16.svg")
             img.trigger-media-off(src="/media/schema-scalable-shared-memory-16plus.svg")
         div(role='note').
-            ...cache distribué en plus, en mode ceinture/airbag.
-            Tout va dépendre de votre budget.
+            ...an additional distributed cache, like a seatbelt.
+            It all depends on your budget.
             [...]
-            Le choix de l'architecture et la difficulté de mise en place vont forcément dépendre de votre contexte, de votre stack, de vos devs, de vos ops, etc...
-            mais je ne peux pas m'empêcher de me dire que ça serait plus simple si l'état de la session était complètement géré...
+            The choice of architecture and the difficulty of setting it up depends on your context, your stack, your devs, your ops, etc..
+            but I cannot help myself from thinking it could be simpler if the state was managed on...
+            //~ ...cache distribué en plus, en mode ceinture/airbag.
+            //~ Tout va dépendre de votre budget.
+            //~ [...]
+            //~ Le choix de l'architecture et la difficulté de mise en place vont forcément dépendre de votre contexte, de votre stack, de vos devs, de vos ops, etc...
+            //~ mais je ne peux pas m'empêcher de me dire que ça serait plus simple si l'état de la session était complètement géré...
 
     section
         figure.fs-media.fs-media-cover
             img(src="/media/lemmings-code-notebook.jpg")
         div(role='note').
-            ...côté client.
+            ...client side.
+            //~ ...côté client.
             Le seul truc qui manque, c'est un moyen pour le serveur de faire confiance au navigateur pour qu'il ne puisse pas tricher.
             Quand la navigateur de John envoie un cookie qui dit "Je suis John et je suis Admin",
             le serveur doit trouver un moyen pour lui faire confiance.
