@@ -155,6 +155,19 @@ a {
   }
 }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360eg);
+  }
+}
+
+.triggerAction .all-languages {
+  animation: shake 2s infinite ease-in-out;
+}
+
 .startEnd-maintitle {
   font-family: 'Press Start 2P', cursive;
 
@@ -873,6 +886,10 @@ pre.wrap {
 .jwt-signature * {
   color: $colorSign !important;
 }
+
+ .code-bold {
+   font-weight: bold;
+ }
 
 .code-hl,
 .code-hl .hljs-keyword {

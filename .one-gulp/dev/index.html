@@ -727,7 +727,7 @@
   <!--        L'idée de signer le contenu des cookies n'est pas nouvelle.-->
   <!--        Ce qui est intéressant avec JWT, c'est d'avoir un standard pour-->
   <section>
-    <pre class="wrap"><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19.fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</code></pre>
+    <pre class="wrap"><code><span class="code-hl">eyJ</span>hbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.<span class="code-hl">eyJ</span>pc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJqbGVubm9uIiwiYXVkIjoid2ViLWZyb250ZW5kIiwiZXhwIjoxNDU4NjM4NjE4LCJuYmYiOm51bGwsImlhdCI6MTQ1ODYzNTAxOCwianRpIjoiODVhM2NiNGMtNTcyMC00ZGJhLWFlOTQtOTMxZDYwOTM3YzQ3IiwibmFtZSI6IkpvaG4gTGVubm9uIiwicGVybWlzc2lvbnMiOlsiUExBWUlOR19HVUlUQVIiLCJTSU5HSU5HIl19.kSsR0v7IxjKlb4CINq4akmPAd3fk9RxfMxrJclfZeSM</code></pre>
     <div role="note">
       ...ça.
       Bon, je sais pas vous mais moi j'ai pas fait base64URL en LV3,
@@ -737,7 +737,7 @@
     </div>
   </section>
   <section class="no-transition">
-    <pre class="wrap"><code><span class="jwt-header">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span><span class="code-hl">.</span><span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span><span class="code-hl">.</span><span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span></code></pre>
+    <pre class="wrap"><code><span class="jwt-header">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span><span class="code-hl">.</span><span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJqbGVubm9uIiwiYXVkIjoid2ViLWZyb250ZW5kIiwiZXhwIjoxNDU4NjM4NjE4LCJuYmYiOm51bGwsImlhdCI6MTQ1ODYzNTAxOCwianRpIjoiODVhM2NiNGMtNTcyMC00ZGJhLWFlOTQtOTMxZDYwOTM3YzQ3IiwibmFtZSI6IkpvaG4gTGVubm9uIiwicGVybWlzc2lvbnMiOlsiUExBWUlOR19HVUlUQVIiLCJTSU5HSU5HIl19</span><span class="code-hl">.</span><span class="jwt-signature">kSsR0v7IxjKlb4CINq4akmPAd3fk9RxfMxrJclfZeSM</span></code></pre>
     <div role="note">
       ...3 parties séparées par des points.
       
@@ -751,10 +751,10 @@
 
 
 > encodedPayload
-<span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJoc2FibG9ubmllcmUiLCJhdWQiOiJ3ZWItZnJvbnRlbmQiLCJleHAiOjE0NTg2Mzg2MTgsIm5iZiI6bnVsbCwiaWF0IjoxNDU4NjM1MDE4LCJqdGkiOiI4NWEzY2I0Yy01NzIwLTRkYmEtYWU5NC05MzFkNjA5MzdjNDciLCJuYW1lIjoiSHViZXJ0IFNBQkxPTk5Jw4hSRSIsInBlcm1pc3Npb25zIjpbIkVESVRPUiIsIlJFVklFV0VSIl19</span>
+<span class="jwt-payload">eyJpc3MiOiJhdXRoLWJhY2tlbmQiLCJzdWIiOiJqbGVubm9uIiwiYXVkIjoid2ViLWZyb250ZW5kIiwiZXhwIjoxNDU4NjM4NjE4LCJuYmYiOm51bGwsImlhdCI6MTQ1ODYzNTAxOCwianRpIjoiODVhM2NiNGMtNTcyMC00ZGJhLWFlOTQtOTMxZDYwOTM3YzQ3IiwibmFtZSI6IkpvaG4gTGVubm9uIiwicGVybWlzc2lvbnMiOlsiUExBWUlOR19HVUlUQVIiLCJTSU5HSU5HIl19</span>
 
 > signature
-<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+<span class="jwt-signature">kSsR0v7IxjKlb4CINq4akmPAd3fk9RxfMxrJclfZeSM</span>
 
 
 
@@ -768,18 +768,18 @@
     </div>
   </section>
   <section class="no-transition">
-    <pre class="wrap"><code>> <span class="code-hl">base64URLdecode(</span>encodedHeader<span class="code-hl">)</span>;
+    <pre class="wrap"><code>> <span class="code-hl code-bold">base64URLdecode(</span>encodedHeader<span class="code-hl code-bold">)</span>;
 <span class="jwt-header">'{"alg":"HS256","typ":"JWT"}'</span>
 
 
 
 
-> <span class="code-hl">base64URLdecode(</span>encodedPayload<span class="code-hl">)</span>;
-<span class="jwt-payload">'{"iss":"auth-backend","sub":"hsablonniere","aud":"web-frontend","exp":1458638618,"nbf":null,"iat":1458635018,"jti":"85a3cb4c-5720-4dba-ae94-931d60937c47","name":"Hubert SABLONNIÈRE","permissions":["EDITOR","REVIEWER"]}'</span>
+> <span class="code-hl  code-bold">base64URLdecode(</span>encodedPayload<span class="code-hl code-bold">)</span>;
+<span class="jwt-payload">'{"iss":"auth-backend","sub":"jlennon","aud":"web-frontend","exp":1458638618,"nbf":null,"iat":1458635018,"jti":"85a3cb4c-5720-4dba-ae94-931d60937c47","name":"John Lennon","permissions":["PLAYING_GUITAR","SINGING"]}'</span>
 
 
 > signature
-<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+<span class="jwt-signature">kSsR0v7IxjKlb4CINq4akmPAd3fk9RxfMxrJclfZeSM</span>
 
 
 
@@ -793,23 +793,23 @@
     </div>
   </section>
   <section class="no-transition">
-    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedHeader) <span class="code-hl">)</span>;
+    <pre class="wrap"><code class="markdown">> <span class="code-hl code-bold">parseJSON(</span> base64URLdecode(encodedHeader) <span class="code-hl code-bold">)</span>;
 <span class="jwt-header">{
     "alg": "HS256",
     "typ": "JWT"
 }</span>
 
-> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+> <span class="code-hl code-bold">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl code-bold">)</span>;
 <span class="jwt-payload">{
     "iss": "auth-backend",
-    "sub": "hsablonniere",
+    "sub": "jlennon",
     "aud": "web-frontend",
     "exp": 1458638618,
     "nbf": null,
     "iat": 1458635018,
     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
-    "name": "Hubert SABLONNIÈRE",
-    "permissions": ["EDITOR", "REVIEWER"]
+    "name": "John Lennon",
+    "permissions": ["PLAYING_GUITAR", "SINGING"]
 }</span>
 </code></pre>
     <div role="note">
@@ -819,18 +819,18 @@
     </div>
   </section>
   <section class="no-transition">
-    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+    <pre class="wrap"><code class="markdown">> <span class="code-hl code-bold">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl code-bold">)</span>;
 <span class="jwt-payload">{
 
     "iss": "auth-backend",
-    "sub": "hsablonniere",
+    "sub": "jlennon",
     "aud": "web-frontend",
     "exp": 1458638618,
     "nbf": null,
     "iat": 1458635018,
     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
-    "name": "Hubert SABLONNIÈRE",
-    "permissions": ["EDITOR", "REVIEWER"]
+    "name": "John Lennon",
+    "permissions": ["PLAYING_GUITAR", "SINGING"]
 }</span></code></pre>
     <div role="note">
       ...il contient pas mal d'information intéressantes.
@@ -841,18 +841,18 @@
     </div>
   </section>
   <section class="no-transition">
-    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+    <pre class="wrap"><code class="markdown">> <span class="code-bold">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-bold">)</span>;
 <span class="jwt-payload">{
     <span class="code-hlnow">// Issuer</span>
     <span class="code-hlnow">"iss": "auth-backend"</span>,
-    "sub": "hsablonniere",
+    "sub": "jlennon",
     "aud": "web-frontend",
     "exp": 1458638618,
     "nbf": null,
     "iat": 1458635018,
     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
-    "name": "Hubert SABLONNIÈRE",
-    "permissions": ["EDITOR", "REVIEWER"]
+    "name": "John Lennon",
+    "permissions": ["PLAYING_GUITAR", "SINGING"]
 }</span></code></pre>
     <div role="note">
       "Issuer" décrit celui qui a généré le token.
@@ -862,18 +862,18 @@
     </div>
   </section>
   <section class="no-transition">
-    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+    <pre class="wrap"><code class="markdown">> <span class="code-bold">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-bold">)</span>;
 <span class="jwt-payload">{
     "iss": "auth-backend",
     <span class="code-hlnow">// Subject</span>
-    <span class="code-hlnow">"sub": "hsablonniere"</span>,
+    <span class="code-hlnow">"sub": "jlennon"</span>,
     "aud": "web-frontend",
     "exp": 1458638618,
     "nbf": null,
     "iat": 1458635018,
     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
-    "name": "Hubert SABLONNIÈRE",
-    "permissions": ["EDITOR", "REVIEWER"]
+    "name": "John Lennon",
+    "permissions": ["PLAYING_GUITAR", "SINGING"]
 }</span></code></pre>
     <div role="note">
       "Subject" décrit le sujet du token.
@@ -883,18 +883,18 @@
     </div>
   </section>
   <section class="no-transition">
-    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+    <pre class="wrap"><code class="markdown">> <span class="code-bold">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-bold">)</span>;
 <span class="jwt-payload">{
     "iss": "auth-backend",
-    "sub": "hsablonniere",
+    "sub": "jlennon",
     <span class="code-hlnow">// Audience</span>
     <span class="code-hlnow">"aud": "web-frontend"</span>,
     "exp": 1458638618,
     "nbf": null,
     "iat": 1458635018,
     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
-    "name": "Hubert SABLONNIÈRE",
-    "permissions": ["EDITOR", "REVIEWER"]
+    "name": "John Lennon",
+    "permissions": ["PLAYING_GUITAR", "SINGING"]
 }</span></code></pre>
     <div role="note">
       "Audience" décrit le destinataire pour lequel le token a été généré.
@@ -902,18 +902,18 @@
     </div>
   </section>
   <section class="no-transition">
-    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+    <pre class="wrap"><code class="markdown">> <span class="code-bold">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-bold">)</span>;
 <span class="jwt-payload">{
     "iss": "auth-backend",
-    "sub": "hsablonniere",
+    "sub": "jlennon",
     "aud": "web-frontend",
     <span class="code-hlnow">// Expiration Time</span>
     <span class="code-hlnow">"exp": 1458638618</span>,
     "nbf": null,
     "iat": 1458635018,
     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
-    "name": "Hubert SABLONNIÈRE",
-    "permissions": ["EDITOR", "REVIEWER"]
+    "name": "John Lennon",
+    "permissions": ["PLAYING_GUITAR", "SINGING"]
 }</span></code></pre>
     <div role="note">
       "Expiration time" décrit la date/heure à laquelle le token ne sera plus accepté par le système.
@@ -921,18 +921,18 @@
     </div>
   </section>
   <section class="no-transition">
-    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+    <pre class="wrap"><code class="markdown">> <span class="code-bold">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-bold">)</span>;
 <span class="jwt-payload">{
     "iss": "auth-backend",
-    "sub": "hsablonniere",
+    "sub": "jlennon",
     "aud": "web-frontend",
     "exp": 1458638618,
     <span class="code-hlnow">// Not Before</span>
     <span class="code-hlnow">"nbf": null</span>,
     "iat": 1458635018,
     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
-    "name": "Hubert SABLONNIÈRE",
-    "permissions": ["EDITOR", "REVIEWER"]
+    "name": "John Lennon",
+    "permissions": ["PLAYING_GUITAR", "SINGING"]
 }</span></code></pre>
     <div role="note">
       "Not Before" décrit la date/heure avant laquelle le token ne peut pas être accepté.
@@ -941,18 +941,18 @@
     </div>
   </section>
   <section class="no-transition">
-    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+    <pre class="wrap"><code class="markdown">> <span class="code-bold">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-bold">)</span>;
 <span class="jwt-payload">{
     "iss": "auth-backend",
-    "sub": "hsablonniere",
+    "sub": "jlennon",
     "aud": "web-frontend",
     "exp": 1458638618,
     "nbf": null,
     <span class="code-hlnow">// Issued At</span>
     <span class="code-hlnow">"iat": 1458635018</span>,
     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
-    "name": "Hubert SABLONNIÈRE",
-    "permissions": ["EDITOR", "REVIEWER"]
+    "name": "John Lennon",
+    "permissions": ["PLAYING_GUITAR", "SINGING"]
 }</span></code></pre>
     <div role="note">
       "Issued At" décrit la date/heure à laquelle le token a été généré.
@@ -960,18 +960,18 @@
     </div>
   </section>
   <section class="no-transition">
-    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+    <pre class="wrap"><code class="markdown">> <span class="code-bold">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-bold">)</span>;
 <span class="jwt-payload">{
     "iss": "auth-backend",
-    "sub": "hsablonniere",
+    "sub": "jlennon",
     "aud": "web-frontend",
     "exp": 1458638618,
     "nbf": null,
     "iat": 1458635018,
     <span class="code-hlnow">// JWT ID</span>
     <span class="code-hlnow">"jti": "85a3cb4c-5720-4dba-ae94-931d60937c47"</span>,
-    "name": "Hubert SABLONNIÈRE",
-    "permissions": ["EDITOR", "REVIEWER"]
+    "name": "John Lennon",
+    "permissions": ["PLAYING_GUITAR", "SINGING"]
 }</span></code></pre>
     <div role="note">
       "JWT ID" décrit un identifiant pour le token.
@@ -980,18 +980,18 @@
     </div>
   </section>
   <section class="no-transition">
-    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+    <pre class="wrap"><code class="markdown">> <span class="code-bold">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-bold">)</span>;
 <span class="jwt-payload">{
     "iss": "auth-backend",
-    "sub": "hsablonniere",
+    "sub": "jlennon",
     "aud": "web-frontend",
     "exp": 1458638618,
     "nbf": null,
     "iat": 1458635018,
     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
     <span class="code-hlnow">// Private claims</span>
-    <span class="code-hlnow">"name": "Hubert SABLONNIÈRE"</span>,
-    <span class="code-hlnow">"permissions": ["EDITOR", "REVIEWER"]</span>
+    <span class="code-hlnow">"name": "John Lennon"</span>,
+    <span class="code-hlnow">"permissions": ["PLAYING_GUITAR", "SINGING"]</span>
 }</span></code></pre>
     <div role="note">
       Enfin, on retrouve les private claims.
@@ -1002,17 +1002,17 @@
     </div>
   </section>
   <section class="no-transition">
-    <pre class="wrap"><code class="markdown">> <span class="code-hl">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-hl">)</span>;
+    <pre class="wrap"><code class="markdown">> <span class="code-bold">parseJSON(</span> base64URLdecode(encodedPayload) <span class="code-bold">)</span>;
 <span class="jwt-payload">{
     "iss": "auth-backend",
-    "sub": "hsablonniere",
+    "sub": "jlennon",
     "aud": "web-frontend",
     "exp": 1458638618,
     "nbf": null,
     "iat": 1458635018,
     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
-    "name": "Hubert SABLONNIÈRE",
-    "permissions": ["EDITOR", "REVIEWER"]
+    "name": "John Lennon",
+    "permissions": ["PLAYING_GUITAR", "SINGING"]
 }</span></code></pre>
     <div role="note">
       OK, du coup, comment le serveur va pouvoir faire confiance à ce truc là ?
@@ -1028,18 +1028,18 @@
 > parseJSON( base64URLdecode(encodedPayload) );
 <span class="jwt-payload">{
     "iss": "auth-backend",
-    "sub": "hsablonniere",
+    "sub": "jlennon",
     "aud": "web-frontend",
     "exp": 1458638618,
     "nbf": null,
     "iat": 1458635018,
     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
-    "name": "Hubert SABLONNIÈRE",
-    "permissions": ["EDITOR", "REVIEWER"]
+    "name": "John Lennon",
+    "permissions": ["PLAYING_GUITAR", "SINGING"]
 }</span>
 
 > signature
-<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span></code></pre>
+<span class="jwt-signature">kSsR0v7IxjKlb4CINq4akmPAd3fk9RxfMxrJclfZeSM</span></code></pre>
     <div role="note">
       il y a 3 parties,
       on a aussi le header et la signature
@@ -1052,20 +1052,20 @@
     <pre class="wrap"><code>> parseJSON( base64URLdecode(encodedPayload) );
 <span class="jwt-payload">{
     "iss": "auth-backend",
-    "sub": "hsablonniere",
+    "sub": "jlennon",
     "aud": "web-frontend",
     "exp": 1458638618,
     "nbf": null,
     "iat": 1458635018,
     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
-    "name": "Hubert SABLONNIÈRE",
-    "permissions": ["EDITOR", "REVIEWER"]
+    "name": "John Lennon",
+    "permissions": ["PLAYING_GUITAR", "SINGING"]
 }</span>
 
 > signature
-<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+<span class="jwt-signature">kSsR0v7IxjKlb4CINq4akmPAd3fk9RxfMxrJclfZeSM</span>
 
-> <span class="code-hl">hmacSha256(</span>encodedHeader + '.' + encodedPayload, 's3cr3t'<span class="code-hl">)</span>;
+> <span class="code-hl code-bold">hmacSha256(</span>encodedHeader + '.' + encodedPayload, 's3cr3t'<span class="code-hl code-bold">)</span>;
 
 </code></pre>
     <div role="note">
@@ -1082,21 +1082,21 @@
     <pre class="wrap"><code>> parseJSON( base64URLdecode(encodedPayload) );
 <span class="jwt-payload">{
     "iss": "auth-backend",
-    "sub": "hsablonniere",
+    "sub": "jlennon",
     "aud": "web-frontend",
     "exp": 1458638618,
     "nbf": null,
     "iat": 1458635018,
     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
-    "name": "Hubert SABLONNIÈRE",
-    "permissions": ["EDITOR", "REVIEWER"]
+    "name": "John Lennon",
+    "permissions": ["PLAYING_GUITAR", "SINGING"]
 }</span>
 
 > signature
-<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+<span class="jwt-signature">kSsR0v7IxjKlb4CINq4akmPAd3fk9RxfMxrJclfZeSM</span>
 
 > hmacSha256(encodedHeader + '.' + encodedPayload, <span class="code-hl">'s3cr3t'</span>);
-<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span></code></pre>
+<span class="jwt-signature">kSsR0v7IxjKlb4CINq4akmPAd3fk9RxfMxrJclfZeSM</span></code></pre>
     <div role="note">
       ...et je tombe sur la même chose, parfait !
       Le serveur peux faire confiance à ce que dit le client.
@@ -1107,21 +1107,21 @@
     <pre class="wrap"><code class="markdown">> parseJSON( base64URLdecode(encodedPayload) );
 <span class="jwt-payload" data-code-id="jwt-body">{
     "iss": "auth-backend",
-    "sub": "hsablonniere",
+    "sub": "jlennon",
     "aud": "web-frontend",
     "exp": 1458638618,
     "nbf": null,
     "iat": 1458635018,
     "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
-    "name": "Hubert SABLONNIÈRE",
-    "permissions": ["EDITOR", "REVIEWER"]
+    "name": "John Lennon",
+    "permissions": ["PLAYING_GUITAR", "SINGING"]
 }</span>
 
 > signature
-<span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+<span class="jwt-signature">kSsR0v7IxjKlb4CINq4akmPAd3fk9RxfMxrJclfZeSM</span>
 
-> hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');
-<span class="jwt-signature" data-code-id="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>
+> hmacSha256(encodedHeader + '.' + encodedPayload, '<span data-code-id="jwt-secret">s3cr3t</span>');
+<span class="jwt-signature" data-code-id="jwt-signature">kSsR0v7IxjKlb4CINq4akmPAd3fk9RxfMxrJclfZeSM</span>
 </code></pre>
     <div role="note">
       Par contre, si le client comment à faire le malin genre,
@@ -1136,18 +1136,18 @@
   <!--            > parseJSON( base64URLdecode(encodedPayload) );-->
   <!--            <span class="jwt-payload">{-->
   <!--                "iss": "auth-backend",-->
-  <!--                "sub": "hsablonniere",-->
+  <!--                "sub": "jlennon",-->
   <!--                "aud": "web-frontend",-->
   <!--                "exp": 1458638618,-->
   <!--                "nbf": null,-->
   <!--                "iat": 1458635018,-->
   <!--                "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",-->
-  <!--                "name": "Hubert SABLONNIÈRE",-->
+  <!--                "name": "John Lennon",-->
   <!--                "permissions": ["EDITOR", "REVIEWER", <span class="code-hl">"ADMIN"</span>]-->
   <!--            }</span>-->
   <!---->
   <!--            > signature-->
-  <!--            <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>-->
+  <!--            <span class="jwt-signature">kSsR0v7IxjKlb4CINq4akmPAd3fk9RxfMxrJclfZeSM</span>-->
   <!---->
   <!--            > hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');-->
   <!--            <span class="jwt-signature"><span class="code-hl">sz_ALMnwaDEf7sF7wKeabiLPSUIBhDSdALvEiVb9G_c</span></span>-->
@@ -1161,18 +1161,18 @@
   <!--            > parseJSON( base64URLdecode(encodedPayload) );-->
   <!--            <span class="jwt-payload">{-->
   <!--                "iss": "auth-backend",-->
-  <!--                "sub": "hsablonniere",-->
+  <!--                "sub": "jlennon",-->
   <!--                "aud": "web-frontend",-->
   <!--                "exp": <span class="code-hl">1500000000</span>,-->
   <!--                "nbf": null,-->
   <!--                "iat": 1458635018,-->
   <!--                "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",-->
-  <!--                "name": "Hubert SABLONNIÈRE",-->
-  <!--                "permissions": ["EDITOR", "REVIEWER"]-->
+  <!--                "name": "John Lennon",-->
+  <!--                "permissions": ["PLAYING_GUITAR", "SINGING"]-->
   <!--            }</span>-->
   <!---->
   <!--            > signature-->
-  <!--            <span class="jwt-signature">fwxQ6GrPRyEi8wKhlBpYrWPuiFOpPswSahgM1WFWIxo</span>-->
+  <!--            <span class="jwt-signature">kSsR0v7IxjKlb4CINq4akmPAd3fk9RxfMxrJclfZeSM</span>-->
   <!---->
   <!--            > hmacSha256(encodedHeader + '.' + encodedPayload, 's3cr3t');-->
   <!--            <span class="jwt-signature"><span class="code-hl">YicKS8hG-PSnYyV22atgbwrshyS-_coW-s79xzFPcqs</span></span>-->
@@ -1234,7 +1234,9 @@
     </div>
   </section>
   <section class="no-transition">
-    <figure class="fs-media fs-media-cover fs-media-cover"><img src="/media/schema-jwt-languages.svg"></figure>
+    <figure class="fs-media fs-media-cover fs-media-cover"><img src="/media/schema-jwt-languages.svg">
+      <!--include media/schema-jwt-languages.svg-->
+    </figure>
     <div role="note">
       ...tous les langages.
       que vous soyez dans un navigateur,
@@ -1432,6 +1434,10 @@
     </div>
   </section>
   <section class="no-transition">
+    <figure class="fs-media fs-media-cover fs-media-cover--right-nt"><img src="/media/schema-jwt-blacklist-alpha.svg"></figure>
+    <div role="note"></div>
+  </section>
+  <section class="no-transition">
     <figure class="fs-media fs-media-cover fs-media-cover--right-nt"><img src="/media/schema-jwt-blacklist-1.svg" class="trigger-media-on"><img src="/media/schema-jwt-blacklist-2.svg" class="trigger-media-off"></figure>
     <div role="note"></div>
   </section>
@@ -1457,15 +1463,6 @@
     <div role="note">
       Utiliser un cookie secure et HTTP only => XSS
       Ajouter un XSRF token dans le payload et qui est stoké aussi à part
-      
-    </div>
-  </section>
-  <section class="no-transition">
-    <figure class="fs-media"><img src="/media/xss-twitter.jpg"></figure>
-    <div role="note">
-      explication de l'attaque XSS
-      Script tiers
-      Commentaires clients
       
     </div>
   </section>
@@ -1506,7 +1503,7 @@ Authorization: Bearer <span class="jwt-header">H34DER</span>.<span class="jwt-pa
     </div>
   </section>
   <section>
-    <pre><code>&lt;!-- http://malicious.com -->
+    <pre><code>&lt;!-- <span class="code-hl">http://malicious.com</span> -->
 
 &lt;form action="https://twitter.com/i/tweet/create"
       method="POST">

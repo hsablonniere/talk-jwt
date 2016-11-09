@@ -3,35 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="4d69d9c3-1534-4035-9da8-cddbf94fbae8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-1.svg" afterPath="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-1.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-2.svg" afterPath="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-2.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-3.svg" afterPath="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-3.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-02.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-02.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-03.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-03.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-04.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-04.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-05.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-05.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-06.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-06.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-07.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-07.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-08.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-08.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-09.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-09.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-10.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-10.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11a.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11a.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11b.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11b.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11c.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11c.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11d.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11d.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11e.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11e.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11f.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-11f.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12a.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12a.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12b.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12b.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12c.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12c.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12d.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12d.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-13.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-13.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-14a.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-14a.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-14b.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-14b.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-15a.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-15a.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-15b.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-15b.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-16.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-16.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-16plus.svg" afterPath="$PROJECT_DIR$/src/media/schema-scalable-shared-memory-16plus.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.one-gulp/dev/editor.html" afterPath="$PROJECT_DIR$/.one-gulp/dev/editor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.one-gulp/dev/index.css" afterPath="$PROJECT_DIR$/.one-gulp/dev/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.one-gulp/dev/index.html" afterPath="$PROJECT_DIR$/.one-gulp/dev/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dynamic-code-in-slides.js" afterPath="$PROJECT_DIR$/src/dynamic-code-in-slides.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/editor.jade" afterPath="$PROJECT_DIR$/src/editor.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/editor.js" afterPath="$PROJECT_DIR$/src/editor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.jade" afterPath="$PROJECT_DIR$/src/index.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.scss" afterPath="$PROJECT_DIR$/src/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/jwt-schemas/schema-csrf-02.svg" afterPath="$PROJECT_DIR$/src/media/jwt-schemas/schema-csrf-02.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt.svg" afterPath="$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-10.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-10.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-jwt-08.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-jwt-08.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-jwt-09.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-jwt-09.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-csrf-jwt-paper.svg" afterPath="$PROJECT_DIR$/src/media/schema-csrf-jwt-paper.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-jwt-05.svg" afterPath="$PROJECT_DIR$/src/media/schema-jwt-05.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-jwt-06.svg" afterPath="$PROJECT_DIR$/src/media/schema-jwt-06.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/media/schema-jwt-languages.svg" afterPath="$PROJECT_DIR$/src/media/schema-jwt-languages.svg" />
     </list>
     <ignored path="talk-jwt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,7 +38,38 @@
     <favorites_list name="talk-jwt" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="editor.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/editor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editor.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/editor.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="15" column="40" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dynamic-code-in-slides.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dynamic-code-in-slides.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="924">
+              <caret line="22" column="21" selection-start-line="4" selection-start-column="0" selection-end-line="22" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,9 +82,6 @@
         <option value="$PROJECT_DIR$/story.adoc" />
         <option value="$PROJECT_DIR$/src/media/schema-cookies-basic-06.svg" />
         <option value="$PROJECT_DIR$/src/editor.scss" />
-        <option value="$PROJECT_DIR$/src/editor.jade" />
-        <option value="$PROJECT_DIR$/src/editor.js" />
-        <option value="$PROJECT_DIR$/src/dynamic-code-in-slides.js" />
         <option value="$PROJECT_DIR$/src/fonts.css" />
         <option value="$PROJECT_DIR$/src/media/schema-cookies-basic-02.svg" />
         <option value="$PROJECT_DIR$/src/media/schema-jwt-04.svg" />
@@ -76,9 +92,7 @@
         <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-cookies-basic-02.svg" />
         <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-cookies-session.svg" />
         <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-csrf-01.svg" />
-        <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-csrf-02.svg" />
         <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt-asym.svg" />
-        <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt-blacklist.svg" />
         <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt-oauth.svg" />
         <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt-scalable-microservices.svg" />
         <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt.svg" />
@@ -94,8 +108,15 @@
         <option value="$PROJECT_DIR$/src/article/article.adoc" />
         <option value="$PROJECT_DIR$/src/dzslides.js" />
         <option value="$PROJECT_DIR$/src/index.jade" />
-        <option value="$PROJECT_DIR$/src/index.scss" />
         <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-scalable-shared-memory-1.svg" />
+        <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt-blacklist.svg" />
+        <option value="$PROJECT_DIR$/src/media/schema-cookie-vs-jwt-3.svg" />
+        <option value="$PROJECT_DIR$/src/index.scss" />
+        <option value="$PROJECT_DIR$/src/media/jwt-schemas/schema-csrf-02.svg" />
+        <option value="$PROJECT_DIR$/src/editor.jade" />
+        <option value="$PROJECT_DIR$/src/dynamic-code-in-slides.js" />
+        <option value="$PROJECT_DIR$/src/editor.js" />
+        <option value="$PROJECT_DIR$/src/media/schema-jwt-languages.svg" />
       </list>
     </option>
   </component>
@@ -329,34 +350,34 @@
       <workItem from="1463440178083" duration="9000" />
       <workItem from="1478079440107" duration="1750000" />
       <workItem from="1478081662732" duration="714000" />
-      <workItem from="1478681819612" duration="876000" />
+      <workItem from="1478681819612" duration="4541000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200495000" />
+    <option name="totallyTimeSpent" value="204160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="36" width="2560" height="1404" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.21757813" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32725948" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284101" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32725948" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -375,48 +396,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jsrsasign-5.0.7-all-min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="11" column="340" selection-start-line="11" selection-start-column="340" selection-end-line="11" selection-end-column="340" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jsrsasign-5.0.7-all-min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dynamic-code-in-slides.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/editor.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/schema-jwt-04.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="1432" column="40" selection-start-line="1432" selection-start-column="40" selection-end-line="1432" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/schema-cookies-session-09.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98015">
-          <caret line="1373" column="31" selection-start-line="1373" selection-start-column="31" selection-end-line="1373" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/media/schema-scalable-shared-memory-12c.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -428,20 +407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="716">
           <caret line="133" column="21" selection-start-line="133" selection-start-column="21" selection-end-line="133" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jwt.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/editor.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -481,21 +446,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/jwt-schemas/schema-csrf-02.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt-asym.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt-blacklist.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
@@ -576,21 +527,6 @@
     <entry file="file://$PROJECT_DIR$/src/article/article.js" />
     <entry file="file://$PROJECT_DIR$/src/article/article.css" />
     <entry file="file://$PROJECT_DIR$/src/article/article.adoc" />
-    <entry file="file://$PROJECT_DIR$/src/dzslides.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="423" column="22" selection-start-line="423" selection-start-column="22" selection-end-line="423" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="217" column="0" selection-start-line="213" selection-start-column="0" selection-end-line="215" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -603,22 +539,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="427">
           <caret line="2250" column="13" selection-start-line="2250" selection-start-column="13" selection-end-line="2250" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/schema-cookie-vs-jwt-1.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="5435" column="11" selection-start-line="5435" selection-start-column="11" selection-end-line="5435" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/media/schema-cookie-vs-jwt-2.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="5435" column="11" selection-start-line="5435" selection-start-column="11" selection-end-line="5435" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -715,6 +635,118 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="922">
           <caret line="1227" column="22" selection-start-line="1227" selection-start-column="22" selection-end-line="1227" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/jwt-schemas/schema-jwt-blacklist.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="4493" column="32" selection-start-line="4493" selection-start-column="32" selection-end-line="4493" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/schema-cookie-vs-jwt-2.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="5435" column="11" selection-start-line="5435" selection-start-column="11" selection-end-line="5435" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/schema-cookie-vs-jwt-1.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="5435" column="11" selection-start-line="5435" selection-start-column="11" selection-end-line="5435" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="302" column="4" selection-start-line="302" selection-start-column="4" selection-end-line="302" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/jwt-schemas/schema-csrf-02.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="3630" column="24" selection-start-line="3630" selection-start-column="24" selection-end-line="3630" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/schema-csrf-10.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140628">
+          <caret line="3628" column="24" selection-start-line="3628" selection-start-column="24" selection-end-line="3628" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/schema-cookie-vs-jwt-3.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dzslides.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="420" column="0" selection-start-line="420" selection-start-column="0" selection-end-line="420" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xtab.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jwt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-258">
+          <caret line="92" column="51" selection-start-line="92" selection-start-column="51" selection-end-line="92" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/editor.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="15" column="40" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dynamic-code-in-slides.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="22" column="21" selection-start-line="4" selection-start-column="0" selection-end-line="22" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/media/schema-jwt-languages.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
           <folding />
         </state>
       </provider>

@@ -16,15 +16,17 @@ body
         textarea(data-code-id="jwt-body").
             {
                 "iss": "auth-backend",
-                "sub": "hsablonniere",
+                "sub": "jlennon",
                 "aud": "web-frontend",
                 "exp": 1458638618,
                 "nbf": null,
                 "iat": 1458635018,
                 "jti": "85a3cb4c-5720-4dba-ae94-931d60937c47",
-                "name": "Hubert SABLONNIÈRE",
-                "permissions": ["EDITOR", "REVIEWER"]
+                "name": "John Lennon",
+                "permissions": ["PLAYING_GUITAR", "SINGING"]
             }
+
+        textarea(data-code-id="jwt-secret") s3cr3t
 
     script(src="xtab.js")
     script(src="editor.js")

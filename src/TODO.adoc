@@ -2,35 +2,35 @@
 
 == MUST
 
-* Translate the slides (without changing too much)
-* Translate the story into english (without changing too much)
-* Explain the Lemmings game was also on SNES
-* Insister un peu plus sur les beatles
-* animate the scale with ID session vs JWT
-* change hsablonniere stuffs to jlennon
-* redo the microservice series of slides
-* redo XSS explain
-** Fake social network
-* add "and beyond?"
-** the gateway architecture
-* add slides for jwe
-* more diagrams to explain revocation
-** more steps
-* white screen before netscape
-* visual for "I'm a browser, I'm sending all the cookies I have"
-** use it several times
-* change 42 and 36
-* remind lemmings code on ID=42
-* video of level something while drinking
-** enter code
-* remove double slide before airbag
-* put the forbidden sign on the special button
-* white screen before JWT base64
-* bold on base64URLdecode
-* bold on parseJSON
-* refactor the microservices diagrams (remove the high availability stuffs)
-* split asymetric key
-* add the round trip to the memory for the sync token in session
+  * Translate the slides (without changing too much)
+  * Translate the story into english (without changing too much)
+  * Explain the Lemmings game was also on SNES
+  * Insister un peu plus sur les beatles
+  * animate the scale with ID session vs JWT
+  * change hsablonniere stuffs to jlennon
+  * redo the microservice series of slides
+  * redo XSS explain
+  ** Fake social network
+  * add "and beyond?"
+  ** the gateway architecture
+  * add slides for jwe
+  * more diagrams to explain revocation
+  ** more steps
+  * white screen before netscape
+  * visual for "I'm a browser, I'm sending all the cookies I have"
+  ** use it several times
+  * change 42 and 36
+  * remind lemmings code on ID=42
+  * video of level something while drinking
+  ** enter code
+  * remove double slide before airbag
+  * put the forbidden sign on the special button
+  * white screen before JWT base64
+  * bold on base64URLdecode
+  * bold on parseJSON
+  * refactor the microservices diagrams (remove the high availability stuffs)
+  * split asymetric key
+  * add the round trip to the memory for the sync token in session
 
 == SHOULD
 
